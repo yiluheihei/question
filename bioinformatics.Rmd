@@ -1,0 +1,13 @@
+# 生物信息
+
+## 微生物组
+
+- mac如何安装 lefse ？
+
+  通过homebrew安装lefse已经[不再维护](https://github.com/biobakery/homebrew-biobakery/issues/37)`brew install biobakery/biobakery/lefse`;采用conda安装(目前biobakery下的软件都用[conda源安装](https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools))
+  
+  ```sh
+  conda config --add channels biobakery
+  conda install -c biobakery lefse
+  ```
+  

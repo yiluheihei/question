@@ -1,0 +1,19 @@
+# git 和 github
+
+- 显示某一次提交中某个文件的变化
+
+```sh
+git log <commit_hash> <file_name>
+```
+
+- 删除远程仓库(如github)的错误提交，在本地处理好之后，如删除错误提交，然后强制push到远程进行修改
+
+```sh
+git push --force
+```
+
+- 删除远程分支
+
+```sh
+git push origin --delete <remote_branch>
+```

@@ -1,0 +1,15 @@
+--- 
+title: "个人问题集"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+---
+
+# 前言 {-}
+
+生活和工作中我们会不断遇到新的问题，继而不断寻找解决问题的方法，可以去百度或者谷歌搜索，可以去问技术大拿。相信很多人跟我一样，在下次碰到同样的问题的时候，还是有可能不知道怎么解决，可能还要走以前的老路子。好记性不如烂笔头，把自己碰到的问题记录在这里，以备需要时查看。
+
+问题无关简单或者困难，有用即可。
