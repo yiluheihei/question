@@ -7,4 +7,4 @@
   时间后对文件进行保存。默认情况下，当我们再打开ppt的时候会弹出恢复文件选项，选择最近时间的文件进行恢
   即可得到修改后的文件。
   
-  但是，有时候不会自动弹出恢复选项。这时候我们到自动保存文件夹位置为`/Users/(username)/Library/Containers/com.Microsoft.Powerpoint/Data/Library/Preferences/AutoRecovery`下根据保存时间找到自动保存的文件，把文件扩展名改成`.pptx`恢复对未保存的修改。
+  但是，有时候不会自动弹出恢复选项。这时候我们到自动保存文件夹位置为`/Users/(username)/Library/Containers/com.Microsoft.Powerpoint/Data/Library/Preferences/AutoRecovery`下根据保存时间找到自动保存的文件，把文件扩展名改成`.ppt`恢复对未保存的修改。
