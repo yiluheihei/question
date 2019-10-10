@@ -31,6 +31,10 @@
 
   `par("pin")`表示当前图形的尺寸用英寸表示(width * height)；`par("usr")`表示当前图形的坐标范围`c(xmin, xmax, ymin, ymax)`
 
+- 颜色代码的可视化，以便观察颜色
+  
+  `image(1, 1, as.matrix(1), col = "#E64B35")`
+
 ### ggplot
 
 - 什么是**individal geom** 和 **collective geom**? 
