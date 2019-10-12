@@ -193,7 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>如果我们在<code>~/.Rprofile</code>添加了初始化设置，那么如果当前工作目录中有含有<code>.Rprofile</code>的时候（如在github上fork的别人的项目中含有该文件），就会忽略<code>~/.Rprofile</code>中的设置。</p>
 <p>解决方法<code># ~/.Renviron</code>中设置site profile变量<code>R_PROFILE=~/Rprofile.site</code>，然后把之前<code>.Rprofile</code>的设置拷贝到<code>~/Rprofile.site</code>即可。这是因为R的启动的时候会在读取<code>.Rprofile</code>之前读取<code>~/Rprofile.site</code>中的设置。</p></li>
 <li><p>设置Alfred快捷打开rstudio的project</p>
-<p><em>Preferences &gt; Features &gt; Default Results &gt; Advanced</em>，然后把任何<code>.Rproj</code>文件拖入窗口，<a href="https://whattheyforgot.org/project-oriented-workflow.html#tricks-for-opening-projects">参考与此</a></p></li>
+<p><em>Preferences &gt; Features &gt; Default Results &gt; Advanced</em>，然后把任何<code>.Rproj</code>文件拖入窗口，<a href="https://whattheyforgot.org/project-oriented-workflow.html#tricks-for-opening-projects">参考于此</a></p></li>
 </ul>
 </div>
 <div id="section-1.2" class="section level2">

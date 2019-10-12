@@ -25,7 +25,7 @@
 
 - 设置Alfred快捷打开rstudio的project
 
-  *Preferences > Features > Default Results > Advanced*，然后把任何`.Rproj`文件拖入窗口，[参考与此](https://whattheyforgot.org/project-oriented-workflow.html#tricks-for-opening-projects)
+  *Preferences > Features > Default Results > Advanced*，然后把任何`.Rproj`文件拖入窗口，[参考于此](https://whattheyforgot.org/project-oriented-workflow.html#tricks-for-opening-projects)
 
 
 ## 可视化
