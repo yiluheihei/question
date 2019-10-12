@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第5章 Mac OS | 个人问题集</title>
-  <meta name="description" content="第5章 Mac OS | 个人问题集" />
+  <title>第4章 办公软件 | 个人问题集</title>
+  <meta name="description" content="第4章 办公软件 | 个人问题集" />
   <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第5章 Mac OS | 个人问题集" />
+  <meta property="og:title" content="第4章 办公软件 | 个人问题集" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第5章 Mac OS | 个人问题集" />
+  <meta name="twitter:title" content="第4章 办公软件 | 个人问题集" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="section-4.html"/>
-
+<link rel="prev" href="section-3.html"/>
+<link rel="next" href="mac-os.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -176,26 +176,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mac-os" class="section level1">
-<h1><span class="header-section-number">第5章</span> Mac OS</h1>
-<div id="section-5.1" class="section level2">
-<h2><span class="header-section-number">5.1</span> 应用程序</h2>
-<div id="alfred" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Alfred</h3>
-<p>Mac效率神器，快速搜索并打开app、文件，可替代spotlight</p>
+<div id="section-4" class="section level1">
+<h1><span class="header-section-number">第4章</span> 办公软件</h1>
+<div id="ppt" class="section level2">
+<h2><span class="header-section-number">4.1</span> PPT</h2>
 <ul>
-<li><p>设置激活快捷键<code>cmd + space</code></p>
-<p>需取消splotlight快捷键，然后在设置面板里设置即可，详见<a href="https://www.alfredapp.com/help/troubleshooting/cmd-space/">此</a></p></li>
-<li><p>搜索不到文件</p>
-<p>可能是mac系统索引问题，设置面板选择建立mac os的源文件“Rebuild macOS Metadata”，见<a href="https://www.alfredapp.com/help/troubleshooting/indexing/">此</a></p></li>
+<li><p>mac下powerpoint从自动保存文件中恢复文件</p>
+<p>以防在某些特殊情况下（如电脑死机）的时候，丢失没有保存的内容，通过菜单栏<code>powerpoint -&gt;  偏好设置 -&gt; 保存 -&gt; 勾选保存自动恢复信息，选择保存间隔（如5分钟)</code>，这样就会在每隔一定
+时间后对文件进行保存。默认情况下，当我们再打开ppt的时候会弹出恢复文件选项，选择最近时间的文件进行恢
+即可得到修改后的文件。</p>
+<p>但是，有时候不会自动弹出恢复选项。这时候我们到自动保存文件夹位置为<code>/Users/(username)/Library/Containers/com.Microsoft.Powerpoint/Data/Library/Preferences/AutoRecovery</code>下根据保存时间找到自动保存的文件，把文件扩展名改成<code>.ppt</code>恢复对未保存的修改。</p></li>
+</ul>
+</div>
+<div id="ps-cc" class="section level2">
+<h2><span class="header-section-number">4.2</span> PS CC</h2>
+<ul>
+<li><p>无法使用修补工具，因为它不用于索引颜色图像</p>
+<p>需转换为RGB图像，点击菜单栏“图像 -&gt; 模式 -&gt; RGB”</p></li>
+<li><p>去除图片中文字</p>
+<p>使用修补工具，具体步骤:选择修补工具，公共栏中选择修补项为源，关闭透明选项，然后用修补工具框选文字，拖动到无文字区域中与文字周围图案相似的位置，修补工具就会自动匹配目标位置的颜色。</p></li>
 </ul>
 
-<div id="refs" class="references">
-<div>
-<p>Grolemund, Garrett, and Hadley Wickham. 2019. <em>R for Data Science</em>. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.</p>
-</div>
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -203,8 +204,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="section-4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="section-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mac-os.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
