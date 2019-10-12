@@ -17,3 +17,9 @@ git push --force
 ```sh
 git push origin --delete <remote_branch>
 ```
+
+- 修改本地仓库关联的远程仓库，提交修改至另一个远程仓库
+
+  ```sh
+  git remote set-url origin https://github.com/yiluheihei/beginr.git
+  ```
