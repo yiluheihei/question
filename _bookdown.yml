@@ -10,3 +10,4 @@ rmd_files:
 - "git.Rmd"
 - "bioinformatics.Rmd"
 - "office.md"
+- "mac.Rmd"

@@ -1,0 +1,15 @@
+# Mac OS
+
+## 应用程序
+
+### Alfred
+
+Mac效率神器，快速搜索并打开app、文件，可替代spotlight
+
+- 设置激活快捷键`cmd + space`
+
+  需取消splotlight快捷键，然后在设置面板里设置即可，详见[此](https://www.alfredapp.com/help/troubleshooting/cmd-space/)
+
+- 搜索不到文件
+  
+  可能是mac系统索引问题，设置面板选择建立mac os的源文件"Rebuild macOS Metadata"，见[此](https://www.alfredapp.com/help/troubleshooting/indexing/)
