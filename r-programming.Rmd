@@ -23,6 +23,11 @@
 
   解决方法`# ~/.Renviron `中设置site profile变量`R_PROFILE=~/Rprofile.site`，然后把之前`.Rprofile`的设置拷贝到`~/Rprofile.site`即可。这是因为R的启动的时候会在读取`.Rprofile`之前读取`~/Rprofile.site`中的设置。
 
+- 设置Alfred快捷打开rstudio的project
+
+  *Preferences > Features > Default Results > Advanced*，然后把任何`.Rproj`文件拖入窗口，[参考与此](https://whattheyforgot.org/project-oriented-workflow.html#tricks-for-opening-projects)
+
+
 ## 可视化
 
 ### 基础图形
