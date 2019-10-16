@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2019-10-14" />
+<meta name="date" content="2019-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -152,8 +152,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="section-4.html"><a href="section-4.html#ps-cc"><i class="fa fa-check"></i><b>4.2</b> PS CC</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="mac-os.html"><a href="mac-os.html"><i class="fa fa-check"></i><b>5</b> Mac OS</a><ul>
-<li class="chapter" data-level="5.1" data-path="mac-os.html"><a href="mac-os.html#section-5.1"><i class="fa fa-check"></i><b>5.1</b> 应用程序</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="mac-os.html"><a href="mac-os.html#alfred"><i class="fa fa-check"></i><b>5.1.1</b> Alfred</a></li>
+<li class="chapter" data-level="5.1" data-path="mac-os.html"><a href="mac-os.html#homebrew"><i class="fa fa-check"></i><b>5.1</b> homebrew</a></li>
+<li class="chapter" data-level="5.2" data-path="mac-os.html"><a href="mac-os.html#section-5.2"><i class="fa fa-check"></i><b>5.2</b> 应用程序</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="mac-os.html"><a href="mac-os.html#alfred"><i class="fa fa-check"></i><b>5.2.1</b> Alfred</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -240,6 +241,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb2-11" data-line-number="11"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> label), <span class="dt">data =</span> label, <span class="dt">vjust =</span> <span class="st">&quot;top&quot;</span>, <span class="dt">hjust =</span> <span class="st">&quot;right&quot;</span>)</a></code></pre></div>
 <p><img src="question-notes_files/figure-html/text-annotation-position-1.png" width="672" /></p></li>
+<li><p>图形添加边框</p>
+<p>设置<code>theme(plot.background = element_rect())</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(wt, mpg)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.background =</span> <span class="kw">element_rect</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>))</a></code></pre></div>
+<p><img src="question-notes_files/figure-html/round-rect-1.png" width="672" /></p></li>
 </ul>
 </div>
 </div>
@@ -250,21 +257,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>正则表达式字符列表<code>[]</code>用法：<code>[]</code>中的字符匹配字符本身，如<code>[.]</code>匹配.,而不是任意字符，因此可以使用<code>[.]</code>代替<code>\\.</code>,一些在<code>[]</code>内有特殊意义的字符除外，如<code>-</code>表示范围，<code>^</code>不包含这些字符，<code>]</code>结束括号，<code>\</code>在字符串中表示转义。</p></li>
 <li><p>正则表达式默认是进行贪婪匹配，即匹配最长字符串，在正则表达式后边加?表示最短匹配</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># 匹配到两个a，然后删除</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;a+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">## [1] &quot;c&quot;</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co"># 匹配到一个a，然后删除</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;a+?&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">## [1] &quot;ac&quot;</span></a></code></pre></div></li>
-<li><p>表示重复次数的<code>*</code>(任意次)、<code>?</code>(0或1次)、<code>+</code>(一次以上)优先级较高</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># b出现一次以上</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;ab+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">## [1] &quot;abc&quot;</span></a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># 匹配到两个a，然后删除</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;a+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">## [1] &quot;c&quot;</span></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co"># ab出现一次以上</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;(ab)+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">## [1] &quot;c&quot;</span></a></code></pre></div></li>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co"># 匹配到一个a，然后删除</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;a+?&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">## [1] &quot;ac&quot;</span></a></code></pre></div></li>
+<li><p>表示重复次数的<code>*</code>(任意次)、<code>?</code>(0或1次)、<code>+</code>(一次以上)优先级较高</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># b出现一次以上</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;ab+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">## [1] &quot;abc&quot;</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co"># ab出现一次以上</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;(ab)+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">## [1] &quot;c&quot;</span></a></code></pre></div></li>
 </ul>
 </div>
 </div>
@@ -298,16 +305,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>pkgdown编译jss文档的时候出现，<code>! LaTeX Error: File</code>ae.sty’not found.` 说明缺少ae包，</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co"># ae:</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#       texmf-dist/tex/latex/ae/ae.sty</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#安装即可</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co"># ae:</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#       texmf-dist/tex/latex/ae/ae.sty</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co">#安装即可</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</a></code></pre></div>
 
 </div>
 </div>

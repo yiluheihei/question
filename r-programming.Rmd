@@ -72,7 +72,17 @@
   ggplot(mpg, aes(displ, hwy)) +
     geom_point() +
     geom_text(aes(label = label), data = label, vjust = "top", hjust = "right")
-```
+  ```
+
+- 图形添加边框
+
+  设置`theme(plot.background = element_rect())`
+  
+  ```{r round-rect}
+  ggplot(mtcars, aes(wt, mpg)) +
+    geom_point() +
+    theme(plot.background = element_rect(color = "black"))
+  ```
 
 ## 字符
 

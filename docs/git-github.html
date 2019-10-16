@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2019-10-14" />
+<meta name="date" content="2019-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -152,8 +152,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="section-4.html"><a href="section-4.html#ps-cc"><i class="fa fa-check"></i><b>4.2</b> PS CC</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="mac-os.html"><a href="mac-os.html"><i class="fa fa-check"></i><b>5</b> Mac OS</a><ul>
-<li class="chapter" data-level="5.1" data-path="mac-os.html"><a href="mac-os.html#section-5.1"><i class="fa fa-check"></i><b>5.1</b> 应用程序</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="mac-os.html"><a href="mac-os.html#alfred"><i class="fa fa-check"></i><b>5.1.1</b> Alfred</a></li>
+<li class="chapter" data-level="5.1" data-path="mac-os.html"><a href="mac-os.html#homebrew"><i class="fa fa-check"></i><b>5.1</b> homebrew</a></li>
+<li class="chapter" data-level="5.2" data-path="mac-os.html"><a href="mac-os.html#section-5.2"><i class="fa fa-check"></i><b>5.2</b> 应用程序</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="mac-os.html"><a href="mac-os.html#alfred"><i class="fa fa-check"></i><b>5.2.1</b> Alfred</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -181,18 +182,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>显示某一次提交中某个文件的变化</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">git</span> log <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span> <span class="op">&lt;</span>file_name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="fu">git</span> log <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span> <span class="op">&lt;</span>file_name<span class="op">&gt;</span></a></code></pre></div>
 <ul>
 <li>删除远程仓库(如github)的错误提交，在本地处理好之后，如删除错误提交，然后强制push到远程进行修改</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="fu">git</span> push --force</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">git</span> push --force</a></code></pre></div>
 <ul>
 <li>删除远程分支</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">git</span> push origin --delete <span class="op">&lt;</span>remote_branch<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="fu">git</span> push origin --delete <span class="op">&lt;</span>remote_branch<span class="op">&gt;</span></a></code></pre></div>
 <ul>
 <li><p>修改本地仓库关联的远程仓库，提交修改至另一个远程仓库</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="fu">git</span> remote set-url origin https://github.com/yiluheihei/beginr.git</a></code></pre></div></li>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="fu">git</span> remote set-url origin https://github.com/yiluheihei/beginr.git</a></code></pre></div></li>
 </ul>
 
 </div>
