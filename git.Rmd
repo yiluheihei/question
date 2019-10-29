@@ -42,3 +42,21 @@ git push origin --delete <remote_branch>
   # 删除 ignore 和非 ignore 文件
   git clean -f -x
   ```
+
+- unstage `git add`的文件
+ 
+  ```sh
+  git reset HEAD <file>
+  ```
+  
+- 忽略本地文件修改
+
+  ```sh
+  # 若文件状态为unstage
+  git checkout <file>
+  
+  # 若文件已经通过`git add` stage，首先文件状态修改为unstage
+  git reset HEAD <file>
+  git checkout <file>
+  ```
+  

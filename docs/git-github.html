@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2019-10-22" />
+<meta name="date" content="2019-10-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -209,6 +209,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-12" data-line-number="12"></a>
 <a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co"># 删除 ignore 和非 ignore 文件</span></a>
 <a class="sourceLine" id="cb5-14" data-line-number="14"><span class="fu">git</span> clean -f -x</a></code></pre></div></li>
+<li><p>unstage <code>git add</code>的文件</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
+<li><p>忽略本地文件修改</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># 若文件状态为unstage</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co"># 若文件已经通过`git add` stage，首先文件状态修改为unstage</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
 </ul>
 
 </div>
