@@ -10,6 +10,12 @@
   即可得到修改后的文件。
   
   但是，有时候不会自动弹出恢复选项。这时候我们到自动保存文件夹位置为`/Users/(username)/Library/Containers/com.Microsoft.Powerpoint/Data/Library/Preferences/AutoRecovery`下根据保存时间找到自动保存的文件，把文件扩展名改成`.ppt`恢复对未保存的修改。
+  
+## EXCEL
+
+- 拖动公式时某个数值保持不变，`A1/B1`在向下拖动时变为`A2/B2`，如何保持`A1`不变
+
+  `$`表示绝对引用，可设置公式参数不变，如`$A$1/B1`中保持`$A$1`不变。
 
 ## PS CC
 
