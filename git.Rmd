@@ -60,3 +60,14 @@ git push origin --delete <remote_branch>
   git checkout <file>
   ```
   
+- 拉取远程分支时保持本地修改
+
+  ```sh
+  # 备份当前工作区内容，从最近一次提交中读取内容
+  git stash
+  # 拉取远程分支内容
+  git pull <remote branch>
+  # 从stash中读取备份的内容
+  git stash pop
+  ```
+  
