@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2019-10-30" />
+<meta name="date" content="2019-11-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -193,6 +193,10 @@ Error: Permission denied @ dir_s_mkdir - /usr/local/Frameworks</code></pre>
 </div>
 <div id="section-5.2" class="section level2">
 <h2><span class="header-section-number">5.2</span> 应用程序</h2>
+<ul>
+<li><p>打开<code>xxx.app</code>文件时，出现<code>app已损坏，打不开，你应该将它移到废纸篓</code></p>
+<p>系统默认不允许用户自行下载安装应用程序。在终端运行<code>sudo sptcl --master-disable</code>运行即可。打开系统偏好设置 -&gt; 安全性与隐私 -&gt; 允许从以下位置下载的应用就变成了<code>任何来源</code>，双击即可打开app。</p></li>
+</ul>
 <div id="alfred" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Alfred</h3>
 <p>Mac效率神器，快速搜索并打开app、文件，可替代spotlight</p>
@@ -203,11 +207,6 @@ Error: Permission denied @ dir_s_mkdir - /usr/local/Frameworks</code></pre>
 <p>可能是mac系统索引问题，设置面板选择建立mac os的源文件“Rebuild macOS Metadata”，见<a href="https://www.alfredapp.com/help/troubleshooting/indexing/">此</a></p></li>
 </ul>
 
-<div id="refs" class="references">
-<div>
-<p>Grolemund, Garrett, and Hadley Wickham. 2019. <em>R for Data Science</em>. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.</p>
-</div>
-</div>
 </div>
 </div>
 </div>
