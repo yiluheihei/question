@@ -84,6 +84,11 @@
     theme(plot.background = element_rect(color = "black"))
   ```
 
+- 等高线图`geom_contour()`自定义levels
+  
+  手动指定参数`breaks`(帮助文档中找不到该参数说明)，参考[此](https://stackoverflow.com/questions/19658088/custom-levels-in-ggplot2-contour-plot).
+  
+
 ## 字符
 
 ### 正则表达式
