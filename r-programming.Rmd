@@ -88,7 +88,18 @@
   
   手动指定参数`breaks`(帮助文档中找不到该参数说明)，参考[此](https://stackoverflow.com/questions/19658088/custom-levels-in-ggplot2-contour-plot).
   
+- ggplot中文字体
 
+  [见此](https://www.choyang.me/zh/post/ggplot-chinese-font/)
+  
+- ggplot分面添加tag (如A,B, C)，可参考[此问题](https://community.rstudio.com/t/how-to-automatically-add-text-annotations-or-tags-outside-of-faceted-plots/13700)
+
+  ```{r facet-tag}
+  p <- ggplot(mpg, aes(displ, hwy)) + 
+    geom_point() +
+    facet_wrap(vars(class))
+  egg::tag_facet_outside(p)
+  ```
 ## 字符
 
 ### 正则表达式
