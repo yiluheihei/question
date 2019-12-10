@@ -1,4 +1,16 @@
-# git 和 github
+# git 和 github {#git-github}
+
+- 修改commit的message
+
+```sh
+# 想要修改的commit的父提交hash值
+git rebase -i <commit_hash>
+  
+# 修改要修改message行首的pick为r(reword)，然后修改该条message，保存退出即可
+  
+# 如果同时修改github仓库的commit，强制push即可
+git push -f
+```
 
 - 显示某一次提交中某个文件的变化
 

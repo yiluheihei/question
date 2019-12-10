@@ -1,6 +1,6 @@
-# R 语言
+# R 语言 {#r-programming}
 
-## R基础
+## R基础 {#r-base}
 
 - 根据序列长度进行迭代（循环）的时候，`1:seq_along(y)`和`1:length(y)`有什么区别？
 
@@ -28,9 +28,9 @@
   *Preferences > Features > Default Results > Advanced*，然后把任何`.Rproj`文件拖入窗口，[参考于此](https://whattheyforgot.org/project-oriented-workflow.html#tricks-for-opening-projects)
 
 
-## 可视化
+## 可视化 {#visualization}
 
-### 基础图形
+### 基础图形 {#base-plot}
 
 - `par("pin")`, `par("usr")`
 
@@ -100,9 +100,9 @@
     facet_wrap(vars(class))
   egg::tag_facet_outside(p)
   ```
-## 字符
+## 字符 {#char}
 
-### 正则表达式
+### 正则表达式 {#rexpr}
 
 - 正则表达式字符列表`[]`用法：`[]`中的字符匹配字符本身，如`[.]`匹配.,而不是任意字符，因此可以使用`[.]`代替`\\.`,一些在`[]`内有特殊意义的字符除外，如`-`表示范围，`^`不包含这些字符，`]`结束括号，`\`在字符串中表示转义。
 
@@ -126,7 +126,7 @@
   sub("(ab)+", "", "ababc")
   ```
 
-## 可重复性研究
+## 可重复性研究 {#reproducible-research}
 
 - knitr多个代码块的输出折叠到一个pre块中
 
@@ -141,6 +141,7 @@
   `cache =TRUE`，对于较大数据可能会抛出错误；这时候设置`cache.lazy = FALSE`即可，答案在[这](https://stackoverflow.com/questions/39417003/long-vectors-not-supported-yet-error-in-rmd-but-not-in-r-script)和[这](https://github.com/yihui/knitr/issues/572)
   
 - 代码块中的输出多个图形，怎么输出为一副图形？
+
   `figure.show`默认为`asis`图形位于产生图形代码后面，多个作图语句就会产生多幅图形，`figure.show='hold'`就代码块结尾显示所有图形，即一个代码块产生一个图形。
 
 ### bookdown
@@ -156,6 +157,10 @@ language:
 
 
 >The chapter_name field can be either a character string to be prepended to chapter numbers in chapter titles (e.g., 'CHAPTER '), or an R function that takes the chapter number as the input and returns a string as the new chapter number (e.g., `!expr function(i) paste('Chapter', i))`. If it is a character vector of length 2, the chapter title prefix will be `paste0(chapter_name[1], i, chapter_name[2])`, where `i` is the chapter number. 
+
+- 出现错误`Error in split_chapters(output, gitbook_page, number_sections, split_by,  :Automatically generated filenames contain duplicated ones: -, -`
+  
+  表示由`split_by`自动生成章节标题出现重复标题而出现错误。中文标题会出现这种错误，章节标题手动添加`{$ID}`即可，参见[这](https://d.cosx.org/d/420172-bookdown-split-chapters)和[这](https://github.com/rstudio/bookdown/issues/520)
 
 ### tinytex
 

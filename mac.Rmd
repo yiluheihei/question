@@ -13,7 +13,7 @@
   
   是由于用户没有修改`$(brew --prefix)/*`即`/usr/local`权限，修改权限即可`sudo chown -R $(whoami) $(brew --prefix)/*`
 
-## 应用程序
+## 应用程序 {#app}
 
 - 打开`xxx.app`文件时，出现`app已损坏，打不开，你应该将它移到废纸篓`
 

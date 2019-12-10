@@ -1,6 +1,6 @@
-# 生物信息
+# 生物信息 (#bioinfo)
 
-## 微生物组
+## 微生物组 {#microbiome}
 
 - mac如何安装 lefse ？
 
