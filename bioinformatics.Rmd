@@ -11,3 +11,7 @@
   conda install -c biobakery lefse
   ```
   
+- 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入matplotlib.pyplot出现错误`from urllib.parse import urlencode
+ImportError: No module named parse`
+
+  pycharm中设置 `Preferences -> Tools -> Python Scientific`取消勾选`Show plots in tool window`，答案见[此](https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error)
