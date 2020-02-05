@@ -82,4 +82,8 @@ git push origin --delete <remote_branch>
   # 从stash中读取备份的内容
   git stash pop
   ```
+
+- windows下命令行git中文显示乱码
+  
+  设置环境变量`LESSCHARSET=utf-8`
   
