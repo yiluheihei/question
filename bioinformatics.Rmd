@@ -1,4 +1,4 @@
-# 生物信息 (#bioinfo)
+# 生物信息 {#bioinfo}
 
 ## 微生物组 {#microbiome}
 

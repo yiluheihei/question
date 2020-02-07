@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第4章 办公软件 | 个人问题集</title>
-  <meta name="description" content="第4章 办公软件 | 个人问题集" />
+  <title>第3章 生物信息 | 个人问题集</title>
+  <meta name="description" content="第3章 生物信息 | 个人问题集" />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第4章 办公软件 | 个人问题集" />
+  <meta property="og:title" content="第3章 生物信息 | 个人问题集" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第4章 办公软件 | 个人问题集" />
+  <meta name="twitter:title" content="第3章 生物信息 | 个人问题集" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="bioinfo.html"/>
-<link rel="next" href="mac-os.html"/>
+<link rel="prev" href="git-github.html"/>
+<link rel="next" href="office-app.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -181,32 +181,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="office-app" class="section level1">
-<h1><span class="header-section-number">第4章</span> 办公软件</h1>
-<div id="ppt" class="section level2">
-<h2><span class="header-section-number">4.1</span> PPT</h2>
+<div id="bioinfo" class="section level1">
+<h1><span class="header-section-number">第3章</span> 生物信息</h1>
+<div id="microbiome" class="section level2">
+<h2><span class="header-section-number">3.1</span> 微生物组</h2>
 <ul>
-<li><p>mac下powerpoint从自动保存文件中恢复文件</p>
-<p>以防在某些特殊情况下（如电脑死机）的时候，丢失没有保存的内容，通过菜单栏<code>powerpoint -&gt;  偏好设置 -&gt; 保存 -&gt; 勾选保存自动恢复信息，选择保存间隔（如5分钟)</code>，这样就会在每隔一定
-时间后对文件进行保存。默认情况下，当我们再打开ppt的时候会弹出恢复文件选项，选择最近时间的文件进行恢
-即可得到修改后的文件。</p>
-<p>但是，有时候不会自动弹出恢复选项。这时候我们到自动保存文件夹位置为<code>/Users/(username)/Library/Containers/com.Microsoft.Powerpoint/Data/Library/Preferences/AutoRecovery</code>下根据保存时间找到自动保存的文件，把文件扩展名改成<code>.ppt</code>恢复对未保存的修改。</p></li>
+<li><p>mac如何安装 lefse ？</p>
+<p>通过homebrew安装lefse已经<a href="https://github.com/biobakery/homebrew-biobakery/issues/37">不再维护</a><code>brew install biobakery/biobakery/lefse</code>;采用conda安装(目前biobakery下的软件都用<a href="https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools">conda源安装</a>)</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="ex">conda</span> config --add channels biobakery</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="ex">conda</span> install -c biobakery lefse</a></code></pre></div></li>
+<li><p>本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入matplotlib.pyplot出现错误<code>from urllib.parse import urlencode ImportError: No module named parse</code></p>
+<p>pycharm中设置 <code>Preferences -&gt; Tools -&gt; Python Scientific</code>取消勾选<code>Show plots in tool window</code>，答案见<a href="https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error">此</a></p></li>
 </ul>
 </div>
-<div id="excel" class="section level2">
-<h2><span class="header-section-number">4.2</span> EXCEL</h2>
+<div id="scrna-seq" class="section level2">
+<h2><span class="header-section-number">3.2</span> scRNA-seq</h2>
 <ul>
-<li><p>拖动公式时某个数值保持不变，<code>A1/B1</code>在向下拖动时变为<code>A2/B2</code>，如何保持<code>A1</code>不变</p>
-<p><code>$</code>表示绝对引用，可设置公式参数不变，如<code>$A$1/B1</code>中保持<code>$A$1</code>不变。</p></li>
-</ul>
-</div>
-<div id="ps-cc" class="section level2">
-<h2><span class="header-section-number">4.3</span> PS CC</h2>
+<li>安装<a href="https://github.com/velocyto-team/velocyto.R">velocyto.R</a>.
 <ul>
-<li><p>无法使用修补工具，因为它不用于索引颜色图像</p>
-<p>需转换为RGB图像，点击菜单栏“图像 -&gt; 模式 -&gt; RGB”</p></li>
-<li><p>去除图片中文字</p>
-<p>使用修补工具，具体步骤:选择修补工具，公共栏中选择修补项为源，关闭透明选项，然后用修补工具框选文字，拖动到无文字区域中与文字周围图案相似的位置，修补工具就会自动匹配目标位置的颜色。</p></li>
+<li><p><code>clang: error: unsupported option '-fopenmp'</code></p>
+<p>mac下clang不支持openmp，解决方法参考<a href="https://github.com/BUStools/BUSpaRse">此处</a>，安装支持openmp的<a href="https://cran.r-project.org/bin/macosx/tools/">clang</a>. 然后修改配置文件，在<code>~/.R/Makevars</code>(配置compliers和library)，添加</p>
+<pre><code>CC=/usr/local/clang7/bin/clang
+SHLIB_CXXLD=/usr/local/clang7/bin/clang++
+CXX= /usr/local/clang7/bin/clang++  -Wall
+CXX1X= /usr/local/clang7/bin/clang++
+CXX98= /usr/local/clang7/bin/clang++
+CXX11= /usr/local/clang7/bin/clang++
+CXX14= /usr/local/clang7/bin/clang++
+CXX17= /usr/local/clang7/bin/clang++
+LDFLAGS=-L/usr/local/clang7/lib</code></pre></li>
+<li><p><code>library not found for -lboost_filesystem</code></p>
+<p>安装 boost <code>brew install boost</code></p></li>
+<li><p><code>library not found for -lgfortran</code></p>
+<p>gfortran包含在gcc中，但是电脑中gcc是通过homebrew安装，原始配置文件<code>/Library/Frameworks/R.framework/Resources/etc/Makeconf</code>中并没有更新库的地址，在<code>~/.R/Makevars</code>中手动添加即可</p>
+<pre><code># 通过homebrew安装的gcc地址
+FLIBS = -L/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/lib/gcc/8 -lgfortran -lquadmath -lm
+# Library/Frameworks/R.framework/Resources/etc/Makeconf中的原始配置
+# FLIBS =  -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm</code></pre></li>
+</ul></li>
 </ul>
 
 </div>
@@ -216,8 +228,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="bioinfo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="mac-os.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="git-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="office-app.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
