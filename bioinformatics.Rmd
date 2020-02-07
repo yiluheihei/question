@@ -46,3 +46,7 @@ ImportError: No module named parse`
     # Library/Frameworks/R.framework/Resources/etc/Makeconf中的原始配置
     # FLIBS =  -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm
     ```
+    
+- 安装[`velocyto.py`](https://github.com/velocyto-team/velocyto.py)
+  
+  mac 在 pip 安装的时候gcc编译出现错误，建议使用conda安装`conda install velocyto.py`

@@ -137,11 +137,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="r-programming.html"><a href="r-programming.html#visualization"><i class="fa fa-check"></i><b>1.2</b> 可视化</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="r-programming.html"><a href="r-programming.html#base-plot"><i class="fa fa-check"></i><b>1.2.1</b> 基础图形</a></li>
 <li class="chapter" data-level="1.2.2" data-path="r-programming.html"><a href="r-programming.html#ggplot"><i class="fa fa-check"></i><b>1.2.2</b> ggplot</a></li>
-<li class="chapter" data-level="1.2.3" data-path="r-programming.html"><a href="r-programming.html#rexpr"><i class="fa fa-check"></i><b>1.2.3</b> 正则表达式</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="r-programming.html"><a href="r-programming.html#reproducible-research"><i class="fa fa-check"></i><b>1.3</b> 可重复性研究</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="r-programming.html"><a href="r-programming.html#bookdown"><i class="fa fa-check"></i><b>1.3.1</b> bookdown</a></li>
-<li class="chapter" data-level="1.3.2" data-path="r-programming.html"><a href="r-programming.html#tinytex"><i class="fa fa-check"></i><b>1.3.2</b> tinytex</a></li>
+<li class="chapter" data-level="1.3" data-path="r-programming.html"><a href="r-programming.html#char"><i class="fa fa-check"></i><b>1.3</b> 字符</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="r-programming.html"><a href="r-programming.html#rexpr"><i class="fa fa-check"></i><b>1.3.1</b> 正则表达式</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="r-programming.html"><a href="r-programming.html#reproducible-research"><i class="fa fa-check"></i><b>1.4</b> 可重复性研究</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="r-programming.html"><a href="r-programming.html#bookdown"><i class="fa fa-check"></i><b>1.4.1</b> bookdown</a></li>
+<li class="chapter" data-level="1.4.2" data-path="r-programming.html"><a href="r-programming.html#tinytex"><i class="fa fa-check"></i><b>1.4.2</b> tinytex</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="git-github.html"><a href="git-github.html"><i class="fa fa-check"></i><b>2</b> git 和 github</a></li>
@@ -188,8 +190,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>mac如何安装 lefse ？</p>
 <p>通过homebrew安装lefse已经<a href="https://github.com/biobakery/homebrew-biobakery/issues/37">不再维护</a><code>brew install biobakery/biobakery/lefse</code>;采用conda安装(目前biobakery下的软件都用<a href="https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools">conda源安装</a>)</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="ex">conda</span> config --add channels biobakery</a>
-<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="ex">conda</span> install -c biobakery lefse</a></code></pre></div></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">conda</span> config --add channels biobakery</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="ex">conda</span> install -c biobakery lefse</a></code></pre></div></li>
 <li><p>本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入matplotlib.pyplot出现错误<code>from urllib.parse import urlencode ImportError: No module named parse</code></p>
 <p>pycharm中设置 <code>Preferences -&gt; Tools -&gt; Python Scientific</code>取消勾选<code>Show plots in tool window</code>，答案见<a href="https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error">此</a></p></li>
 </ul>
@@ -219,6 +221,8 @@ FLIBS = -L/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/
 # Library/Frameworks/R.framework/Resources/etc/Makeconf中的原始配置
 # FLIBS =  -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm</code></pre></li>
 </ul></li>
+<li><p>安装<a href="https://github.com/velocyto-team/velocyto.py"><code>velocyto.py</code></a></p>
+<p>mac 在 pip 安装的时候gcc编译出现错误，建议使用conda安装<code>conda install velocyto.py</code></p></li>
 </ul>
 
 </div>
