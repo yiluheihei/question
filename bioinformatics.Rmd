@@ -15,3 +15,34 @@
 ImportError: No module named parse`
 
   pycharm中设置 `Preferences -> Tools -> Python Scientific`取消勾选`Show plots in tool window`，答案见[此](https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error)
+  
+## scRNA-seq
+
+- 安装[velocyto.R](https://github.com/velocyto-team/velocyto.R).
+  - `clang: error: unsupported option '-fopenmp'`
+    
+    mac下clang不支持openmp，解决方法参考[此处](https://github.com/BUStools/BUSpaRse)，安装支持openmp的[clang](https://cran.r-project.org/bin/macosx/tools/). 然后修改配置文件，在`~/.R/Makevars`(配置compliers和library)，添加
+    ```
+    CC=/usr/local/clang7/bin/clang
+    SHLIB_CXXLD=/usr/local/clang7/bin/clang++
+    CXX= /usr/local/clang7/bin/clang++  -Wall
+    CXX1X= /usr/local/clang7/bin/clang++
+    CXX98= /usr/local/clang7/bin/clang++
+    CXX11= /usr/local/clang7/bin/clang++
+    CXX14= /usr/local/clang7/bin/clang++
+    CXX17= /usr/local/clang7/bin/clang++
+    LDFLAGS=-L/usr/local/clang7/lib
+    ```
+  - `library not found for -lboost_filesystem`
+      
+     安装 boost `brew install boost`
+  
+  - `library not found for -lgfortran`
+  
+    gfortran包含在gcc中，但是电脑中gcc是通过homebrew安装，原始配置文件`/Library/Frameworks/R.framework/Resources/etc/Makeconf`中并没有更新库的地址，在`~/.R/Makevars`中手动添加即可
+    ```
+    # 通过homebrew安装的gcc地址
+    FLIBS = -L/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/lib/gcc/8 -lgfortran -lquadmath -lm
+    # Library/Frameworks/R.framework/Resources/etc/Makeconf中的原始配置
+    # FLIBS =  -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm
+    ```
