@@ -11,3 +11,5 @@ rmd_files:
 - "bioinformatics.Rmd"
 - "office.md"
 - "mac.Rmd"
+- "linux.Rmd"
+- "tools.Rmd"

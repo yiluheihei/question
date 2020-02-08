@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第4章 办公软件 | 个人问题集</title>
-  <meta name="description" content="第4章 办公软件 | 个人问题集" />
+  <title>第6章 linux | 个人问题集</title>
+  <meta name="description" content="第6章 linux | 个人问题集" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第4章 办公软件 | 个人问题集" />
+  <meta property="og:title" content="第6章 linux | 个人问题集" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第4章 办公软件 | 个人问题集" />
+  <meta name="twitter:title" content="第6章 linux | 个人问题集" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="bioinfo.html"/>
-<link rel="next" href="mac-os.html"/>
+<link rel="prev" href="mac-os.html"/>
+<link rel="next" href="tools.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -186,43 +186,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="office-app" class="section level1">
-<h1><span class="header-section-number">第4章</span> 办公软件</h1>
-<div id="ppt" class="section level2">
-<h2><span class="header-section-number">4.1</span> PPT</h2>
+<div id="linux" class="section level1">
+<h1><span class="header-section-number">第6章</span> linux</h1>
 <ul>
-<li><p>mac下powerpoint从自动保存文件中恢复文件</p>
-<p>以防在某些特殊情况下（如电脑死机）的时候，丢失没有保存的内容，通过菜单栏<code>powerpoint -&gt;  偏好设置 -&gt; 保存 -&gt; 勾选保存自动恢复信息，选择保存间隔（如5分钟)</code>，这样就会在每隔一定
-时间后对文件进行保存。默认情况下，当我们再打开ppt的时候会弹出恢复文件选项，选择最近时间的文件进行恢
-即可得到修改后的文件。</p>
-<p>但是，有时候不会自动弹出恢复选项。这时候我们到自动保存文件夹位置为<code>/Users/(username)/Library/Containers/com.Microsoft.Powerpoint/Data/Library/Preferences/AutoRecovery</code>下根据保存时间找到自动保存的文件，把文件扩展名改成<code>.ppt</code>恢复对未保存的修改。</p></li>
-</ul>
-</div>
-<div id="excel" class="section level2">
-<h2><span class="header-section-number">4.2</span> EXCEL</h2>
-<ul>
-<li><p>拖动公式时某个数值保持不变，<code>A1/B1</code>在向下拖动时变为<code>A2/B2</code>，如何保持<code>A1</code>不变</p>
-<p><code>$</code>表示绝对引用，可设置公式参数不变，如<code>$A$1/B1</code>中保持<code>$A$1</code>不变。</p></li>
-</ul>
-</div>
-<div id="ps-cc" class="section level2">
-<h2><span class="header-section-number">4.3</span> PS CC</h2>
-<ul>
-<li><p>无法使用修补工具，因为它不用于索引颜色图像</p>
-<p>需转换为RGB图像，点击菜单栏“图像 -&gt; 模式 -&gt; RGB”</p></li>
-<li><p>去除图片中文字</p>
-<p>使用修补工具，具体步骤:选择修补工具，公共栏中选择修补项为源，关闭透明选项，然后用修补工具框选文字，拖动到无文字区域中与文字周围图案相似的位置，修补工具就会自动匹配目标位置的颜色。</p></li>
+<li><p>ubuntu 添加 aliyun 源</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="co"># 备份原有文件</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="fu">mv</span> /etc/apt/sources.list /etc/apt/sources.list.backup</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb24-4" data-line-number="4"><span class="co"># 新建文件，添加源</span></a>
+<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="fu">touch</span> /etc/apt/sources.list</a>
+<a class="sourceLine" id="cb24-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb24-7" data-line-number="7"><span class="ex">deb-src</span> http://archive.ubuntu.com/ubuntu xenial main restricted <span class="co"># Added by software-properties</span></a>
+<a class="sourceLine" id="cb24-8" data-line-number="8"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial main restricted</a>
+<a class="sourceLine" id="cb24-9" data-line-number="9"><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial main restricted multiverse universe <span class="co"># Added by software-properties</span></a>
+<a class="sourceLine" id="cb24-10" data-line-number="10"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted</a>
+<a class="sourceLine" id="cb24-11" data-line-number="11"><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted multiverse universe <span class="co"># Added by software-properties</span></a>
+<a class="sourceLine" id="cb24-12" data-line-number="12"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial universe</a>
+<a class="sourceLine" id="cb24-13" data-line-number="13"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates universe</a>
+<a class="sourceLine" id="cb24-14" data-line-number="14"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial multiverse</a>
+<a class="sourceLine" id="cb24-15" data-line-number="15"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates multiverse</a>
+<a class="sourceLine" id="cb24-16" data-line-number="16"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse</a>
+<a class="sourceLine" id="cb24-17" data-line-number="17"><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse <span class="co"># Added by software-properties</span></a>
+<a class="sourceLine" id="cb24-18" data-line-number="18"><span class="ex">deb</span> http://archive.canonical.com/ubuntu xenial partner</a>
+<a class="sourceLine" id="cb24-19" data-line-number="19"><span class="ex">deb-src</span> http://archive.canonical.com/ubuntu xenial partner</a>
+<a class="sourceLine" id="cb24-20" data-line-number="20"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted</a>
+<a class="sourceLine" id="cb24-21" data-line-number="21"><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe <span class="co"># Added by software-properties</span></a>
+<a class="sourceLine" id="cb24-22" data-line-number="22"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-security universe</a>
+<a class="sourceLine" id="cb24-23" data-line-number="23"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse</a></code></pre></div></li>
+<li><p>ubuntu 安裝 R</p>
+<p>参考https://cran.r-project.org/bin/linux/ubuntu/README.html</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="co"># 添加源</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="ex">deb</span> https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/</a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="co"># 密匙</span></a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="fu">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="fu">sudo</span> apt-get update</a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="fu">sudo</span> apt-get install r-base r-base-dev</a></code></pre></div></li>
 </ul>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="bioinfo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="mac-os.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="mac-os.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tools.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,41 @@
+# linux
+
+- ubuntu 添加 aliyun 源
+  
+  ```sh
+  # 备份原有文件
+  mv /etc/apt/sources.list /etc/apt/sources.list.backup
+  
+  # 新建文件，添加源
+  touch /etc/apt/sources.list
+  
+  deb-src http://archive.ubuntu.com/ubuntu xenial main restricted # Added by software-properties
+  deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted
+  deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted multiverse universe # Added by software-properties
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted
+  deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted multiverse universe # Added by software-properties
+  deb http://mirrors.aliyun.com/ubuntu/ xenial universe
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-updates universe
+  deb http://mirrors.aliyun.com/ubuntu/ xenial multiverse
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-updates multiverse
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
+  deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse # Added by software-properties
+  deb http://archive.canonical.com/ubuntu xenial partner
+  deb-src http://archive.canonical.com/ubuntu xenial partner
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted
+  deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe # Added by software-properties
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse
+```
+
+- ubuntu 安裝 R
+  
+  参考https://cran.r-project.org/bin/linux/ubuntu/README.html
+  ```sh
+  # 添加源
+  deb https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/
+  # 密匙
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+  sudo apt-get update
+  sudo apt-get install r-base r-base-dev
+  ```
