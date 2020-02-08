@@ -178,3 +178,15 @@ tlmgr_search('ae.sty')
 #安装即可
 tlmgr_install('ae')
 ```
+
+## rstudio
+
+- ubuntu rstudio不支持中文
+  
+  这是因为 rstudio 自带的QT5不支持 fctix (搜狗拼音就是依赖fctix)，设置 rstuido 使用系统自带的QT即可，步骤如下(参考[此](http://www.biotrainee.com/thread-3142-1-1.html)):
+  ```
+  # 1.系统自带 qt 的 fctix 插件链接到 rstudio 相应文件夹下
+  sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/plugins/platforminputcontexts
+  # 2. 修改rstudio qt配置文件/usr/lib/rstudio/bin/qt.conf,添加刚才链接的路径
+  Prefix = /usr/lib/rstudio/
+  ```
