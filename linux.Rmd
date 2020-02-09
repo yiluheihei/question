@@ -44,3 +44,8 @@
 
   因为虚拟机中`ctrl + alt + 左右方向键`在VMware中用于切换全屏虚拟机，修改VMware切换全屏
 虚拟机快捷键即可，如`ctrl + shit + 左右方向键`
+
+- 虚拟机ubuntu非正常关机后，再打开黑屏
+
+  方法参考[这里](https://www.zhihu.com/question/66422773/answer/245081019), 重置LSP
+  `netsh winsock reset`
