@@ -25,7 +25,7 @@
   deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted
   deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe # Added by software-properties
   deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
-  deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse
+  deb http://mirr.iyun.com/ubuntu/ xenial-security multiverse
 ```
 
 - ubuntu 安裝 R
@@ -39,3 +39,8 @@
   sudo apt-get update
   sudo apt-get install r-base r-base-dev
   ```
+
+- 虚拟机安装ubuntu后切换工作区快捷键`ctrl + alt + 方向键`，上下方向键可正常切换，而左右方向键切换不了
+
+  因为虚拟机中`ctrl + alt + 左右方向键`在VMware中用于切换全屏虚拟机，修改VMware切换全屏
+虚拟机快捷键即可，如`ctrl + shit + 左右方向键`
