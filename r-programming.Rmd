@@ -26,6 +26,13 @@
 - 设置Alfred快捷打开rstudio的project
 
   *Preferences > Features > Default Results > Advanced*，然后把任何`.Rproj`文件拖入窗口，[参考于此](https://whattheyforgot.org/project-oriented-workflow.html#tricks-for-opening-projects)
+  
+- 安装rlang的时候出现错误`复制 C:\R-3.6.0\library\00LOCK-rlang\00new\rlang\libs\x64\rlang.dll到 C:\R-3.6.0\library\rlang\libs\x64\rlang.dll 时出了问题：Permission denied`
+
+  因为如果R包如果包含c++/c/Fortran代码（如rlang），如果已经加载了这种包，在对其进行升级或者重装
+  的时候就会出现类似上述错误。关掉加载这些包的R，才能继续重装或升级。
+  
+  
 
 
 ## 可视化 {#visualization}
