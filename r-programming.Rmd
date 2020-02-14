@@ -61,6 +61,10 @@
   
   见[这篇博客](https://www.choyang.me/zh/post/ggplot-range-of-continuous-axis/)
 
+- 坐标轴label移动到图形内部
+
+  见[此](https://www.choyang.me/zh/post/moving-axis-label-left-justified-inside-plot-area/)
+
 - 修改离散坐标的顺序
   见[这篇博文](https://www.choyang.me/zh/post/ggplot-reorder-discrete-axis/)
 
