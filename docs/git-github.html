@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2020-02-12" />
+<meta name="date" content="2020-02-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -69,7 +69,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(title);
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -162,10 +162,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="mac-os.html"><a href="mac-os.html#conda"><i class="fa fa-check"></i><b>5.3</b> conda</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>6</b> linux</a></li>
-<li class="chapter" data-level="7" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>7</b> tools</a><ul>
-<li class="chapter" data-level="7.1" data-path="tools.html"><a href="tools.html#conda-1"><i class="fa fa-check"></i><b>7.1</b> conda</a></li>
-</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -191,59 +187,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>修改commit的message</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># 想要修改的commit的父提交hash值</span></a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="fu">git</span> rebase -i <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb10-3" title="3">  </a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="co"># 修改要修改message行首的pick为r(reword)，然后修改该条message，保存退出即可</span></a>
-<a class="sourceLine" id="cb10-5" title="5">  </a>
-<a class="sourceLine" id="cb10-6" title="6"><span class="co"># 如果同时修改github仓库的commit，强制push即可</span></a>
-<a class="sourceLine" id="cb10-7" title="7"><span class="fu">git</span> push -f</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># 想要修改的commit的父提交hash值</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="fu">git</span> rebase -i <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">  </a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co"># 修改要修改message行首的pick为r(reword)，然后修改该条message，保存退出即可</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co"># 如果同时修改github仓库的commit，强制push即可</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="fu">git</span> push -f</a></code></pre></div>
 <ul>
 <li>显示某一次提交中某个文件的变化</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="fu">git</span> log <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span> <span class="op">&lt;</span>file_name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="fu">git</span> log <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span> <span class="op">&lt;</span>file_name<span class="op">&gt;</span></a></code></pre></div>
 <ul>
 <li>删除远程仓库(如github)的错误提交，在本地处理好之后，如删除错误提交，然后强制push到远程进行修改</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="fu">git</span> push --force</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">git</span> push --force</a></code></pre></div>
 <ul>
 <li>删除远程分支</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1"><span class="fu">git</span> push origin --delete <span class="op">&lt;</span>remote_branch<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">git</span> push origin --delete <span class="op">&lt;</span>remote_branch<span class="op">&gt;</span></a></code></pre></div>
 <ul>
 <li><p>修改本地仓库关联的远程仓库，提交修改至另一个远程仓库</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" title="1"><span class="fu">git</span> remote set-url origin https://github.com/yiluheihei/beginr.git</a></code></pre></div></li>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="fu">git</span> remote set-url origin https://github.com/yiluheihei/beginr.git</a></code></pre></div></li>
 <li><p><a href="https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree">删除本地 untracted files</a></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># 查看哪些文件将被删除</span></a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="fu">git</span> clean -n </a>
-<a class="sourceLine" id="cb15-3" title="3"></a>
-<a class="sourceLine" id="cb15-4" title="4"><span class="co"># 删除文件</span></a>
-<a class="sourceLine" id="cb15-5" title="5"><span class="fu">git</span> clean -f</a>
-<a class="sourceLine" id="cb15-6" title="6"></a>
-<a class="sourceLine" id="cb15-7" title="7"><span class="co"># 删除文件和文件夹</span></a>
-<a class="sourceLine" id="cb15-8" title="8"><span class="fu">git</span> clean -f -d</a>
-<a class="sourceLine" id="cb15-9" title="9"></a>
-<a class="sourceLine" id="cb15-10" title="10"><span class="co"># 删除 ignore 的文件</span></a>
-<a class="sourceLine" id="cb15-11" title="11"><span class="fu">git</span> clean -f -X</a>
-<a class="sourceLine" id="cb15-12" title="12"></a>
-<a class="sourceLine" id="cb15-13" title="13"><span class="co"># 删除 ignore 和非 ignore 文件</span></a>
-<a class="sourceLine" id="cb15-14" title="14"><span class="fu">git</span> clean -f -x</a></code></pre></div></li>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># 查看哪些文件将被删除</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="fu">git</span> clean -n </a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="co"># 删除文件</span></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="fu">git</span> clean -f</a>
+<a class="sourceLine" id="cb15-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb15-7" data-line-number="7"><span class="co"># 删除文件和文件夹</span></a>
+<a class="sourceLine" id="cb15-8" data-line-number="8"><span class="fu">git</span> clean -f -d</a>
+<a class="sourceLine" id="cb15-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb15-10" data-line-number="10"><span class="co"># 删除 ignore 的文件</span></a>
+<a class="sourceLine" id="cb15-11" data-line-number="11"><span class="fu">git</span> clean -f -X</a>
+<a class="sourceLine" id="cb15-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb15-13" data-line-number="13"><span class="co"># 删除 ignore 和非 ignore 文件</span></a>
+<a class="sourceLine" id="cb15-14" data-line-number="14"><span class="fu">git</span> clean -f -x</a></code></pre></div></li>
 <li><p>unstage <code>git add</code>的文件</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" title="1"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
 <li><p>忽略本地文件修改</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" title="1"><span class="co"># 若文件状态为unstage</span></a>
-<a class="sourceLine" id="cb17-2" title="2"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb17-3" title="3"></a>
-<a class="sourceLine" id="cb17-4" title="4"><span class="co"># 若文件已经通过`git add` stage，首先文件状态修改为unstage</span></a>
-<a class="sourceLine" id="cb17-5" title="5"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb17-6" title="6"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># 若文件状态为unstage</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="co"># 若文件已经通过`git add` stage，首先文件状态修改为unstage</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
 <li><p>拉取远程分支时保持本地修改</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" title="1"><span class="co"># 备份当前工作区内容，从最近一次提交中读取内容</span></a>
-<a class="sourceLine" id="cb18-2" title="2"><span class="fu">git</span> stash</a>
-<a class="sourceLine" id="cb18-3" title="3"><span class="co"># 拉取远程分支内容</span></a>
-<a class="sourceLine" id="cb18-4" title="4"><span class="fu">git</span> pull <span class="op">&lt;</span>remote branch<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb18-5" title="5"><span class="co"># 从stash中读取备份的内容</span></a>
-<a class="sourceLine" id="cb18-6" title="6"><span class="fu">git</span> stash pop</a></code></pre></div></li>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="co"># 备份当前工作区内容，从最近一次提交中读取内容</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="fu">git</span> stash</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="co"># 拉取远程分支内容</span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="fu">git</span> pull <span class="op">&lt;</span>remote branch<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="co"># 从stash中读取备份的内容</span></a>
+<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="fu">git</span> stash pop</a></code></pre></div></li>
 <li><p>windows下命令行git中文显示乱码</p>
 <p>设置环境变量<code>LESSCHARSET=utf-8</code></p></li>
 </ul>

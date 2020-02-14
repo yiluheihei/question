@@ -45,7 +45,8 @@
 
 - 颜色代码的可视化，以便观察颜色
   
-  `image(1, 1, as.matrix(1), col = "#E64B35")`
+  - `image(1, 1, as.matrix(1), col = "#E64B35")`
+  - `scales::show_col("#E64B35")`
 
 ### ggplot
 
