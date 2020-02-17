@@ -204,6 +204,11 @@ tlmgr_install('ae')
 
 ## rstudio
 
+- rstudio git 选择所有文件add并commit
+
+  在commit界面，`ctrl/command + A`全选,然后回车即可，参考[这里
+  ](https://stackoverflow.com/a/33913671/3993246)
+
 - ubuntu rstudio不支持中文
   
   这是因为 rstudio 自带的QT5不支持 fctix (搜狗拼音就是依赖fctix)，设置 rstuido 使用系统自带的QT即可，步骤如下(参考[此](http://www.biotrainee.com/thread-3142-1-1.html)):
