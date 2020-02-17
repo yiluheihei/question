@@ -13,8 +13,6 @@
   options(BioC_mirror = "http://mirrors.ustc.edu.cn/bioc/")
   ```
 
-  
-
 - 根据序列长度进行迭代（循环）的时候，`1:seq_along(y)`和`1:length(y)`有什么区别？
 
   应使用`1:seq_along(y)`。当`length(y) = 0 `时`seq_along(y)`返回`integer(0)`，基于`1:seq_along(y)`的循环会抛错； 而`1:length(y)`表示`1:0`的迭代，可能出现意想不到的结果。参见R for Data Science [@grolemund2019]
@@ -44,8 +42,8 @@
 
   因为如果R包如果包含c++/c/Fortran代码（如rlang），如果已经加载了这种包，在对其进行升级或者重装
   的时候就会出现类似上述错误。关掉加载这些包的R，才能继续重装或升级。
-  
-  
+
+## 安装包
 
 
 ## 可视化 {#visualization}

@@ -23,3 +23,11 @@ custom_channels:
   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
+
+## hugo
+
+- 基于hugo采用blogdown建站的时候出现错误`panic: BUG: Expected valid escape code 
+after \, but got '\r'.`
+
+  是由于配置文件`config.toml`中采用多行字符中`"""`的换行符引起的`\`,去掉换行符即
+  可,参考[这](https://github.com/gcushen/hugo-academic/issues/852).
