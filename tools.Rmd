@@ -31,3 +31,23 @@ after \, but got '\r'.`
 
   是由于配置文件`config.toml`中采用多行字符中`"""`的换行符引起的`\`,去掉换行符即
   可,参考[这](https://github.com/gcushen/hugo-academic/issues/852).
+
+## docker
+
+- docker 配置国内源
+  
+  参考[这](http://mirrors.ustc.edu.cn/help/dockerhub.html?highlight=docker),配置
+  文件`/etc/docker/daemon.json`中加入中科大源。
+  
+  ```
+  {
+    "registry-mirrors": 
+      ["https://docker.mirrors.ustc.edu.cn/"]
+  }
+  ```
+  
+  然后重启docker服务`sudo systemctl restart docker`。同时也可以添加阿里云源，
+  方法是注册阿里云开发账户后，访问https://cr.console.aliyun.com/#/accelerator，
+  点击镜像加速器，就看到加速器地址，添加进去即可。
+  
+  
