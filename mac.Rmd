@@ -30,23 +30,3 @@ Mac效率神器，快速搜索并打开app、文件，可替代spotlight
 - 搜索不到文件
   
   可能是mac系统索引问题，设置面板选择建立mac os的源文件"Rebuild macOS Metadata"，见[此](https://www.alfredapp.com/help/troubleshooting/indexing/)
-  
-## conda
-
-- macOS 10.14 Mojave,conda安装包的时候设计到qt就出现错误，如`conda-forge::qt-5.9.7-h93ee506_1'. PermissionError(1, 'Operation not permitted')`
-
-  解决方法[在此](https://github.com/conda/conda/issues/8440#issuecomment-481167572)
-  
-  ```
-  # for base:
-  cd ~/anaconda3/bin
-  ls *.app
-  rm -rf *.app
-  conda update --all --yes
-  
-  # for some_env:
-  cd ~/anaconda3/envs/some_env/bin
-  ls *.app
-  rm -rf *.app
-  conda update -n some_env --all --yes
-```

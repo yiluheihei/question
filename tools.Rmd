@@ -1,4 +1,94 @@
-# tools
+# tools {#tools}
+
+## git 和 github
+
+- 修改commit的message
+
+```sh
+# 想要修改的commit的父提交hash值
+git rebase -i <commit_hash>
+  
+# 修改要修改message行首的pick为r(reword)，然后修改该条message，保存退出即可
+  
+# 如果同时修改github仓库的commit，强制push即可
+git push -f
+```
+
+- 显示某一次提交中某个文件的变化
+
+```sh
+git log <commit_hash> <file_name>
+```
+
+- 删除远程仓库(如github)的错误提交，在本地处理好之后，如删除错误提交，然后强制push到远程进行修改
+
+```sh
+git push --force
+```
+
+- 删除远程分支
+
+```sh
+git push origin --delete <remote_branch>
+```
+
+- 修改本地仓库关联的远程仓库，提交修改至另一个远程仓库
+
+  ```sh
+  git remote set-url origin https://github.com/yiluheihei/beginr.git
+  ```
+
+- [删除本地 untracted files](https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree)
+  
+  ```sh
+  # 查看哪些文件将被删除
+  git clean -n 
+  
+  # 删除文件
+  git clean -f
+  
+  # 删除文件和文件夹
+  git clean -f -d
+  
+  # 删除 ignore 的文件
+  git clean -f -X
+  
+  # 删除 ignore 和非 ignore 文件
+  git clean -f -x
+  ```
+
+- unstage `git add`的文件
+ 
+  ```sh
+  git reset HEAD <file>
+  ```
+  
+- 忽略本地文件修改
+
+  ```sh
+  # 若文件状态为unstage
+  git checkout <file>
+  
+  # 若文件已经通过`git add` stage，首先文件状态修改为unstage
+  git reset HEAD <file>
+  git checkout <file>
+  ```
+  
+- 拉取远程分支时保持本地修改
+
+  ```sh
+  # 备份当前工作区内容，从最近一次提交中读取内容
+  git stash
+  # 拉取远程分支内容
+  git pull <remote branch>
+  # 从stash中读取备份的内容
+  git stash pop
+  ```
+
+- windows下命令行git中文显示乱码
+  
+  设置环境变量`LESSCHARSET=utf-8`
+  
 
 ## conda
 
@@ -49,5 +139,25 @@ after \, but got '\r'.`
   然后重启docker服务`sudo systemctl restart docker`。同时也可以添加阿里云源，
   方法是注册阿里云开发账户后，访问https://cr.console.aliyun.com/#/accelerator，
   点击镜像加速器，就看到加速器地址，添加进去即可。
+  
+## conda
+
+- macOS 10.14 Mojave,conda安装包的时候设计到qt就出现错误，如`conda-forge::qt-5.9.7-h93ee506_1'. PermissionError(1, 'Operation not permitted')`
+
+  解决方法[在此](https://github.com/conda/conda/issues/8440#issuecomment-481167572)
+  
+  ```
+  # for base:
+  cd ~/anaconda3/bin
+  ls *.app
+  rm -rf *.app
+  conda update --all --yes
+  
+  # for some_env:
+  cd ~/anaconda3/envs/some_env/bin
+  ls *.app
+  rm -rf *.app
+  conda update -n some_env --all --yes
+```
   
   

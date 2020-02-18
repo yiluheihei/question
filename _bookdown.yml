@@ -7,7 +7,6 @@ output_dir: docs/
 rmd_files:
 - "index.Rmd"
 - "r-programming.Rmd"
-- "git.Rmd"
 - "bioinformatics.Rmd"
 - "office.md"
 - "mac.Rmd"
