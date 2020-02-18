@@ -45,6 +45,10 @@
 
 ## 安装包
 
+- centos 7 安装 hdf5r
+
+  见[这](https://www.choyang.me/zh/post/centos-7-r-install-hdf5r/)
+
 
 ## 可视化 {#visualization}
 
