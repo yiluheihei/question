@@ -49,6 +49,21 @@
 
   见[这](https://www.choyang.me/zh/post/centos-7-r-install-hdf5r/)
 
+- cenos 7 安装 stringr
+
+  stringr 依赖 [stringi](https://cran.r-project.org/web/packages/stringi/), 
+  stringi 要求 ICU4C >= 55, 而centos 7 中 icu版本为50.2。我们可以从 stringi 的
+  [github 仓库](https://github.com/gagolews/stringi)下载源代码，里面包含ICU安装
+  包，直接安装即可。
+  
+  ```r
+  wget https://github.com/gagolews/stringi/archive/v1.4.6.tar.gz - O stringi-1.4.6.tar.gz
+  install.packages("stringi-1.4.6.tar.gz")
+  install.packages("stringr")
+  ```
+  
+  
+
 
 ## 可视化 {#visualization}
 
