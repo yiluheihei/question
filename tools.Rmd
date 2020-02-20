@@ -85,6 +85,22 @@ git push origin --delete <remote_branch>
   git stash pop
   ```
 
+- 远程仓库已经有新的commit，在本地开发的时候没有pull到本地，就直接进行修改并
+  commit，这时候再push到远程仓库就会提示远程仓库中有本地不存在的commit。这时候就
+  需要在远程仓库基础上merge本地的最新commit
+  
+  ```sh
+  # 首先抓取远程仓库数据
+  git fetch
+  
+  # 然后在本地分支内，在origin仓库的基础上变基提交，如果没有冲突，则直接基于远程
+  # 仓库合并了本地提交。如果有冲突，则解决冲突后合并
+  git rebase origin/master
+  ```
+  
+  
+  
+
 - windows下命令行git中文显示乱码
   
   设置环境变量`LESSCHARSET=utf-8`

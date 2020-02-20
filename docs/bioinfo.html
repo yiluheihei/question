@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2020-02-19" />
+<meta name="date" content="2020-02-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -69,7 +69,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(title);
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -196,8 +196,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>mac如何安装 lefse ？</p>
 <p>通过homebrew安装lefse已经<a href="https://github.com/biobakery/homebrew-biobakery/issues/37">不再维护</a><code>brew install biobakery/biobakery/lefse</code>;采用conda安装(目前biobakery下的软件都用<a href="https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools">conda源安装</a>)</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="ex">conda</span> config --add channels biobakery</a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="ex">conda</span> install -c biobakery lefse</a></code></pre></div></li>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="ex">conda</span> config --add channels biobakery</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="ex">conda</span> install -c biobakery lefse</a></code></pre></div></li>
 <li><p>本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入matplotlib.pyplot出现错误<code>from urllib.parse import urlencode ImportError: No module named parse</code></p>
 <p>pycharm中设置 <code>Preferences -&gt; Tools -&gt; Python Scientific</code>取消勾选<code>Show plots in tool window</code>，答案见<a href="https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error">此</a></p></li>
 </ul>
@@ -205,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="scrna-seq" class="section level2">
 <h2><span class="header-section-number">2.2</span> scRNA-seq</h2>
 <ul>
-<li><p>安装<a href="https://github.com/velocyto-team/velocyto.R">velocyto.R</a>.</p>
+<li>安装<a href="https://github.com/velocyto-team/velocyto.R">velocyto.R</a>.
 <ul>
 <li><p><code>clang: error: unsupported option '-fopenmp'</code></p>
 <p>mac下clang不支持openmp，解决方法参考<a href="https://github.com/BUStools/BUSpaRse">此处</a>，安装支持openmp的<a href="https://cran.r-project.org/bin/macosx/tools/">clang</a>. 然后修改配置文件，在<code>~/.R/Makevars</code>(配置compliers和library)，添加</p>
