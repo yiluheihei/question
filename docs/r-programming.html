@@ -271,34 +271,32 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 <li><p>添加文本标注</p>
 <p>使用<code>Inf</code>或<code>-Inf</code>表征在边界添加文本</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># 例子源自https://r4ds.had.co.nz/graphics-for-communication.html</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a></code></pre></div>
-<pre><code>## Need help getting started? Try the cookbook for R:
-## http://www.cookbook-r.com/Graphs/</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">label &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="dt">displ =</span> <span class="ot">Inf</span>,</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="dt">hwy =</span> <span class="ot">Inf</span>,</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="dt">label =</span> <span class="st">&quot;Increasing engine size is </span><span class="ch">\n</span><span class="st">related to decreasing fuel economy.&quot;</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">)</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> label), <span class="dt">data =</span> label, <span class="dt">vjust =</span> <span class="st">&quot;top&quot;</span>, <span class="dt">hjust =</span> <span class="st">&quot;right&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">label &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="dt">displ =</span> <span class="ot">Inf</span>,</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="dt">hwy =</span> <span class="ot">Inf</span>,</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">  <span class="dt">label =</span> <span class="st">&quot;Increasing engine size is </span><span class="ch">\n</span><span class="st">related to decreasing fuel economy.&quot;</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">)</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> label), <span class="dt">data =</span> label, <span class="dt">vjust =</span> <span class="st">&quot;top&quot;</span>, <span class="dt">hjust =</span> <span class="st">&quot;right&quot;</span>)</a></code></pre></div>
 <p><img src="question-notes_files/figure-html/text-annotation-position-1.png" width="672" /></p></li>
 <li><p>图形添加边框</p>
 <p>设置<code>theme(plot.background = element_rect())</code></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(wt, mpg)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.background =</span> <span class="kw">element_rect</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(wt, mpg)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.background =</span> <span class="kw">element_rect</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>))</a></code></pre></div>
 <p><img src="question-notes_files/figure-html/round-rect-1.png" width="672" /></p></li>
 <li><p>等高线图<code>geom_contour()</code>自定义levels</p>
 <p>手动指定参数<code>breaks</code>(帮助文档中找不到该参数说明)，参考<a href="https://stackoverflow.com/questions/19658088/custom-levels-in-ggplot2-contour-plot">此</a>.</p></li>
 <li><p>ggplot中文字体</p>
 <p><a href="https://www.choyang.me/zh/post/ggplot-chinese-font/">见此</a></p></li>
 <li><p>ggplot分面添加tag (如A,B, C)，可参考<a href="https://community.rstudio.com/t/how-to-automatically-add-text-annotations-or-tags-outside-of-faceted-plots/13700">此问题</a></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(class))</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">egg<span class="op">::</span><span class="kw">tag_facet_outside</span>(p)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(class))</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">egg<span class="op">::</span><span class="kw">tag_facet_outside</span>(p)</a></code></pre></div>
 <p><img src="question-notes_files/figure-html/facet-tag-1.png" width="672" />
 ## 字符 {#char}</p></li>
 </ul>
@@ -308,21 +306,21 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 <ul>
 <li><p>正则表达式字符列表<code>[]</code>用法：<code>[]</code>中的字符匹配字符本身，如<code>[.]</code>匹配.,而不是任意字符，因此可以使用<code>[.]</code>代替<code>\\.</code>,一些在<code>[]</code>内有特殊意义的字符除外，如<code>-</code>表示范围，<code>^</code>不包含这些字符，<code>]</code>结束括号，<code>\</code>在字符串中表示转义。</p></li>
 <li><p>正则表达式默认是进行贪婪匹配，即匹配最长字符串，在正则表达式后边加?表示最短匹配</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># 匹配到两个a，然后删除</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;a+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">## [1] &quot;c&quot;</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co"># 匹配到一个a，然后删除</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;a+?&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">## [1] &quot;ac&quot;</span></a></code></pre></div></li>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># 匹配到两个a，然后删除</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;a+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">## [1] &quot;c&quot;</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co"># 匹配到一个a，然后删除</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;a+?&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">## [1] &quot;ac&quot;</span></a></code></pre></div></li>
 <li><p>表示重复次数的<code>*</code>(任意次)、<code>?</code>(0或1次)、<code>+</code>(一次以上)优先级较高</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># b出现一次以上</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;ab+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">## [1] &quot;abc&quot;</span></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co"># ab出现一次以上</span></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;(ab)+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">## [1] &quot;c&quot;</span></a></code></pre></div></li>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># b出现一次以上</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;ab+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">## [1] &quot;abc&quot;</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co"># ab出现一次以上</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;(ab)+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">## [1] &quot;c&quot;</span></a></code></pre></div></li>
 </ul>
 </div>
 </div>
@@ -360,16 +358,16 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 <ul>
 <li>pkgdown编译jss文档的时候出现，<code>! LaTeX Error: File</code>ae.sty’not found.` 说明缺少ae包，</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co"># ae:</span></a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#       texmf-dist/tex/latex/ae/ae.sty</span></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="co">#安装即可</span></a>
-<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co"># ae:</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#       texmf-dist/tex/latex/ae/ae.sty</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#安装即可</span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</a></code></pre></div>
 </div>
 </div>
 <div id="rstudio" class="section level2">

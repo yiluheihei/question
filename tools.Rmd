@@ -97,8 +97,15 @@ git push origin --delete <remote_branch>
   # 仓库合并了本地提交。如果有冲突，则解决冲突后合并
   git rebase origin/master
   ```
-  
-  
+- 删除已经提交的文件，并添加到ignore
+
+ ```sh
+ # 从版本控制中的index中删除该文件
+ git rm -r --cached <file>
+ 
+ # 该文件添加至ignore，然后commit
+ git commit
+ ```
   
 
 - windows下命令行git中文显示乱码
