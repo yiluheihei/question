@@ -164,10 +164,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>5</b> linux</a></li>
 <li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> tools</a><ul>
 <li class="chapter" data-level="6.1" data-path="tools.html"><a href="tools.html#git-和-github"><i class="fa fa-check"></i><b>6.1</b> git 和 github</a></li>
-<li class="chapter" data-level="6.2" data-path="tools.html"><a href="tools.html#conda"><i class="fa fa-check"></i><b>6.2</b> conda</a></li>
-<li class="chapter" data-level="6.3" data-path="tools.html"><a href="tools.html#hugo"><i class="fa fa-check"></i><b>6.3</b> hugo</a></li>
-<li class="chapter" data-level="6.4" data-path="tools.html"><a href="tools.html#docker"><i class="fa fa-check"></i><b>6.4</b> docker</a></li>
-<li class="chapter" data-level="6.5" data-path="tools.html"><a href="tools.html#conda-1"><i class="fa fa-check"></i><b>6.5</b> conda</a></li>
+<li class="chapter" data-level="6.2" data-path="tools.html"><a href="tools.html#hugo"><i class="fa fa-check"></i><b>6.2</b> hugo</a></li>
+<li class="chapter" data-level="6.3" data-path="tools.html"><a href="tools.html#docker"><i class="fa fa-check"></i><b>6.3</b> docker</a></li>
+<li class="chapter" data-level="6.4" data-path="tools.html"><a href="tools.html#conda"><i class="fa fa-check"></i><b>6.4</b> conda</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -270,29 +269,8 @@ commit，这时候再push到远程仓库就会提示远程仓库中有本地不�
 <p>设置环境变量<code>LESSCHARSET=utf-8</code></p></li>
 </ul>
 </div>
-<div id="conda" class="section level2">
-<h2><span class="header-section-number">6.2</span> conda</h2>
-<p>设置清华源，参考<a href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/">此</a></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="ex">channels</span>:</a>
-<a class="sourceLine" id="cb29-2" data-line-number="2">  <span class="ex">-</span> defaults</a>
-<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="ex">show_channel_urls</span>: true</a>
-<a class="sourceLine" id="cb29-4" data-line-number="4"><span class="ex">channel_alias</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda</a>
-<a class="sourceLine" id="cb29-5" data-line-number="5"><span class="ex">default_channels</span>:</a>
-<a class="sourceLine" id="cb29-6" data-line-number="6">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</a>
-<a class="sourceLine" id="cb29-7" data-line-number="7">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</a>
-<a class="sourceLine" id="cb29-8" data-line-number="8">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</a>
-<a class="sourceLine" id="cb29-9" data-line-number="9">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</a>
-<a class="sourceLine" id="cb29-10" data-line-number="10">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</a>
-<a class="sourceLine" id="cb29-11" data-line-number="11"><span class="ex">custom_channels</span>:</a>
-<a class="sourceLine" id="cb29-12" data-line-number="12">  <span class="ex">conda-forge</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb29-13" data-line-number="13">  <span class="ex">msys2</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb29-14" data-line-number="14">  <span class="ex">bioconda</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb29-15" data-line-number="15">  <span class="ex">menpo</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb29-16" data-line-number="16">  <span class="ex">pytorch</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb29-17" data-line-number="17">  <span class="ex">simpleitk</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a></code></pre></div>
-</div>
 <div id="hugo" class="section level2">
-<h2><span class="header-section-number">6.3</span> hugo</h2>
+<h2><span class="header-section-number">6.2</span> hugo</h2>
 <ul>
 <li><p>基于hugo采用blogdown建站的时候出现错误<code>panic: BUG: Expected valid escape code  after \, but got '\r'.</code></p>
 <p>是由于配置文件<code>config.toml</code>中采用多行字符中<code>&quot;&quot;&quot;</code>的换行符引起的<code>\</code>,去掉换行符即
@@ -300,7 +278,7 @@ commit，这时候再push到远程仓库就会提示远程仓库中有本地不�
 </ul>
 </div>
 <div id="docker" class="section level2">
-<h2><span class="header-section-number">6.4</span> docker</h2>
+<h2><span class="header-section-number">6.3</span> docker</h2>
 <ul>
 <li><p>docker 配置国内源</p>
 <p>参考<a href="http://mirrors.ustc.edu.cn/help/dockerhub.html?highlight=docker">这</a>,配置
@@ -314,9 +292,27 @@ commit，这时候再push到远程仓库就会提示远程仓库中有本地不�
 点击镜像加速器，就看到加速器地址，添加进去即可。</p></li>
 </ul>
 </div>
-<div id="conda-1" class="section level2">
-<h2><span class="header-section-number">6.5</span> conda</h2>
+<div id="conda" class="section level2">
+<h2><span class="header-section-number">6.4</span> conda</h2>
 <ul>
+<li><p>设置清华源，参考<a href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/">此</a></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="ex">channels</span>:</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">  <span class="ex">-</span> defaults</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="ex">show_channel_urls</span>: true</a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="ex">channel_alias</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda</a>
+<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="ex">default_channels</span>:</a>
+<a class="sourceLine" id="cb30-6" data-line-number="6">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</a>
+<a class="sourceLine" id="cb30-7" data-line-number="7">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</a>
+<a class="sourceLine" id="cb30-8" data-line-number="8">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</a>
+<a class="sourceLine" id="cb30-9" data-line-number="9">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</a>
+<a class="sourceLine" id="cb30-10" data-line-number="10">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</a>
+<a class="sourceLine" id="cb30-11" data-line-number="11"><span class="ex">custom_channels</span>:</a>
+<a class="sourceLine" id="cb30-12" data-line-number="12">  <span class="ex">conda-forge</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb30-13" data-line-number="13">  <span class="ex">msys2</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb30-14" data-line-number="14">  <span class="ex">bioconda</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb30-15" data-line-number="15">  <span class="ex">menpo</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb30-16" data-line-number="16">  <span class="ex">pytorch</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb30-17" data-line-number="17">  <span class="ex">simpleitk</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a></code></pre></div></li>
 <li><p>macOS 10.14 Mojave,conda安装包的时候设计到qt就出现错误，如<code>conda-forge::qt-5.9.7-h93ee506_1'. PermissionError(1, 'Operation not permitted')</code></p>
 <p>解决方法<a href="https://github.com/conda/conda/issues/8440#issuecomment-481167572">在此</a></p>
 <pre><code># for base:

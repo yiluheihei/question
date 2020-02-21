@@ -111,31 +111,6 @@ git push origin --delete <remote_branch>
 - windows下命令行git中文显示乱码
   
   设置环境变量`LESSCHARSET=utf-8`
-  
-
-## conda
-
-设置清华源，参考[此](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/)
-
-```sh
-channels:
-  - defaults
-show_channel_urls: true
-channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda
-default_channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-custom_channels:
-  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-```
 
 ## hugo
 
@@ -164,6 +139,28 @@ after \, but got '\r'.`
   点击镜像加速器，就看到加速器地址，添加进去即可。
   
 ## conda
+
+- 设置清华源，参考[此](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/)
+
+  ```sh
+  channels:
+    - defaults
+  show_channel_urls: true
+  channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda
+  default_channels:
+    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+  custom_channels:
+    conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  ```
 
 - macOS 10.14 Mojave,conda安装包的时候设计到qt就出现错误，如`conda-forge::qt-5.9.7-h93ee506_1'. PermissionError(1, 'Operation not permitted')`
 
