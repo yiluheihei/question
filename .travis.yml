@@ -20,5 +20,5 @@ branches:
   
 after_success:
   - git add -A
-  - git commit -m "update book"
+  - git commit -m "travis update book"
   - git push -q https://${GITHUB_PAT}@github.com/yiluheihei/question.git HEAD:master
