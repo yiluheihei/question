@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>个人问题集</title>
-  <meta name="description" content="个人问题集" />
+  <title>第1章 R 语言 | 个人问题集</title>
+  <meta name="description" content="第1章 R 语言 | 个人问题集" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="个人问题集" />
+  <meta property="og:title" content="第1章 R 语言 | 个人问题集" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="个人问题集" />
+  <meta name="twitter:title" content="第1章 R 语言 | 个人问题集" />
   
   
   
@@ -55,7 +55,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -67,11 +67,13 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
 pre.numberSource a.sourceLine::before
   { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -258,15 +260,15 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, <span class="dv">0</span>)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co"># 抛错</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">seq_along</span>(y)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">## integer(0)</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">## integer(0)</a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">seq_along</span>(y), <span class="cf">function</span>(x) x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">## Error in 1:seq_along(y): 参数长度为零</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">## Error in 1:seq_along(y): argument of length 0</a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co"># 正常计算</span></a>
 <a class="sourceLine" id="cb6-9" data-line-number="9"><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(y)</a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">## [1] 1 0</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">## [1] 1 0</a>
 <a class="sourceLine" id="cb6-11" data-line-number="11"><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(y), <span class="cf">function</span>(x) x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">## [1] 2 1</span></a></code></pre></div></li>
+<a class="sourceLine" id="cb6-12" data-line-number="12">## [1] 2 1</a></code></pre></div></li>
 <li><p>如果我们在<code>~/.Rprofile</code>添加了初始化设置，那么如果当前工作目录中有含有<code>.Rprofile</code>的时候（如在github上fork的别人的项目中含有该文件），就会忽略<code>~/.Rprofile</code>中的设置。</p>
 <p>解决方法<code># ~/.Renviron</code>中设置site profile变量<code>R_PROFILE=~/Rprofile.site</code>，然后把之前<code>.Rprofile</code>的设置拷贝到<code>~/Rprofile.site</code>即可。这是因为R的启动的时候会在读取<code>.Rprofile</code>之前读取<code>~/Rprofile.site</code>中的设置。</p></li>
 <li><p>设置Alfred快捷打开rstudio的project</p>
@@ -343,19 +345,19 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 <li><p>正则表达式默认是进行贪婪匹配，即匹配最长字符串，在正则表达式后边加?表示最短匹配</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># 匹配到两个a，然后删除</span></a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;a+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">## [1] &quot;c&quot;</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">## [1] &quot;c&quot;</a>
 <a class="sourceLine" id="cb10-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co"># 匹配到一个a，然后删除</span></a>
 <a class="sourceLine" id="cb10-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;a+?&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">## [1] &quot;ac&quot;</span></a></code></pre></div></li>
+<a class="sourceLine" id="cb10-7" data-line-number="7">## [1] &quot;ac&quot;</a></code></pre></div></li>
 <li><p>表示重复次数的<code>*</code>(任意次)、<code>?</code>(0或1次)、<code>+</code>(一次以上)优先级较高</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># b出现一次以上</span></a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;ab+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">## [1] &quot;abc&quot;</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">## [1] &quot;abc&quot;</a>
 <a class="sourceLine" id="cb11-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co"># ab出现一次以上</span></a>
 <a class="sourceLine" id="cb11-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;(ab)+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">## [1] &quot;c&quot;</span></a></code></pre></div></li>
+<a class="sourceLine" id="cb11-7" data-line-number="7">## [1] &quot;c&quot;</a></code></pre></div></li>
 </ul>
 </div>
 </div>
@@ -423,7 +425,7 @@ Prefix = /usr/lib/rstudio/</code></pre></li>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-grolemund2019">
-<p>Grolemund, Garrett, and Hadley Wickham. 2019. <em>R for Data Science</em>. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.</p>
+<p>Grolemund, Garrett, and Hadley Wickham. 2019. <em>R for Data Science</em>. <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a>.</p>
 </div>
 </div>
             </section>
