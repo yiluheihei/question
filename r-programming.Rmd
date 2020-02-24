@@ -1,6 +1,29 @@
 # R 语言 {#r-programming}
 
-## R基础 {#r-base}
+## 安装和配置
+
+### 安装
+
+- ubuntu 安裝 R
+  
+  参考https://cran.r-project.org/bin/linux/ubuntu/README.html
+  ```sh
+  # 添加源
+  deb https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/
+  # 密匙
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+  sudo apt-get update
+  sudo apt-get install r-base r-base-dev
+  ```
+
+- CentOS 安装 R
+
+ ```sh
+ yum install epel-release
+ yum install R-core R-core-devel
+```
+
+### 配置
 
 - 设置cran和bioconductor国内源
 
@@ -12,6 +35,27 @@
   # bioconductor mirror
   options(BioC_mirror = "http://mirrors.ustc.edu.cn/bioc/")
   ```
+
+### 安装包
+
+- centos 7 安装 hdf5r
+
+  见[这](https://www.choyang.me/zh/post/centos-7-r-install-hdf5r/)
+
+- cenos 7 安装 stringr
+
+  stringr 依赖 [stringi](https://cran.r-project.org/web/packages/stringi/), 
+  stringi 要求 ICU4C >= 55, 而centos 7 中 icu版本为50.2。我们可以从 stringi 的
+  [github 仓库](https://github.com/gagolews/stringi)下载源代码，里面包含ICU安装
+  包，直接安装即可。
+  
+  ```r
+  wget https://github.com/gagolews/stringi/archive/v1.4.6.tar.gz - O stringi-1.4.6.tar.gz
+  install.packages("stringi-1.4.6.tar.gz")
+  install.packages("stringr")
+  ```
+  
+## R 基础
 
 - 根据序列长度进行迭代（循环）的时候，`1:seq_along(y)`和`1:length(y)`有什么区别？
 
@@ -42,26 +86,6 @@
 
   因为如果R包如果包含c++/c/Fortran代码（如rlang），如果已经加载了这种包，在对其进行升级或者重装
   的时候就会出现类似上述错误。关掉加载这些包的R，才能继续重装或升级。
-
-## 安装包
-
-- centos 7 安装 hdf5r
-
-  见[这](https://www.choyang.me/zh/post/centos-7-r-install-hdf5r/)
-
-- cenos 7 安装 stringr
-
-  stringr 依赖 [stringi](https://cran.r-project.org/web/packages/stringi/), 
-  stringi 要求 ICU4C >= 55, 而centos 7 中 icu版本为50.2。我们可以从 stringi 的
-  [github 仓库](https://github.com/gagolews/stringi)下载源代码，里面包含ICU安装
-  包，直接安装即可。
-  
-  ```r
-  wget https://github.com/gagolews/stringi/archive/v1.4.6.tar.gz - O stringi-1.4.6.tar.gz
-  install.packages("stringi-1.4.6.tar.gz")
-  install.packages("stringr")
-  ```
-  
   
 
 
