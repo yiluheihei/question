@@ -3,7 +3,6 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: ["第", "章"]
-output_dir: docs/
 rmd_files:
 - "index.Rmd"
 - "r-programming.Rmd"
