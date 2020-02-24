@@ -1,8 +1,8 @@
 # linux
 
 - centos 7 升级内核, 一些软件或者驱动（如网卡驱动）需要高版本内核
-
- 参考[这里](https://blog.csdn.net/fenglailea/article/details/88740961)
+  
+  参考[这里](https://blog.csdn.net/fenglailea/article/details/88740961)
 
   ```sh
   # 添加elrepo源，elrepo包含了许多硬件相关的软件包的rpm软件仓库
@@ -74,25 +74,3 @@
   deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
   deb http://mirr.iyun.com/ubuntu/ xenial-security multiverse
 ```
-
-- ubuntu 安裝 R
-  
-  参考https://cran.r-project.org/bin/linux/ubuntu/README.html
-  ```sh
-  # 添加源
-  deb https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/
-  # 密匙
-  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-  sudo apt-get update
-  sudo apt-get install r-base r-base-dev
-  ```
-
-- 虚拟机安装ubuntu后切换工作区快捷键`ctrl + alt + 方向键`，上下方向键可正常切换，而左右方向键切换不了
-
-  因为虚拟机中`ctrl + alt + 左右方向键`在VMware中用于切换全屏虚拟机，修改VMware切换全屏
-虚拟机快捷键即可，如`ctrl + shit + 左右方向键`
-
-- 虚拟机ubuntu非正常关机后，再打开黑屏
-
-  方法参考[这里](https://www.zhihu.com/question/66422773/answer/245081019), 重置LSP
-  `netsh winsock reset`

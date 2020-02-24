@@ -193,8 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="linux" class="section level1">
 <h1><span class="header-section-number">第5章</span> linux</h1>
 <ul>
-<li>centos 7 升级内核, 一些软件或者驱动（如网卡驱动）需要高版本内核</li>
-</ul>
+<li><p>centos 7 升级内核, 一些软件或者驱动（如网卡驱动）需要高版本内核</p>
 <p>参考<a href="https://blog.csdn.net/fenglailea/article/details/88740961">这里</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># 添加elrepo源，elrepo包含了许多硬件相关的软件包的rpm软件仓库</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># 首先倒入public key</span></a>
@@ -225,8 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-27" data-line-number="27"><span class="ex">grub2-set-default</span> <span class="st">&quot;CentOS Linux (5.5.5-1.el7.elrepo.x86_64) 7 (Core)&quot;</span></a>
 <a class="sourceLine" id="cb1-28" data-line-number="28"></a>
 <a class="sourceLine" id="cb1-29" data-line-number="29"><span class="co"># 重启即可看到新更新的内核</span></a>
-<a class="sourceLine" id="cb1-30" data-line-number="30"><span class="ex">reboot</span></a></code></pre></div>
-<ul>
+<a class="sourceLine" id="cb1-30" data-line-number="30"><span class="ex">reboot</span></a></code></pre></div></li>
 <li><p>centos 7 安装 Intel <code>Wi-Fi 6 AX200 160MHz</code>无线网卡驱动</p>
 <p>[官网](<a href="https://www.intel.cn/content/www/cn/zh/support/articles/000005511/network-and-i-o/wireless-networking.html" class="uri">https://www.intel.cn/content/www/cn/zh/support/articles/000005511/network-and-i-o/wireless-networking.html</a>
 上说该网卡要求内核在5.1以上,在升级完内核后，<a href="https://wireless.wiki.kernel.org/_media/en/users/drivers/iwlwifi/iwlwifi-cc-46.3cfab8da.0.tgz">下载</a>
@@ -256,20 +254,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb3-21" data-line-number="21"><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe <span class="co"># Added by software-properties</span></a>
 <a class="sourceLine" id="cb3-22" data-line-number="22"><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-security universe</a>
 <a class="sourceLine" id="cb3-23" data-line-number="23"><span class="ex">deb</span> http://mirr.iyun.com/ubuntu/ xenial-security multiverse</a></code></pre></div></li>
-<li><p>ubuntu 安裝 R</p>
-<p>参考https://cran.r-project.org/bin/linux/ubuntu/README.html</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># 添加源</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="ex">deb</span> https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># 密匙</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="fu">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="fu">sudo</span> apt-get update</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="fu">sudo</span> apt-get install r-base r-base-dev</a></code></pre></div></li>
-<li><p>虚拟机安装ubuntu后切换工作区快捷键<code>ctrl + alt + 方向键</code>，上下方向键可正常切换，而左右方向键切换不了</p>
-<p>因为虚拟机中<code>ctrl + alt + 左右方向键</code>在VMware中用于切换全屏虚拟机，修改VMware切换全屏
-虚拟机快捷键即可，如<code>ctrl + shit + 左右方向键</code></p></li>
-<li><p>虚拟机ubuntu非正常关机后，再打开黑屏</p>
-<p>方法参考<a href="https://www.zhihu.com/question/66422773/answer/245081019">这里</a>, 重置LSP
-<code>netsh winsock reset</code></p></li>
 </ul>
 
 </div>
