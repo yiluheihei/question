@@ -122,6 +122,26 @@ after \, but got '\r'.`
 
 ## docker
 
+- 安装(centos)
+
+  ```sh
+  curl -sSL get.docker.com	-o	get-docker.sh
+  # 可选择合适的源
+  sh get-docker.sh --mirror Aliyun
+  
+  ## 启动docker
+  sudo systemctl enable docker
+  sudo systemctl start docker
+  
+  ## docker 默认只能root用户才能运行
+  ## 可以把需要用docker的用户加入docker用户组
+  sudo usermod -aG dokcer $USER
+  # 以docker 用户组登入
+  newgrp docker
+  
+  ```
+  
+
 - docker 配置国内源
   
   参考[这](http://mirrors.ustc.edu.cn/help/dockerhub.html?highlight=docker),配置
