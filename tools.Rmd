@@ -2,6 +2,37 @@
 
 ## git 和 github
 
+- push到github的时候每次都需要输入用户名密码
+
+  首先，克隆到本地的时候选择ssh方式
+  
+  ```sh
+  git clone git@github.com:<repo>
+  
+  ## 如果本地已经选择https方式克隆，可以先删除原来的远程仓库，重新添加
+  ## ssh方式
+  # 查看本地clone方式
+  git remote -v 
+  # 删除远程仓库
+  git remote rm origin
+  # 重新添加
+  git remote add origin git@github.com:<repo>
+  ```
+  
+  然后本地生成ssh密匙添加至github账户，获得访问github权限,详细步骤参考
+  [这里](https://github.com/waylau/github-help/blob/master/Generating%20SSH%20keys%20%E7%94%9F%E6%88%90%20SSH%20%E5%AF%86%E9%92%A5.md)
+  
+  ```sh
+  # 一路回车，在~/.ssh文件夹下生成了id_rsa文件
+  ssh-keygen -t rsa -C "<github账户邮箱"
+  # 拷贝~/.ssh/id_rsa.pub到github账户进行设置
+  ```
+  最后push即可
+  
+  ```
+  git push --set-upstream origin master
+  ```
+
 - 修改commit的message
 
 ```sh
