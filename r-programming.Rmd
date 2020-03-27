@@ -68,7 +68,7 @@
   }
   ```
   
-## R-lib
+## R 包开发
 
 - 包中 README.md 中用到的图片存放位置
 
@@ -109,6 +109,48 @@
 
   因为如果R包如果包含c++/c/Fortran代码（如rlang），如果已经加载了这种包，在对其进行升级或者重装
   的时候就会出现类似上述错误。关掉加载这些包的R，才能继续重装或升级。
+
+## tidyverse 数据分析
+
+- `data.frame` 转置(transpose)
+  
+  tidyverse 中 默认操作数据结构为 `tibble`, 用于替代 R 中`data.frame`，`tibble`
+  默认没有行名。下面对用`t()`和 tidyr 方法转置作比较：
+  
+  用`t()`函数
+  
+  ```{r t-transpose}
+  # 有行名的数据
+  df <- data.frame(a = 1:3, b = 4:6)
+  row.names(df) <- paste0("r", 1:3)
+  
+  # as.data.frame(), 保持行名和列名
+  t(df) %>% as.data.frame()
+  
+  # as_tibble, 默认删除行名
+  t(df) %>% tibble::as_tibble()
+  # 可以用`rowname = NA`保持行名, 左上角有个`*`表示这个tibble有行名
+  t(df) %>% tibble::as_tibble(rownames = NA)
+  ```
+  
+  用 tidyr 中函数
+  
+  ```{r tidyr-transpose}
+  # 保持行名和列名, column_to_rownames用于设置行名，返回data.frame
+  tibble::rownames_to_column(df) %>% 
+    tidyr::pivot_longer(-rowname) %>% 
+    tidyr::pivot_wider(names_from = "rowname", values_from = "value") %>% 
+    tibble::column_to_rownames("name")
+  ```
+  
+  此外还可以使用 `purrr::transpose`
+  
+  ```{r purrr-transpose}
+  # 行名列名都丢失，transpose 去除了原有行名
+  purrr::transpose(df) %>%
+    purrr::map(unlist) %>% 
+    dplyr::bind_cols()
+  ```
 
 ## 可视化 {#visualization}
 
