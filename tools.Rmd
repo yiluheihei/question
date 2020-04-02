@@ -137,7 +137,16 @@ git push origin --delete <remote_branch>
  # 该文件添加至ignore，然后commit
  git commit
  ```
+
+- 查看仓库中代码行数
   
+  参考[这里](https://stackoverflow.com/questions/26881441/can-you-get-the-number-of-lines-of-code-from-a-github-repository)
+  
+  ```sh
+  git ls-files | xargs wc -l
+  # R 代码行数
+  git ls-files | grep '.R$' | xargs wc -l
+  ```
 
 - windows下命令行git中文显示乱码
   

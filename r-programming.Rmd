@@ -136,6 +136,7 @@
   用 tidyr 中函数
   
   ```{r tidyr-transpose}
+  library(magrittr)
   # 保持行名和列名, column_to_rownames用于设置行名，返回data.frame
   tibble::rownames_to_column(df) %>% 
     tidyr::pivot_longer(-rowname) %>% 
