@@ -31,6 +31,36 @@
   #     configuration: driver=nvidia latency=0
   ```
 
+- ubuntu 添加 aliyun 源
+  
+  根据[这里](https://developer.aliyun.com/mirror/ubuntu)选择相应版本的源，以 16.04 xenial为例
+  
+  ```sh
+  # 备份原有文件
+  mv /etc/apt/sources.list /etc/apt/sources.list.backup
+  
+  # 新建文件，添加源
+  touch /etc/apt/sources.list
+  
+  deb-src http://archive.ubuntu.com/ubuntu xenial main restricted # Added by software-properties
+  deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted
+  deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted multiverse universe # Added by software-properties
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted
+  deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted multiverse universe # Added by software-properties
+  deb http://mirrors.aliyun.com/ubuntu/ xenial universe
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-updates universe
+  deb http://mirrors.aliyun.com/ubuntu/ xenial multiverse
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-updates multiverse
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
+  deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse # Added by software-properties
+  deb http://archive.canonical.com/ubuntu xenial partner
+  deb-src http://archive.canonical.com/ubuntu xenial partner
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted
+  deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe # Added by software-properties
+  deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
+  deb http://mirr.iyun.com/ubuntu/ xenial-security multiverse
+  ```
+
 - ubuntu 搜狗输入法乱码
 
   搜狗输入法需要切换两次才能正确显示，第一次切换拼音显示为乱码
@@ -44,6 +74,10 @@
   rm -rf SogouPY* sogou*
   fcitx -r
   ```
+
+- ubuntu 开机后弹窗 检测系统程序出现问题
+
+  修改`/etc/default/apport`, `enable=0`
 
 - centos 7 升级内核, 一些软件或者驱动（如网卡驱动）需要高版本内核
   
@@ -90,36 +124,6 @@
   
   ```sh
   cp iwlwifi-cc-a0-46.ucode /lib/firmware
-  ```
-
-- ubuntu 添加 aliyun 源
-  
-  根据[这里](https://developer.aliyun.com/mirror/ubuntu)选择相应版本的源，以 16.04 xenial为例
-  
-  ```sh
-  # 备份原有文件
-  mv /etc/apt/sources.list /etc/apt/sources.list.backup
-  
-  # 新建文件，添加源
-  touch /etc/apt/sources.list
-  
-  deb-src http://archive.ubuntu.com/ubuntu xenial main restricted # Added by software-properties
-  deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted
-  deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted multiverse universe # Added by software-properties
-  deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted
-  deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted multiverse universe # Added by software-properties
-  deb http://mirrors.aliyun.com/ubuntu/ xenial universe
-  deb http://mirrors.aliyun.com/ubuntu/ xenial-updates universe
-  deb http://mirrors.aliyun.com/ubuntu/ xenial multiverse
-  deb http://mirrors.aliyun.com/ubuntu/ xenial-updates multiverse
-  deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
-  deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse # Added by software-properties
-  deb http://archive.canonical.com/ubuntu xenial partner
-  deb-src http://archive.canonical.com/ubuntu xenial partner
-  deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted
-  deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe # Added by software-properties
-  deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
-  deb http://mirr.iyun.com/ubuntu/ xenial-security multiverse
   ```
 
 
