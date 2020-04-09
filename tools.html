@@ -168,7 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.1" data-path="mac-os.html"><a href="mac-os.html#alfred"><i class="fa fa-check"></i><b>4.2.1</b> Alfred</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>5</b> linux</a></li>
+<li class="chapter" data-level="5" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>5</b> linux</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="linux.html"><a href="linux.html#安装-1"><i class="fa fa-check"></i><b>5.0.1</b> 安装</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> tools</a><ul>
 <li class="chapter" data-level="6.1" data-path="tools.html"><a href="tools.html#git-和-github"><i class="fa fa-check"></i><b>6.1</b> git 和 github</a></li>
 <li class="chapter" data-level="6.2" data-path="tools.html"><a href="tools.html#hugo"><i class="fa fa-check"></i><b>6.2</b> hugo</a></li>
@@ -202,100 +204,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>push到github的时候每次都需要输入用户名密码</p>
 <p>首先，克隆到本地的时候选择ssh方式</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="fu">git</span> clone git@github.com:<span class="op">&lt;</span>repo<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb32-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="co">## 如果本地已经选择https方式克隆，可以先删除原来的远程仓库，重新添加</span></a>
-<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="co">## ssh方式</span></a>
-<a class="sourceLine" id="cb32-5" data-line-number="5"><span class="co"># 查看本地clone方式</span></a>
-<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="fu">git</span> remote -v </a>
-<a class="sourceLine" id="cb32-7" data-line-number="7"><span class="co"># 删除远程仓库</span></a>
-<a class="sourceLine" id="cb32-8" data-line-number="8"><span class="fu">git</span> remote rm origin</a>
-<a class="sourceLine" id="cb32-9" data-line-number="9"><span class="co"># 重新添加</span></a>
-<a class="sourceLine" id="cb32-10" data-line-number="10"><span class="fu">git</span> remote add origin git@github.com:<span class="op">&lt;</span>repo<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="fu">git</span> clone git@github.com:<span class="op">&lt;</span>repo<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="co">## 如果本地已经选择https方式克隆，可以先删除原来的远程仓库，重新添加</span></a>
+<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="co">## ssh方式</span></a>
+<a class="sourceLine" id="cb33-5" data-line-number="5"><span class="co"># 查看本地clone方式</span></a>
+<a class="sourceLine" id="cb33-6" data-line-number="6"><span class="fu">git</span> remote -v </a>
+<a class="sourceLine" id="cb33-7" data-line-number="7"><span class="co"># 删除远程仓库</span></a>
+<a class="sourceLine" id="cb33-8" data-line-number="8"><span class="fu">git</span> remote rm origin</a>
+<a class="sourceLine" id="cb33-9" data-line-number="9"><span class="co"># 重新添加</span></a>
+<a class="sourceLine" id="cb33-10" data-line-number="10"><span class="fu">git</span> remote add origin git@github.com:<span class="op">&lt;</span>repo<span class="op">&gt;</span></a></code></pre></div>
 <p>然后本地生成ssh密匙添加至github账户，获得访问github权限,详细步骤参考
 <a href="https://github.com/waylau/github-help/blob/master/Generating%20SSH%20keys%20%E7%94%9F%E6%88%90%20SSH%20%E5%AF%86%E9%92%A5.md">这里</a></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="co"># 一路回车，在~/.ssh文件夹下生成了id_rsa文件</span></a>
-<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="fu">ssh-keygen</span> -t rsa -C <span class="st">&quot;&lt;github账户邮箱&quot;</span></a>
-<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="co"># 拷贝~/.ssh/id_rsa.pub到github账户进行设置</span></a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="co"># 一路回车，在~/.ssh文件夹下生成了id_rsa文件</span></a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="fu">ssh-keygen</span> -t rsa -C <span class="st">&quot;&lt;github账户邮箱&quot;</span></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="co"># 拷贝~/.ssh/id_rsa.pub到github账户进行设置</span></a></code></pre></div>
 <p>最后push即可</p>
 <pre><code>git push --set-upstream origin master</code></pre></li>
 <li><p>修改commit的message</p></li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="co"># 想要修改的commit的父提交hash值</span></a>
-<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="fu">git</span> rebase -i <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb35-3" data-line-number="3">  </a>
-<a class="sourceLine" id="cb35-4" data-line-number="4"><span class="co"># 修改要修改message行首的pick为r(reword)，然后修改该条message，保存退出即可</span></a>
-<a class="sourceLine" id="cb35-5" data-line-number="5">  </a>
-<a class="sourceLine" id="cb35-6" data-line-number="6"><span class="co"># 如果同时修改github仓库的commit，强制push即可</span></a>
-<a class="sourceLine" id="cb35-7" data-line-number="7"><span class="fu">git</span> push -f</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="co"># 想要修改的commit的父提交hash值</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="fu">git</span> rebase -i <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3">  </a>
+<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="co"># 修改要修改message行首的pick为r(reword)，然后修改该条message，保存退出即可</span></a>
+<a class="sourceLine" id="cb36-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb36-6" data-line-number="6"><span class="co"># 如果同时修改github仓库的commit，强制push即可</span></a>
+<a class="sourceLine" id="cb36-7" data-line-number="7"><span class="fu">git</span> push -f</a></code></pre></div>
 <ul>
 <li>显示某一次提交中某个文件的变化</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="fu">git</span> log <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span> <span class="op">&lt;</span>file_name<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="fu">git</span> log <span class="op">&lt;</span>commit_hash<span class="op">&gt;</span> <span class="op">&lt;</span>file_name<span class="op">&gt;</span></a></code></pre></div>
 <ul>
 <li>删除远程仓库(如github)的错误提交，在本地处理好之后，如删除错误提交，然后强制push到远程进行修改</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="fu">git</span> push --force</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="fu">git</span> push --force</a></code></pre></div>
 <ul>
 <li>删除远程分支</li>
 </ul>
-<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="fu">git</span> push origin --delete <span class="op">&lt;</span>remote_branch<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="fu">git</span> push origin --delete <span class="op">&lt;</span>remote_branch<span class="op">&gt;</span></a></code></pre></div>
 <ul>
 <li><p>修改本地仓库关联的远程仓库，提交修改至另一个远程仓库</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="fu">git</span> remote set-url origin https://github.com/yiluheihei/beginr.git</a></code></pre></div></li>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="fu">git</span> remote set-url origin https://github.com/yiluheihei/beginr.git</a></code></pre></div></li>
 <li><p><a href="https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree">删除本地 untracted files</a></p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="co"># 查看哪些文件将被删除</span></a>
-<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="fu">git</span> clean -n </a>
-<a class="sourceLine" id="cb40-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="co"># 删除文件</span></a>
-<a class="sourceLine" id="cb40-5" data-line-number="5"><span class="fu">git</span> clean -f</a>
-<a class="sourceLine" id="cb40-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb40-7" data-line-number="7"><span class="co"># 删除文件和文件夹</span></a>
-<a class="sourceLine" id="cb40-8" data-line-number="8"><span class="fu">git</span> clean -f -d</a>
-<a class="sourceLine" id="cb40-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb40-10" data-line-number="10"><span class="co"># 删除 ignore 的文件</span></a>
-<a class="sourceLine" id="cb40-11" data-line-number="11"><span class="fu">git</span> clean -f -X</a>
-<a class="sourceLine" id="cb40-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb40-13" data-line-number="13"><span class="co"># 删除 ignore 和非 ignore 文件</span></a>
-<a class="sourceLine" id="cb40-14" data-line-number="14"><span class="fu">git</span> clean -f -x</a></code></pre></div></li>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="co"># 查看哪些文件将被删除</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="fu">git</span> clean -n </a>
+<a class="sourceLine" id="cb41-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb41-4" data-line-number="4"><span class="co"># 删除文件</span></a>
+<a class="sourceLine" id="cb41-5" data-line-number="5"><span class="fu">git</span> clean -f</a>
+<a class="sourceLine" id="cb41-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb41-7" data-line-number="7"><span class="co"># 删除文件和文件夹</span></a>
+<a class="sourceLine" id="cb41-8" data-line-number="8"><span class="fu">git</span> clean -f -d</a>
+<a class="sourceLine" id="cb41-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb41-10" data-line-number="10"><span class="co"># 删除 ignore 的文件</span></a>
+<a class="sourceLine" id="cb41-11" data-line-number="11"><span class="fu">git</span> clean -f -X</a>
+<a class="sourceLine" id="cb41-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb41-13" data-line-number="13"><span class="co"># 删除 ignore 和非 ignore 文件</span></a>
+<a class="sourceLine" id="cb41-14" data-line-number="14"><span class="fu">git</span> clean -f -x</a></code></pre></div></li>
 <li><p>unstage <code>git add</code>的文件</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
 <li><p>忽略本地文件修改</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co"># 若文件状态为unstage</span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="co"># 若文件已经通过`git add` stage，首先文件状态修改为unstage</span></a>
-<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb42-6" data-line-number="6"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="co"># 若文件状态为unstage</span></a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb43-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb43-4" data-line-number="4"><span class="co"># 若文件已经通过`git add` stage，首先文件状态修改为unstage</span></a>
+<a class="sourceLine" id="cb43-5" data-line-number="5"><span class="fu">git</span> reset HEAD <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb43-6" data-line-number="6"><span class="fu">git</span> checkout <span class="op">&lt;</span>file<span class="op">&gt;</span></a></code></pre></div></li>
 <li><p>拉取远程分支时保持本地修改</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="co"># 备份当前工作区内容，从最近一次提交中读取内容</span></a>
-<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="fu">git</span> stash</a>
-<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="co"># 拉取远程分支内容</span></a>
-<a class="sourceLine" id="cb43-4" data-line-number="4"><span class="fu">git</span> pull <span class="op">&lt;</span>remote branch<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb43-5" data-line-number="5"><span class="co"># 从stash中读取备份的内容</span></a>
-<a class="sourceLine" id="cb43-6" data-line-number="6"><span class="fu">git</span> stash pop</a></code></pre></div></li>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="co"># 备份当前工作区内容，从最近一次提交中读取内容</span></a>
+<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="fu">git</span> stash</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="co"># 拉取远程分支内容</span></a>
+<a class="sourceLine" id="cb44-4" data-line-number="4"><span class="fu">git</span> pull <span class="op">&lt;</span>remote branch<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb44-5" data-line-number="5"><span class="co"># 从stash中读取备份的内容</span></a>
+<a class="sourceLine" id="cb44-6" data-line-number="6"><span class="fu">git</span> stash pop</a></code></pre></div></li>
 <li><p>远程仓库已经有新的commit，在本地开发的时候没有pull到本地，就直接进行修改并
 commit，这时候再push到远程仓库就会提示远程仓库中有本地不存在的commit。这时候就
 需要在远程仓库基础上merge本地的最新commit</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="co"># 首先抓取远程仓库数据</span></a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="fu">git</span> fetch</a>
-<a class="sourceLine" id="cb44-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb44-4" data-line-number="4"><span class="co"># 然后在本地分支内，在origin仓库的基础上变基提交，如果没有冲突，则直接基于远程</span></a>
-<a class="sourceLine" id="cb44-5" data-line-number="5"><span class="co"># 仓库合并了本地提交。如果有冲突，则解决冲突后合并</span></a>
-<a class="sourceLine" id="cb44-6" data-line-number="6"><span class="fu">git</span> rebase origin/master</a></code></pre></div></li>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="co"># 首先抓取远程仓库数据</span></a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="fu">git</span> fetch</a>
+<a class="sourceLine" id="cb45-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb45-4" data-line-number="4"><span class="co"># 然后在本地分支内，在origin仓库的基础上变基提交，如果没有冲突，则直接基于远程</span></a>
+<a class="sourceLine" id="cb45-5" data-line-number="5"><span class="co"># 仓库合并了本地提交。如果有冲突，则解决冲突后合并</span></a>
+<a class="sourceLine" id="cb45-6" data-line-number="6"><span class="fu">git</span> rebase origin/master</a></code></pre></div></li>
 <li><p>删除已经提交的文件，并添加到ignore</p></li>
 </ul>
-<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="co"># 从版本控制中的index中删除该文件</span></a>
-<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="fu">git</span> rm -r --cached <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb45-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb45-4" data-line-number="4"><span class="co"># 该文件添加至ignore，然后commit</span></a>
-<a class="sourceLine" id="cb45-5" data-line-number="5"><span class="fu">git</span> commit</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="co"># 从版本控制中的index中删除该文件</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="fu">git</span> rm -r --cached <span class="op">&lt;</span>file<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="co"># 该文件添加至ignore，然后commit</span></a>
+<a class="sourceLine" id="cb46-5" data-line-number="5"><span class="fu">git</span> commit</a></code></pre></div>
 <ul>
 <li><p>查看仓库中代码行数</p>
 <p>参考<a href="https://stackoverflow.com/questions/26881441/can-you-get-the-number-of-lines-of-code-from-a-github-repository">这里</a></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="fu">git</span> ls-files <span class="kw">|</span> <span class="fu">xargs</span> wc -l</a>
-<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="co"># R 代码行数</span></a>
-<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="fu">git</span> ls-files <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;.R$&#39;</span> <span class="kw">|</span> <span class="fu">xargs</span> wc -l</a></code></pre></div></li>
+<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="fu">git</span> ls-files <span class="kw">|</span> <span class="fu">xargs</span> wc -l</a>
+<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="co"># R 代码行数</span></a>
+<a class="sourceLine" id="cb47-3" data-line-number="3"><span class="fu">git</span> ls-files <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&#39;.R$&#39;</span> <span class="kw">|</span> <span class="fu">xargs</span> wc -l</a></code></pre></div></li>
 <li><p>windows下命令行git中文显示乱码</p>
 <p>设置环境变量<code>LESSCHARSET=utf-8</code></p></li>
 </ul>
@@ -312,19 +314,19 @@ commit，这时候再push到远程仓库就会提示远程仓库中有本地不�
 <h2><span class="header-section-number">6.3</span> docker</h2>
 <ul>
 <li><p>安装(centos)</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="ex">curl</span> -sSL get.docker.com  -o  get-docker.sh</a>
-<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="co"># 可选择合适的源</span></a>
-<a class="sourceLine" id="cb47-3" data-line-number="3"><span class="fu">sh</span> get-docker.sh --mirror Aliyun</a>
-<a class="sourceLine" id="cb47-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb47-5" data-line-number="5"><span class="co">## 启动docker</span></a>
-<a class="sourceLine" id="cb47-6" data-line-number="6"><span class="fu">sudo</span> systemctl enable docker</a>
-<a class="sourceLine" id="cb47-7" data-line-number="7"><span class="fu">sudo</span> systemctl start docker</a>
-<a class="sourceLine" id="cb47-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb47-9" data-line-number="9"><span class="co">## docker 默认只能root用户才能运行</span></a>
-<a class="sourceLine" id="cb47-10" data-line-number="10"><span class="co">## 可以把需要用docker的用户加入docker用户组</span></a>
-<a class="sourceLine" id="cb47-11" data-line-number="11"><span class="fu">sudo</span> usermod -aG dokcer <span class="va">$USER</span></a>
-<a class="sourceLine" id="cb47-12" data-line-number="12"><span class="co"># 以docker 用户组登入</span></a>
-<a class="sourceLine" id="cb47-13" data-line-number="13"><span class="ex">newgrp</span> docker</a></code></pre></div></li>
+<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="ex">curl</span> -sSL get.docker.com  -o  get-docker.sh</a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="co"># 可选择合适的源</span></a>
+<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="fu">sh</span> get-docker.sh --mirror Aliyun</a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb48-5" data-line-number="5"><span class="co">## 启动docker</span></a>
+<a class="sourceLine" id="cb48-6" data-line-number="6"><span class="fu">sudo</span> systemctl enable docker</a>
+<a class="sourceLine" id="cb48-7" data-line-number="7"><span class="fu">sudo</span> systemctl start docker</a>
+<a class="sourceLine" id="cb48-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb48-9" data-line-number="9"><span class="co">## docker 默认只能root用户才能运行</span></a>
+<a class="sourceLine" id="cb48-10" data-line-number="10"><span class="co">## 可以把需要用docker的用户加入docker用户组</span></a>
+<a class="sourceLine" id="cb48-11" data-line-number="11"><span class="fu">sudo</span> usermod -aG dokcer <span class="va">$USER</span></a>
+<a class="sourceLine" id="cb48-12" data-line-number="12"><span class="co"># 以docker 用户组登入</span></a>
+<a class="sourceLine" id="cb48-13" data-line-number="13"><span class="ex">newgrp</span> docker</a></code></pre></div></li>
 <li><p>docker 配置国内源</p>
 <p>参考<a href="http://mirrors.ustc.edu.cn/help/dockerhub.html?highlight=docker">这</a>,配置
 文件<code>/etc/docker/daemon.json</code>中加入中科大源。</p>
@@ -341,23 +343,23 @@ commit，这时候再push到远程仓库就会提示远程仓库中有本地不�
 <h2><span class="header-section-number">6.4</span> conda</h2>
 <ul>
 <li><p>设置清华源，参考<a href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/">此</a></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="ex">channels</span>:</a>
-<a class="sourceLine" id="cb49-2" data-line-number="2">  <span class="ex">-</span> defaults</a>
-<a class="sourceLine" id="cb49-3" data-line-number="3"><span class="ex">show_channel_urls</span>: true</a>
-<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="ex">channel_alias</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda</a>
-<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="ex">default_channels</span>:</a>
-<a class="sourceLine" id="cb49-6" data-line-number="6">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</a>
-<a class="sourceLine" id="cb49-7" data-line-number="7">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</a>
-<a class="sourceLine" id="cb49-8" data-line-number="8">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</a>
-<a class="sourceLine" id="cb49-9" data-line-number="9">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</a>
-<a class="sourceLine" id="cb49-10" data-line-number="10">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</a>
-<a class="sourceLine" id="cb49-11" data-line-number="11"><span class="ex">custom_channels</span>:</a>
-<a class="sourceLine" id="cb49-12" data-line-number="12">  <span class="ex">conda-forge</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb49-13" data-line-number="13">  <span class="ex">msys2</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb49-14" data-line-number="14">  <span class="ex">bioconda</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb49-15" data-line-number="15">  <span class="ex">menpo</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb49-16" data-line-number="16">  <span class="ex">pytorch</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
-<a class="sourceLine" id="cb49-17" data-line-number="17">  <span class="ex">simpleitk</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a></code></pre></div></li>
+<div class="sourceCode" id="cb50"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="ex">channels</span>:</a>
+<a class="sourceLine" id="cb50-2" data-line-number="2">  <span class="ex">-</span> defaults</a>
+<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="ex">show_channel_urls</span>: true</a>
+<a class="sourceLine" id="cb50-4" data-line-number="4"><span class="ex">channel_alias</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda</a>
+<a class="sourceLine" id="cb50-5" data-line-number="5"><span class="ex">default_channels</span>:</a>
+<a class="sourceLine" id="cb50-6" data-line-number="6">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</a>
+<a class="sourceLine" id="cb50-7" data-line-number="7">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</a>
+<a class="sourceLine" id="cb50-8" data-line-number="8">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</a>
+<a class="sourceLine" id="cb50-9" data-line-number="9">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</a>
+<a class="sourceLine" id="cb50-10" data-line-number="10">  <span class="ex">-</span> https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</a>
+<a class="sourceLine" id="cb50-11" data-line-number="11"><span class="ex">custom_channels</span>:</a>
+<a class="sourceLine" id="cb50-12" data-line-number="12">  <span class="ex">conda-forge</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb50-13" data-line-number="13">  <span class="ex">msys2</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb50-14" data-line-number="14">  <span class="ex">bioconda</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb50-15" data-line-number="15">  <span class="ex">menpo</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb50-16" data-line-number="16">  <span class="ex">pytorch</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a>
+<a class="sourceLine" id="cb50-17" data-line-number="17">  <span class="ex">simpleitk</span>: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</a></code></pre></div></li>
 <li><p>macOS 10.14 Mojave,conda安装包的时候设计到qt就出现错误，如<code>conda-forge::qt-5.9.7-h93ee506_1'. PermissionError(1, 'Operation not permitted')</code></p>
 <p>解决方法<a href="https://github.com/conda/conda/issues/8440#issuecomment-481167572">在此</a></p>
 <pre><code># for base:
