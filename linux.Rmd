@@ -1,6 +1,6 @@
 # linux
 
-### 安装
+## 安装和配置
 
 - TP-P53 安装 ubuntu
 
@@ -29,6 +29,20 @@
   #     clock: 33MHz
   #     capabilities: pm msi pciexpress vga_controller bus_master cap_list rom
   #     configuration: driver=nvidia latency=0
+  ```
+
+- ubuntu 搜狗输入法乱码
+
+  搜狗输入法需要切换两次才能正确显示，第一次切换拼音显示为乱码
+  
+  解决办法参考[这里](https://blog.csdn.net/ZHJ123CSDN/article/details/104884258/)
+  1. 输入法配置，不要把搜狗输入法放在第一位
+  2. 依赖性检查`sudo apt-get install -f`
+  3. 删除配置文件后重启
+  ```sh
+  cd ~/.config
+  rm -rf SogouPY* sogou*
+  fcitx -r
   ```
 
 - centos 7 升级内核, 一些软件或者驱动（如网卡驱动）需要高版本内核
