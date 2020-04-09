@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>第1章 R 语言 | 个人问题集</title>
   <meta name="description" content="第1章 R 语言 | 个人问题集" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="第1章 R 语言 | 个人问题集" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2020-02-28" />
+<meta name="date" content="2020-04-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -140,18 +140,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.2" data-path="r-programming.html"><a href="r-programming.html#配置"><i class="fa fa-check"></i><b>1.1.2</b> 配置</a></li>
 <li class="chapter" data-level="1.1.3" data-path="r-programming.html"><a href="r-programming.html#安装包"><i class="fa fa-check"></i><b>1.1.3</b> 安装包</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="r-programming.html"><a href="r-programming.html#r-lib"><i class="fa fa-check"></i><b>1.2</b> R-lib</a></li>
+<li class="chapter" data-level="1.2" data-path="r-programming.html"><a href="r-programming.html#r-包开发"><i class="fa fa-check"></i><b>1.2</b> R 包开发</a></li>
 <li class="chapter" data-level="1.3" data-path="r-programming.html"><a href="r-programming.html#r-基础"><i class="fa fa-check"></i><b>1.3</b> R 基础</a></li>
-<li class="chapter" data-level="1.4" data-path="r-programming.html"><a href="r-programming.html#visualization"><i class="fa fa-check"></i><b>1.4</b> 可视化</a><ul>
-<li class="chapter" data-level="1.4.1" data-path="r-programming.html"><a href="r-programming.html#base-plot"><i class="fa fa-check"></i><b>1.4.1</b> 基础图形</a></li>
-<li class="chapter" data-level="1.4.2" data-path="r-programming.html"><a href="r-programming.html#ggplot"><i class="fa fa-check"></i><b>1.4.2</b> ggplot</a></li>
-<li class="chapter" data-level="1.4.3" data-path="r-programming.html"><a href="r-programming.html#rexpr"><i class="fa fa-check"></i><b>1.4.3</b> 正则表达式</a></li>
+<li class="chapter" data-level="1.4" data-path="r-programming.html"><a href="r-programming.html#tidyverse-数据分析"><i class="fa fa-check"></i><b>1.4</b> tidyverse 数据分析</a></li>
+<li class="chapter" data-level="1.5" data-path="r-programming.html"><a href="r-programming.html#visualization"><i class="fa fa-check"></i><b>1.5</b> 可视化</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="r-programming.html"><a href="r-programming.html#base-plot"><i class="fa fa-check"></i><b>1.5.1</b> 基础图形</a></li>
+<li class="chapter" data-level="1.5.2" data-path="r-programming.html"><a href="r-programming.html#ggplot"><i class="fa fa-check"></i><b>1.5.2</b> ggplot</a></li>
+<li class="chapter" data-level="1.5.3" data-path="r-programming.html"><a href="r-programming.html#rexpr"><i class="fa fa-check"></i><b>1.5.3</b> 正则表达式</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="r-programming.html"><a href="r-programming.html#reproducible-research"><i class="fa fa-check"></i><b>1.5</b> 可重复性研究</a><ul>
-<li class="chapter" data-level="1.5.1" data-path="r-programming.html"><a href="r-programming.html#bookdown"><i class="fa fa-check"></i><b>1.5.1</b> bookdown</a></li>
-<li class="chapter" data-level="1.5.2" data-path="r-programming.html"><a href="r-programming.html#tinytex"><i class="fa fa-check"></i><b>1.5.2</b> tinytex</a></li>
+<li class="chapter" data-level="1.6" data-path="r-programming.html"><a href="r-programming.html#reproducible-research"><i class="fa fa-check"></i><b>1.6</b> 可重复性研究</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="r-programming.html"><a href="r-programming.html#bookdown"><i class="fa fa-check"></i><b>1.6.1</b> bookdown</a></li>
+<li class="chapter" data-level="1.6.2" data-path="r-programming.html"><a href="r-programming.html#tinytex"><i class="fa fa-check"></i><b>1.6.2</b> tinytex</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="r-programming.html"><a href="r-programming.html#rstudio"><i class="fa fa-check"></i><b>1.6</b> rstudio</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="bioinfo.html"><a href="bioinfo.html"><i class="fa fa-check"></i><b>2</b> 生物信息</a><ul>
 <li class="chapter" data-level="2.1" data-path="bioinfo.html"><a href="bioinfo.html#microbiome"><i class="fa fa-check"></i><b>2.1</b> 微生物组</a></li>
@@ -204,7 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>ubuntu 安裝 R</p>
 <p>参考https://cran.r-project.org/bin/linux/ubuntu/README.html</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># 添加源</span></a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># 添加源 以 16.04 xenial 为例，根据自己的ubuntu版本添加相应源</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="ex">deb</span> https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/</a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co"># 密匙</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="fu">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</a>
@@ -214,16 +214,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">yum</span> install epel-release</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ex">yum</span> install R-core R-core-devel</a></code></pre></div>
+<div id="rstudio" class="section level4">
+<h4><span class="header-section-number">1.1.1.1</span> rstudio</h4>
+<ul>
+<li><p>rstudio git 选择所有文件add并commit</p>
+<p>在commit界面，<code>ctrl/command + A</code>全选,然后回车即可，参考<a href="https://stackoverflow.com/a/33913671/3993246">这里</a></p></li>
+<li><p>ubuntu rstudio不支持中文</p>
+<p>这是因为 rstudio 自带的QT5不支持 fctix (搜狗拼音就是依赖fctix)，设置 rstuido 使用系统自带的QT即可，步骤如下</p>
+<pre><code># 1.系统自带 qt 的 fctix 插件链接到 rstudio 相应文件夹下
+sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/plugins/platforminputcontexts/</code></pre>
+<p>重启 Rstudio 即可</p></li>
+</ul>
+</div>
 </div>
 <div id="配置" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> 配置</h3>
 <ul>
 <li><p>设置cran和bioconductor国内源</p>
 <p>可以在用户主目录下新建<code>.Rprofile</code>文件，添加:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># cran mirror</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">CRAN =</span> <span class="st">&quot;https://mirrors.tuna.tsinghua.edu.cn/CRAN/&quot;</span>))</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co"># bioconductor mirror</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="kw">options</span>(<span class="dt">BioC_mirror =</span> <span class="st">&quot;http://mirrors.ustc.edu.cn/bioc/&quot;</span>)</a></code></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># cran mirror</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">CRAN =</span> <span class="st">&quot;https://mirrors.tuna.tsinghua.edu.cn/CRAN/&quot;</span>))</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># bioconductor mirror</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">options</span>(<span class="dt">BioC_mirror =</span> <span class="st">&quot;http://mirrors.ustc.edu.cn/bioc/&quot;</span>)</a></code></pre></div></li>
 </ul>
 </div>
 <div id="安装包" class="section level3">
@@ -236,22 +248,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以从 stringi 的
 <a href="https://github.com/gagolews/stringi">github 仓库</a>下载源代码，里面包含ICU安装
 包，直接安装即可。</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">wget https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>gagolews<span class="op">/</span>stringi<span class="op">/</span>archive<span class="op">/</span>v1.<span class="dv">4</span>.<span class="fl">6.</span>tar.gz <span class="op">-</span><span class="st"> </span>O stringi<span class="dv">-1</span>.<span class="dv">4</span>.<span class="fl">6.</span>tar.gz</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&quot;stringi-1.4.6.tar.gz&quot;</span>)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw">install.packages</span>(<span class="st">&quot;stringr&quot;</span>)</a></code></pre></div></li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">wget https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>gagolews<span class="op">/</span>stringi<span class="op">/</span>archive<span class="op">/</span>v1.<span class="dv">4</span>.<span class="fl">6.</span>tar.gz <span class="op">-</span><span class="st"> </span>O stringi<span class="dv">-1</span>.<span class="dv">4</span>.<span class="fl">6.</span>tar.gz</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&quot;stringi-1.4.6.tar.gz&quot;</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">install.packages</span>(<span class="st">&quot;stringr&quot;</span>)</a></code></pre></div></li>
 <li><p><code>install_github()</code>安装包的时候出现错误<code>Error in file.copy(file.path(R.home(&quot;doc&quot;), &quot;html&quot;, &quot;R.css&quot;), outman)</code>,
 系统是centos</p>
 <p>因为安装 R 的时候缺少<code>file.path(R.home(&quot;doc&quot;), &quot;html&quot;, &quot;R.css&quot;)</code>，需要手动创建,
 参考<a href="https://github.com/r-lib/devtools/issues/2084">这</a></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw">file.exists</span>(x)) {</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="kw">dir.create</span>(x, <span class="dt">recursive=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="kw">file.copy</span>(<span class="kw">system.file</span>(<span class="st">&quot;html/R.css&quot;</span>, <span class="dt">package=</span><span class="st">&quot;stats&quot;</span>), x)</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">}</a></code></pre></div></li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw">file.exists</span>(x)) {</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="kw">dir.create</span>(x, <span class="dt">recursive=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="kw">file.copy</span>(<span class="kw">system.file</span>(<span class="st">&quot;html/R.css&quot;</span>, <span class="dt">package=</span><span class="st">&quot;stats&quot;</span>), x)</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">}</a></code></pre></div></li>
 </ul>
 </div>
 </div>
-<div id="r-lib" class="section level2">
-<h2><span class="header-section-number">1.2</span> R-lib</h2>
+<div id="r-包开发" class="section level2">
+<h2><span class="header-section-number">1.2</span> R 包开发</h2>
 <ul>
 <li><p>包中 README.md 中用到的图片存放位置</p>
 <p>因为 cran 中生成 readme 只允许放在少数文件夹下，如<code>man/figures/</code>
@@ -269,18 +281,18 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 <blockquote>
 <p>You might not have seen <code>seq_along()</code> before. It’s a safe version of the familiar <code>1:length(l)</code>, with an important difference: if you have a zero-length vector, <code>seq_along()</code> does the right thing</p>
 </blockquote>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co"># 抛错</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">seq_along</span>(y)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">## integer(0)</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">seq_along</span>(y), <span class="cf">function</span>(x) x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">## Error in 1:seq_along(y): argument of length 0</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co"># 正常计算</span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(y)</a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">## [1] 1 0</a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(y), <span class="cf">function</span>(x) x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb6-12" data-line-number="12">## [1] 2 1</a></code></pre></div></li>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co"># 抛错</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">seq_along</span>(y)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">## integer(0)</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">seq_along</span>(y), <span class="cf">function</span>(x) x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">## Error in 1:seq_along(y): argument of length 0</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co"># 正常计算</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(y)</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">## [1] 1 0</a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(y), <span class="cf">function</span>(x) x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">## [1] 2 1</a></code></pre></div></li>
 <li><p>如果我们在<code>~/.Rprofile</code>添加了初始化设置，那么如果当前工作目录中有含有<code>.Rprofile</code>的时候（如在github上fork的别人的项目中含有该文件），就会忽略<code>~/.Rprofile</code>中的设置。</p>
 <p>解决方法<code># ~/.Renviron</code>中设置site profile变量<code>R_PROFILE=~/Rprofile.site</code>，然后把之前<code>.Rprofile</code>的设置拷贝到<code>~/Rprofile.site</code>即可。这是因为R的启动的时候会在读取<code>.Rprofile</code>之前读取<code>~/Rprofile.site</code>中的设置。</p></li>
 <li><p>设置Alfred快捷打开rstudio的project</p>
@@ -290,10 +302,61 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 的时候就会出现类似上述错误。关掉加载这些包的R，才能继续重装或升级。</p></li>
 </ul>
 </div>
+<div id="tidyverse-数据分析" class="section level2">
+<h2><span class="header-section-number">1.4</span> tidyverse 数据分析</h2>
+<ul>
+<li><p><code>data.frame</code> 转置(transpose)</p>
+<p>tidyverse 中 默认操作数据结构为 <code>tibble</code>, 用于替代 R 中<code>data.frame</code>，<code>tibble</code>
+默认没有行名。下面对用<code>t()</code>和 tidyr 方法转置作比较：</p>
+<p>用<code>t()</code>函数</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># 有行名的数据</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">b =</span> <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">row.names</span>(df) &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;r&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co"># as.data.frame(), 保持行名和列名</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="kw">t</span>(df) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</a></code></pre></div>
+<pre><code>##   r1 r2 r3
+## a  1  2  3
+## b  4  5  6</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># as_tibble, 默认删除行名</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">t</span>(df) <span class="op">%&gt;%</span><span class="st"> </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>()</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 3
+##      r1    r2    r3
+##   &lt;int&gt; &lt;int&gt; &lt;int&gt;
+## 1     1     2     3
+## 2     4     5     6</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># 可以用`rowname = NA`保持行名, 左上角有个`*`表示这个tibble有行名</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">t</span>(df) <span class="op">%&gt;%</span><span class="st"> </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>(<span class="dt">rownames =</span> <span class="ot">NA</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 3
+##      r1    r2    r3
+## * &lt;int&gt; &lt;int&gt; &lt;int&gt;
+## 1     1     2     3
+## 2     4     5     6</code></pre>
+<p>用 tidyr 中函数</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># 保持行名和列名, column_to_rownames用于设置行名，返回data.frame</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(df) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">pivot_longer</span>(<span class="op">-</span>rowname) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;rowname&quot;</span>, <span class="dt">values_from =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="st">  </span>tibble<span class="op">::</span><span class="kw">column_to_rownames</span>(<span class="st">&quot;name&quot;</span>)</a></code></pre></div>
+<pre><code>##   r1 r2 r3
+## a  1  2  3
+## b  4  5  6</code></pre>
+<p>此外还可以使用 <code>purrr::transpose</code></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># 行名列名都丢失，transpose 去除了原有行名</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">purrr<span class="op">::</span><span class="kw">transpose</span>(df) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span>purrr<span class="op">::</span><span class="kw">map</span>(unlist) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">bind_cols</span>()</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 3
+##      V1    V2    V3
+##   &lt;int&gt; &lt;int&gt; &lt;int&gt;
+## 1     1     2     3
+## 2     4     5     6</code></pre></li>
+</ul>
+</div>
 <div id="visualization" class="section level2">
-<h2><span class="header-section-number">1.4</span> 可视化</h2>
+<h2><span class="header-section-number">1.5</span> 可视化</h2>
 <div id="base-plot" class="section level3">
-<h3><span class="header-section-number">1.4.1</span> 基础图形</h3>
+<h3><span class="header-section-number">1.5.1</span> 基础图形</h3>
 <ul>
 <li><p><code>par(&quot;pin&quot;)</code>, <code>par(&quot;usr&quot;)</code></p>
 <p><code>par(&quot;pin&quot;)</code>表示当前图形的尺寸用英寸表示(width * height)；<code>par(&quot;usr&quot;)</code>表示当前图形的坐标范围<code>c(xmin, xmax, ymin, ymax)</code></p></li>
@@ -305,7 +368,7 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 </ul>
 </div>
 <div id="ggplot" class="section level3">
-<h3><span class="header-section-number">1.4.2</span> ggplot</h3>
+<h3><span class="header-section-number">1.5.2</span> ggplot</h3>
 <ul>
 <li><p>什么是<strong>individal geom</strong> 和 <strong>collective geom</strong>?
 基于一行数据进行作图的<code>geom</code>称为<strong>individal geom</strong>，如<code>geom_point</code>每行数据映射到图形中的一个点；基于多行数据作图的<code>geom</code>称为<strong>collective geom</strong>, 如<code>geom_bar</code>对多行数据进行统计变换计算其频数，也就是说多行数据映射到图形中的一个<strong>bar</strong>.</p></li>
@@ -319,62 +382,62 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 见<a href="https://www.choyang.me/zh/post/ggplot-reorder-discrete-axis/">这篇博文</a></p></li>
 <li><p>添加文本标注</p>
 <p>使用<code>Inf</code>或<code>-Inf</code>表征在边界添加文本</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># 例子源自https://r4ds.had.co.nz/graphics-for-communication.html</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">label &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">  <span class="dt">displ =</span> <span class="ot">Inf</span>,</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5">  <span class="dt">hwy =</span> <span class="ot">Inf</span>,</a>
-<a class="sourceLine" id="cb7-6" data-line-number="6">  <span class="dt">label =</span> <span class="st">&quot;Increasing engine size is </span><span class="ch">\n</span><span class="st">related to decreasing fuel economy.&quot;</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7">)</a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> label), <span class="dt">data =</span> label, <span class="dt">vjust =</span> <span class="st">&quot;top&quot;</span>, <span class="dt">hjust =</span> <span class="st">&quot;right&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="co"># 例子源自https://r4ds.had.co.nz/graphics-for-communication.html</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3">label &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb18-4" data-line-number="4">  <span class="dt">displ =</span> <span class="ot">Inf</span>,</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5">  <span class="dt">hwy =</span> <span class="ot">Inf</span>,</a>
+<a class="sourceLine" id="cb18-6" data-line-number="6">  <span class="dt">label =</span> <span class="st">&quot;Increasing engine size is </span><span class="ch">\n</span><span class="st">related to decreasing fuel economy.&quot;</span></a>
+<a class="sourceLine" id="cb18-7" data-line-number="7">)</a>
+<a class="sourceLine" id="cb18-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb18-9" data-line-number="9"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb18-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb18-11" data-line-number="11"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> label), <span class="dt">data =</span> label, <span class="dt">vjust =</span> <span class="st">&quot;top&quot;</span>, <span class="dt">hjust =</span> <span class="st">&quot;right&quot;</span>)</a></code></pre></div>
 <p><img src="question-notes_files/figure-html/text-annotation-position-1.png" width="672" /></p></li>
 <li><p>图形添加边框</p>
 <p>设置<code>theme(plot.background = element_rect())</code></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(wt, mpg)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.background =</span> <span class="kw">element_rect</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(wt, mpg)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.background =</span> <span class="kw">element_rect</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>))</a></code></pre></div>
 <p><img src="question-notes_files/figure-html/round-rect-1.png" width="672" /></p></li>
 <li><p>等高线图<code>geom_contour()</code>自定义levels</p>
 <p>手动指定参数<code>breaks</code>(帮助文档中找不到该参数说明)，参考<a href="https://stackoverflow.com/questions/19658088/custom-levels-in-ggplot2-contour-plot">此</a>.</p></li>
 <li><p>ggplot中文字体</p>
 <p><a href="https://www.choyang.me/zh/post/ggplot-chinese-font/">见此</a></p></li>
 <li><p>ggplot分面添加tag (如A,B, C)，可参考<a href="https://community.rstudio.com/t/how-to-automatically-add-text-annotations-or-tags-outside-of-faceted-plots/13700">此问题</a></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(class))</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4">egg<span class="op">::</span><span class="kw">tag_facet_outside</span>(p)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(class))</a>
+<a class="sourceLine" id="cb20-4" data-line-number="4">egg<span class="op">::</span><span class="kw">tag_facet_outside</span>(p)</a></code></pre></div>
 <p><img src="question-notes_files/figure-html/facet-tag-1.png" width="672" />
 ## 字符 {#char}</p></li>
 </ul>
 </div>
 <div id="rexpr" class="section level3">
-<h3><span class="header-section-number">1.4.3</span> 正则表达式</h3>
+<h3><span class="header-section-number">1.5.3</span> 正则表达式</h3>
 <ul>
 <li><p>正则表达式字符列表<code>[]</code>用法：<code>[]</code>中的字符匹配字符本身，如<code>[.]</code>匹配.,而不是任意字符，因此可以使用<code>[.]</code>代替<code>\\.</code>,一些在<code>[]</code>内有特殊意义的字符除外，如<code>-</code>表示范围，<code>^</code>不包含这些字符，<code>]</code>结束括号，<code>\</code>在字符串中表示转义。</p></li>
 <li><p>正则表达式默认是进行贪婪匹配，即匹配最长字符串，在正则表达式后边加?表示最短匹配</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># 匹配到两个a，然后删除</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;a+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">## [1] &quot;c&quot;</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co"># 匹配到一个a，然后删除</span></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;a+?&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7">## [1] &quot;ac&quot;</a></code></pre></div></li>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="co"># 匹配到两个a，然后删除</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;a+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3">## [1] &quot;c&quot;</a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="co"># 匹配到一个a，然后删除</span></a>
+<a class="sourceLine" id="cb21-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;a+?&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</a>
+<a class="sourceLine" id="cb21-7" data-line-number="7">## [1] &quot;ac&quot;</a></code></pre></div></li>
 <li><p>表示重复次数的<code>*</code>(任意次)、<code>?</code>(0或1次)、<code>+</code>(一次以上)优先级较高</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># b出现一次以上</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;ab+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3">## [1] &quot;abc&quot;</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co"># ab出现一次以上</span></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;(ab)+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
-<a class="sourceLine" id="cb11-7" data-line-number="7">## [1] &quot;c&quot;</a></code></pre></div></li>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="co"># b出现一次以上</span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">sub</span>(<span class="st">&quot;ab+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3">## [1] &quot;abc&quot;</a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="co"># ab出现一次以上</span></a>
+<a class="sourceLine" id="cb22-6" data-line-number="6"><span class="kw">sub</span>(<span class="st">&quot;(ab)+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</a>
+<a class="sourceLine" id="cb22-7" data-line-number="7">## [1] &quot;c&quot;</a></code></pre></div></li>
 </ul>
 </div>
 </div>
 <div id="reproducible-research" class="section level2">
-<h2><span class="header-section-number">1.5</span> 可重复性研究</h2>
+<h2><span class="header-section-number">1.6</span> 可重复性研究</h2>
 <ul>
 <li><p>knitr多个代码块的输出折叠到一个pre块中</p>
 <p><code>collapse = TRUE</code></p></li>
@@ -386,7 +449,7 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 <p><code>figure.show</code>默认为<code>asis</code>图形位于产生图形代码后面，多个作图语句就会产生多幅图形，<code>figure.show='hold'</code>就代码块结尾显示所有图形，即一个代码块产生一个图形。</p></li>
 </ul>
 <div id="bookdown" class="section level3">
-<h3><span class="header-section-number">1.5.1</span> bookdown</h3>
+<h3><span class="header-section-number">1.6.1</span> bookdown</h3>
 <ul>
 <li>章节去除编号 章节后面添加 {-}</li>
 <li>汉话：章节标题汉化，<a href="https://bookdown.org/yihui/bookdown/internationalization.html。配置文件%60_bookdown.yml" class="uri">https://bookdown.org/yihui/bookdown/internationalization.html。配置文件`_bookdown.yml</a>`</li>
@@ -403,35 +466,22 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 </ul>
 </div>
 <div id="tinytex" class="section level3">
-<h3><span class="header-section-number">1.5.2</span> tinytex</h3>
+<h3><span class="header-section-number">1.6.2</span> tinytex</h3>
 <ul>
 <li>pkgdown编译jss文档的时候出现，<code>! LaTeX Error: File</code>ae.sty’not found.` 说明缺少ae包，</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3">tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co"># ae:</span></a>
-<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#       texmf-dist/tex/latex/ae/ae.sty</span></a>
-<a class="sourceLine" id="cb13-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="co">#安装即可</span></a>
-<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</a></code></pre></div>
-</div>
-</div>
-<div id="rstudio" class="section level2">
-<h2><span class="header-section-number">1.6</span> rstudio</h2>
-<ul>
-<li><p>rstudio git 选择所有文件add并commit</p>
-<p>在commit界面，<code>ctrl/command + A</code>全选,然后回车即可，参考<a href="https://stackoverflow.com/a/33913671/3993246">这里</a></p></li>
-<li><p>ubuntu rstudio不支持中文</p>
-<p>这是因为 rstudio 自带的QT5不支持 fctix (搜狗拼音就是依赖fctix)，设置 rstuido 使用系统自带的QT即可，步骤如下(参考<a href="http://www.biotrainee.com/thread-3142-1-1.html">此</a>):</p>
-<pre><code># 1.系统自带 qt 的 fctix 插件链接到 rstudio 相应文件夹下
-sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/plugins/platforminputcontexts
-# 2. 修改rstudio qt配置文件/usr/lib/rstudio/bin/qt.conf,添加刚才链接的路径
-Prefix = /usr/lib/rstudio/</code></pre></li>
-</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</a>
+<a class="sourceLine" id="cb24-6" data-line-number="6"><span class="co"># ae:</span></a>
+<a class="sourceLine" id="cb24-7" data-line-number="7"><span class="co">#       texmf-dist/tex/latex/ae/ae.sty</span></a>
+<a class="sourceLine" id="cb24-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb24-9" data-line-number="9"><span class="co">#安装即可</span></a>
+<a class="sourceLine" id="cb24-10" data-line-number="10"><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</a></code></pre></div>
 
+</div>
 </div>
 </div>
 <h3>References</h3>
