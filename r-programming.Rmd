@@ -1,5 +1,9 @@
 # R 语言 {#r-programming}
 
+```{r echo=FALSE}
+library(magrittr)
+```
+
 ## 安装和配置
 
 ### 安装
@@ -7,8 +11,9 @@
 - ubuntu 安裝 R
   
   参考https://cran.r-project.org/bin/linux/ubuntu/README.html
+  
   ```sh
-  # 添加源
+  # 添加源 以 16.04 xenial 为例，根据自己的ubuntu版本添加相应源
   deb https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/
   # 密匙
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
@@ -22,6 +27,23 @@
  yum install epel-release
  yum install R-core R-core-devel
 ```
+
+#### rstudio
+
+- rstudio git 选择所有文件add并commit
+
+  在commit界面，`ctrl/command + A`全选,然后回车即可，参考[这里
+  ](https://stackoverflow.com/a/33913671/3993246)
+
+- ubuntu rstudio不支持中文
+  
+  这是因为 rstudio 自带的QT5不支持 fctix (搜狗拼音就是依赖fctix)，设置 rstuido 使用系统自带的QT即可，步骤如下
+  ```
+  # 1.系统自带 qt 的 fctix 插件链接到 rstudio 相应文件夹下
+  sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/plugins/platforminputcontexts/
+  ```
+  重启 Rstudio 即可
+
 
 ### 配置
 
@@ -136,7 +158,6 @@
   用 tidyr 中函数
   
   ```{r tidyr-transpose}
-  library(magrittr)
   # 保持行名和列名, column_to_rownames用于设置行名，返回data.frame
   tibble::rownames_to_column(df) %>% 
     tidyr::pivot_longer(-rowname) %>% 
@@ -308,20 +329,3 @@ tlmgr_search('ae.sty')
 #安装即可
 tlmgr_install('ae')
 ```
-
-## rstudio
-
-- rstudio git 选择所有文件add并commit
-
-  在commit界面，`ctrl/command + A`全选,然后回车即可，参考[这里
-  ](https://stackoverflow.com/a/33913671/3993246)
-
-- ubuntu rstudio不支持中文
-  
-  这是因为 rstudio 自带的QT5不支持 fctix (搜狗拼音就是依赖fctix)，设置 rstuido 使用系统自带的QT即可，步骤如下(参考[此](http://www.biotrainee.com/thread-3142-1-1.html)):
-  ```
-  # 1.系统自带 qt 的 fctix 插件链接到 rstudio 相应文件夹下
-  sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/plugins/platforminputcontexts
-  # 2. 修改rstudio qt配置文件/usr/lib/rstudio/bin/qt.conf,添加刚才链接的路径
-  Prefix = /usr/lib/rstudio/
-  ```

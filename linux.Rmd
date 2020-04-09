@@ -49,6 +49,8 @@
 
 - ubuntu 添加 aliyun 源
   
+  根据[这里](https://developer.aliyun.com/mirror/ubuntu)选择相应版本的源，以 16.04 xenial为例
+  
   ```sh
   # 备份原有文件
   mv /etc/apt/sources.list /etc/apt/sources.list.backup
@@ -73,4 +75,4 @@
   deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe # Added by software-properties
   deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
   deb http://mirr.iyun.com/ubuntu/ xenial-security multiverse
-```
+  ```
