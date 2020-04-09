@@ -1,5 +1,36 @@
 # linux
 
+### 安装
+
+- TP-P53 安装 ubuntu
+
+  参考[这里](https://blogg.bekk.no/how-to-install-ubuntu-18-04-on-lenovo-p1-617a4bdea389)
+
+  1. bios 关闭 `Secure Boot`,  startup 选择 Both (UEFI/legacy), 以从 usb 安装系统
+  2. 安装 `Install Ubuntu`， 按 `e` 配置安装选项，以 `set`开始的行修改：`gfxpayload=××text××`；
+  下面一行添加`=casper only-ubiquity ××nomodeset××`，不安装`nouveau`驱动，因为机器带了nvidia T2000独显，
+  后续要安装对应显卡驱动
+  3. 安装系统
+  4. 重启,`ctrl + alt + F1`进入命令行安装驱动，因为我们选择了`nomodeset`安装，没有显卡驱动进入图形界面会卡死。
+  `sudo ubuntu-drivers autoinstall`，重启即可
+  
+  检查显卡驱动是否安装成功
+  ```sh
+  # 看到configuration那里driver=nvidia表示显卡驱动安装成功，如果不采用nomodeset选项安装，默认安装nouveau驱动
+  sudo lshw -C display
+  # *-display
+  #     description: VGA compatible controller
+  #     product: NVIDIA Corporation
+  #     vendor: NVIDIA Corporation
+  #     physical id: 0
+  #     bus info: pci@0000:01:00.0
+  #     version: a1
+  #     width: 64 bits
+  #     clock: 33MHz
+  #     capabilities: pm msi pciexpress vga_controller bus_master cap_list rom
+  #     configuration: driver=nvidia latency=0
+  ```
+
 - centos 7 升级内核, 一些软件或者驱动（如网卡驱动）需要高版本内核
   
   参考[这里](https://blog.csdn.net/fenglailea/article/details/88740961)
@@ -76,3 +107,5 @@
   deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
   deb http://mirr.iyun.com/ubuntu/ xenial-security multiverse
   ```
+
+
