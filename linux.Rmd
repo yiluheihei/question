@@ -2,7 +2,7 @@
 
 ## 安装和配置
 
-- TP-P53 安装 ubuntu
+- TP-P53 安装 ubuntu 18.04
 
   参考[这里](https://blogg.bekk.no/how-to-install-ubuntu-18-04-on-lenovo-p1-617a4bdea389)
 
@@ -31,6 +31,15 @@
   #     configuration: driver=nvidia latency=0
   ```
 
+- ubuntu 修复模式下修改文件
+
+  有时候在修改完某个文件后，重启系统会卡在 ubuntu 启动的log界面，比如通过修改`rc.local`设置开机启动项，这时候就
+  需要在recovery模式下修改引起启动问题的文件：
+  
+  1. 开机后按`shift`或者`esc`进入grub，选额高级启动项
+  2. 进入recovery mode
+  3. 选则进入`Drop To Root Shell Prompt`，就用 root 用户登录了，然后修改文件即可
+  
 - ubuntu 添加 aliyun 源
   
   根据[这里](https://developer.aliyun.com/mirror/ubuntu)选择相应版本的源，以 16.04 xenial为例
