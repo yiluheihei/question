@@ -137,6 +137,42 @@
   ```
   
   重启`/etc/rc.local`内的脚本就会在开机后自动启动。
+  
+- ubuntu workspace 呈 grid 形式显示
+
+  ubuntu 默认的 workspace 只能上下显示，安装 
+  [gnome-shell-wsmatrix](https://github.com/mzur/gnome-shell-wsmatrix) 使
+  workspace 以行列显示。
+  
+  1. 下载 **gnome-shell-wsmatrix**
+  2. 解压后拷贝到 `~/.local/share/gnome-shell/extensions/` 下
+  3. 保证 `metadata.json` 文件的`uuid`字段与加压后的文件夹同名，如
+  `wsmatrix@martin.zurowietz.de`
+  4. `alt + f2` 输入命 `r` 重启 ××gnome shell××即可
+
+- ubuntu 触控板手势设置
+
+  安装 [fusuma](https://github.com/iberianpig/fusuma#installation)
+  
+  1. 添加用户至 `INPUT` 用户组后重启
+  
+  ```sh
+  sudo gpasswd -a `$USER` input
+  ```
+  
+  2. 安装
+  
+  ```sh
+  sudo apt-get install libinput-tools
+  sudo gem install fusuma
+  sudo apt-get install xdotool
+  ```
+  
+  添加至开机自动启动: 打开 **gnome-session-properties** 添加 **fusuma**
+  (`which fusuma`)的路径, 路径后面加上参数 `-d` 表明后台运行
+  
+  最后可以在`~/.config/fusuma/config.yml`下自定义配置
+  
 
 - ubuntu 搜狗输入法乱码
 
