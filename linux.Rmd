@@ -7,16 +7,18 @@
   参考[这里](https://blogg.bekk.no/how-to-install-ubuntu-18-04-on-lenovo-p1-617a4bdea389)
 
   1. bios 关闭 `Secure Boot`,  startup 选择 Both (UEFI/legacy), 以从 usb 安装系统
-  2. 安装 `Install Ubuntu`， 按 `e` 配置安装选项，以 `set`开始的行修改：`gfxpayload=××text××`；
-  下面一行添加`=casper only-ubiquity ××nomodeset××`，不安装`nouveau`驱动，因为机器带了nvidia T2000独显，
-  后续要安装对应显卡驱动
+  2. 安装 `Install Ubuntu`， 按 `e` 配置安装选项，以 `set`开始的行修改：
+  `gfxpayload=××text××`；
+  下面一行添加`=casper only-ubiquity ××nomodeset××`，不安装`nouveau`驱动，因为机
+  器带了nvidia T2000独显，后续要安装对应显卡驱动
   3. 安装系统
-  4. 重启,`ctrl + alt + F1`进入命令行安装驱动，因为我们选择了`nomodeset`安装，没有显卡驱动进入图形界面会卡死。
-  `sudo ubuntu-drivers autoinstall`，重启即可
+  4. 重启,`ctrl + alt + F1`进入命令行安装驱动，因为我们选择了`nomodeset`安装，
+  没有显卡驱动进入图形界面会卡死。`sudo ubuntu-drivers autoinstall`，重启即可
   
   检查显卡驱动是否安装成功
   ```sh
-  # 看到configuration那里driver=nvidia表示显卡驱动安装成功，如果不采用nomodeset选项安装，默认安装nouveau驱动
+  # 看到configuration那里driver=nvidia表示显卡驱动安装成功，如果不采用nomodeset
+  # 选项安装，默认安装nouveau驱动
   sudo lshw -C display
   # *-display
   #     description: VGA compatible controller
@@ -33,8 +35,8 @@
 
 - ubuntu 修复模式下修改文件
 
-  有时候在修改完某个文件后，重启系统会卡在 ubuntu 启动的log界面，比如通过修改`rc.local`设置开机启动项，这时候就
-  需要在recovery模式下修改引起启动问题的文件：
+  有时候在修改完某个文件后，重启系统会卡在 ubuntu 启动的log界面，比如通过修改
+  `rc.local`设置开机启动项，这时候就需要在recovery模式下修改引起启动问题的文件：
   
   1. 开机后按`shift`或者`esc`进入grub，选额高级启动项
   2. 进入recovery mode
@@ -42,7 +44,8 @@
   
 - ubuntu 添加 aliyun 源
   
-  根据[这里](https://developer.aliyun.com/mirror/ubuntu)选择相应版本的源，以 16.04 xenial为例
+  根据[这里](https://developer.aliyun.com/mirror/ubuntu)选择相应版本的源，以 
+  16.04 xenial为例
   
   ```sh
   # 备份原有文件
@@ -69,6 +72,71 @@
   deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
   deb http://mirr.iyun.com/ubuntu/ xenial-security multiverse
   ```
+
+- ubuntu 18.04 设置开机启动脚本
+
+  方法参考[这里](http://www.r9it.com/20180613/ubuntu-18.04-auto-start.html)
+  
+  ubutu 18.04采用 systemd 进行系统管理，启动的时候 systemd 默认读取 
+  `/etc/systemd/system`下的配置文件，这些配置文件会链接`/lib/systemd/system`下的
+  文件。 
+  
+  `ls /lib/systemd/system`下可以看到有`rc-local.service`和`rc.local.service`文
+  件,其中`rc.local.servce`是链接到`rc-local.service`。打开`rc-local.service`
+  
+  ```sh
+  # SPDX-License-Identifier: LGPL-2.1+
+  #
+  #  This file is part of systemd.
+  #
+  #  systemd is free software; you can redistribute it and/or modify it
+  #  under the terms of the GNU Lesser General Public License as published by
+  #  the Free Software Foundation; either version 2.1 of the License, or
+  #  (at your option) any later version.
+
+  # This unit gets pulled automatically into multi-user.target by
+  # systemd-rc-local-generator if /etc/rc.local is executable.
+  [Unit]
+  Description=/etc/rc.local Compatibility
+  ConditionFileIsExecutable=/etc/rc.local
+  After=network.target
+
+  [Service]
+  Type=forking
+  ExecStart=/etc/rc.local start
+  TimeoutSec=0
+  RemainAfterExit=yes
+  GuessMainPID=on
+  ```
+  
+  该启动文件少了`INSTALL`字段，在`rc-local.service`后面添加
+  
+  ```sh
+  [INSTALL]
+  WantedBy=multi-user.target
+  Alias=rc-local.service
+  ```
+  
+  接着新建`/etc/rc.local`文件，在里面添加启动脚本
+  
+  ```sh
+  !bin/sh -e
+  # 如添加xx-net的启动脚本
+  /<path_to_xx-net>/xx_net.sh
+  ```
+  加上`x`执行权限
+  
+  ```sh
+  sudo chmod +x /etc/rc.load
+  ```
+  
+  最后把`rc-local.service`链接到`/etc/systemd/system/`下
+  
+  ```sh
+  sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/
+  ```
+  
+  重启`/etc/rc.local`内的脚本就会在开机后自动启动。
 
 - ubuntu 搜狗输入法乱码
 
