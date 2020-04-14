@@ -6,6 +6,7 @@ language:
 rmd_files:
 - "index.Rmd"
 - "r-programming.Rmd"
+- "python.Rmd"
 - "bioinformatics.Rmd"
 - "office.md"
 - "mac.Rmd"

@@ -1,0 +1,15 @@
+# python
+
+- linux 修改 pip 源
+  
+  新建`~/.pip/pip.conf`添加源
+  
+  ```
+  # 以清华源为例
+  [global]
+  timeout = 300
+  index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+  [install]
+  trusted-host = tsinghua.edu.cn
+  ```
+  
