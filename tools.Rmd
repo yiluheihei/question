@@ -198,6 +198,20 @@ after \, but got '\r'.`
   方法是注册阿里云开发账户后，访问https://cr.console.aliyun.com/#/accelerator，
   点击镜像加速器，就看到加速器地址，添加进去即可。
   
+- docker 中运行含图形界面的程序
+  
+  参考[这里](https://stackoverflow.com/questions/24095968/docker-for-gui-based-environments)
+  和[这里](http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/)
+  
+  ```sh
+  # 1. 赋予其他用户访问本机x server的权利
+  xhost local:root # xhost +
+  
+  # 挂载 X11 至docker
+  docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY <the image>
+  ```
+  
+  
 ## conda
 
 - 设置清华源，参考[此](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/)
