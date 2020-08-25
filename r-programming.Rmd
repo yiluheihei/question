@@ -23,10 +23,10 @@ library(magrittr)
 
 - CentOS 安装 R
 
- ```sh
- yum install epel-release
- yum install R-core R-core-devel
-```
+  ```sh
+  yum install epel-release
+  yum install R-core R-core-devel
+  ```
 
 #### rstudio
 
@@ -279,6 +279,19 @@ library(magrittr)
 
 ## 可重复性研究 {#reproducible-research}
 
+### Rmarkdown - Knitr
+
+- Rmarkdown 输出 pdf 支持中文
+  
+  使用[rticles](https://github.com/rstudio/rticles)包, 在 `yaml` 头文件中指定
+  输出格式为`rticles::ctex`.  参考[这里](https://github.com/rstudio/rticles/blob/master/inst/rmarkdown/templates/ctex/skeleton/skeleton.Rmd)
+  
+  ```
+  documentclass: ctexart
+  output:
+    rticles::ctex
+  ```
+
 - knitr多个代码块的输出折叠到一个pre块中
 
   `collapse = TRUE`
@@ -300,14 +313,14 @@ library(magrittr)
 - 章节去除编号 章节后面添加 {-}
 - 汉话：章节标题汉化，https://bookdown.org/yihui/bookdown/internationalization.html。配置文件`_bookdown.yml`
 
-```
-language:
-  ui:
+  ```
+  language:
+    ui:
   chapter_name: ["第", "章"]
-```
+  ```
 
 
->The chapter_name field can be either a character string to be prepended to chapter numbers in chapter titles (e.g., 'CHAPTER '), or an R function that takes the chapter number as the input and returns a string as the new chapter number (e.g., `!expr function(i) paste('Chapter', i))`. If it is a character vector of length 2, the chapter title prefix will be `paste0(chapter_name[1], i, chapter_name[2])`, where `i` is the chapter number. 
+  >The chapter_name field can be either a character string to be prepended to chapter numbers in chapter titles (e.g., 'CHAPTER '), or an R function that takes the chapter number as the input and returns a string as the new chapter number (e.g., `!expr function(i) paste('Chapter', i))`. If it is a character vector of length 2, the chapter title prefix will be `paste0(chapter_name[1], i, chapter_name[2])`, where `i` is the chapter number. 
 
 - 出现错误`Error in split_chapters(output, gitbook_page, number_sections, split_by,  :Automatically generated filenames contain duplicated ones: -, -`
   
@@ -317,15 +330,15 @@ language:
 
 - pkgdown编译jss文档的时候出现，`! LaTeX Error: File `ae.sty'not found.` 说明缺少ae包，
 
-```{r eval=FALSE}
-tlmgr_search('ae.sty')
-# 提示remote repository 版本太旧，2018 < 2019,这时候需要升级texlive
-tinytex::reinstall_tinytex()
+  ```{r eval=FALSE}
+  tlmgr_search('ae.sty')
+  # 提示remote repository 版本太旧，2018 < 2019,这时候需要升级texlive
+  tinytex::reinstall_tinytex()
 
-tlmgr_search('ae.sty')
-# ae:
-#	    texmf-dist/tex/latex/ae/ae.sty
+  tlmgr_search('ae.sty')
+  # ae:
+  #	    texmf-dist/tex/latex/ae/ae.sty
 
-#安装即可
-tlmgr_install('ae')
-```
+  #安装即可
+  tlmgr_install('ae')
+  ```
