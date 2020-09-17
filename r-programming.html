@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2020-08-25" />
+<meta name="date" content="2020-09-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -275,6 +275,9 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 跟 cran 保持一致。所以 README.md 中图片建议存放在<code>man/figures/</code>，
 如果是由 Rmd 文件生成，设置 knitr 图片保存路径
 <code>knitr::opts_chunk(fig.path = &quot;man/figures/&quot;)</code></p></li>
+<li><p>写 unit test 的时候如果需要读取用<code>save()</code>或者<code>saveRDS()</code>保存外部数据，出现warning</p>
+<p>Added dependency on R &gt;= 3.5.0 because serialized objects in serialize/load version 3 cannot be read in older versions of R</p>
+<p>这是因为 R 在 3.5.0 版本后修改了这两个函数的参数<code>version</code>默认为<code>3</code>, 保存数据的时候设置参数<code>version = 2</code>即可。</p></li>
 </ul>
 </div>
 <div id="r-基础" class="section level2">
