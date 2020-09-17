@@ -99,6 +99,12 @@ library(magrittr)
   跟 cran 保持一致。所以 README.md 中图片建议存放在`man/figures/`，
   如果是由 Rmd 文件生成，设置 knitr 图片保存路径
  `knitr::opts_chunk(fig.path = "man/figures/")`
+ 
+- 写 unit test 的时候如果需要读取用`save()`或者`saveRDS()`保存外部数据，出现warning
+
+    Added dependency on R >= 3.5.0 because serialized objects in  serialize/load version 3 cannot be read in older versions of R
+    
+  这是因为 R 在 3.5.0 版本后修改了这两个函数的参数`version`默认为`3`, 保存数据的时候设置参数`version = 2`即可。
   
 ## R 基础
 
