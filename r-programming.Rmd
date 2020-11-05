@@ -27,24 +27,7 @@ library(magrittr)
   yum install epel-release
   yum install R-core R-core-devel
   ```
-
-#### rstudio
-
-- rstudio git 选择所有文件add并commit
-
-  在commit界面，`ctrl/command + A`全选,然后回车即可，参考[这里
-  ](https://stackoverflow.com/a/33913671/3993246)
-
-- ubuntu rstudio不支持中文
   
-  这是因为 rstudio 自带的QT5不支持 fctix (搜狗拼音就是依赖fctix)，设置 rstuido 使用系统自带的QT即可，步骤如下
-  ```
-  # 1.系统自带 qt 的 fctix 插件链接到 rstudio 相应文件夹下
-  sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/plugins/platforminputcontexts/
-  ```
-  重启 Rstudio 即可
-
-
 ### 配置
 
 - 设置cran和bioconductor国内源
@@ -105,6 +88,32 @@ library(magrittr)
     Added dependency on R >= 3.5.0 because serialized objects in  serialize/load version 3 cannot be read in older versions of R
     
   这是因为 R 在 3.5.0 版本后修改了这两个函数的参数`version`默认为`3`, 保存数据的时候设置参数`version = 2`即可。
+  
+## Rstudio
+
+- rstudio git 选择所有文件add并commit
+
+  在commit界面，`ctrl/command + A`全选,然后回车即可，参考[这里
+  ](https://stackoverflow.com/a/33913671/3993246)
+
+- ubuntu rstudio不支持中文
+  
+  这是因为 rstudio 自带的QT5不支持 fctix (搜狗拼音就是依赖fctix)，设置 rstuido 使用系统自带的QT即可，步骤如下
+  ```
+  # 1.系统自带 qt 的 fctix 插件链接到 rstudio 相应文件夹下
+  sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/plugins/platforminputcontexts/
+  ```
+  重启 Rstudio 即可
+
+### Rstudio 常用快捷键
+
+#### Navigating code (代码导航)
+
+##### 跳转到project中的文件/函数(定义)
+
+- `ctrl + .`, 在弹出框中输入文件名或者函数名, 也可以在工具栏的`Go to File/Function` 搜索框中输入要搜索的文件名或者函数名
+- `F2`
+- 按住`ctrl`, 点击左键
   
 ## R 基础
 
