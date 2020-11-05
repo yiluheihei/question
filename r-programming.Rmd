@@ -75,19 +75,41 @@ library(magrittr)
   
 ## R 包开发
 
-- 包中 README.md 中用到的图片存放位置
+##### 1. github中添加包的 code coverage {-}
+  
+  1. 使用`usethis::use_coverage()`, 添加test coverage，
+  2. 运行后会创建文件`codecov.yml`控制台会显示类似下面markerdown文本，粘贴至
+      README文件添加badage
+      
+        ```
+        [![Codecov test coverage](https://codecov.io/gh/yiluheihei/rlatexmath/branch/master/graph/badge.svg)](https://codecov.io/gh/yiluheihei/rlatexmath?branch=master)
+        ```
+    
+  3. 用github账号登录[codecov.io](codecov.io), 添加该仓库至codecov赋予其权限，
+      然后会弹出一个token (如下图所示)
+          
+        ```{r codecov-token,echo=FALSE}
+        knitr::include_graphics("image/codecov-token.png")
+        ```
+  4. 利用`covr::codecov`检测包的test coverage并上传至codecov
+       
+        ```r
+        covr::codecov(token = "YOUR_TOKEN_GOES_HERE")
+        ```
+        
+##### 2. 包中 README.md 中用到的图片存放位置 {-}
 
-  因为 cran 中生成 readme 只允许放在少数文件夹下，如`man/figures/`
-  [**pkgdown**](https://github.com/ropensci/rotemplate/issues/19#issuecomment-506315565) 
-  跟 cran 保持一致。所以 README.md 中图片建议存放在`man/figures/`，
-  如果是由 Rmd 文件生成，设置 knitr 图片保存路径
- `knitr::opts_chunk(fig.path = "man/figures/")`
+因为 cran 中生成 readme 只允许放在少数文件夹下，如`man/figures/`
+[**pkgdown**](https://github.com/ropensci/rotemplate/issues/19#issuecomment-506315565) 
+跟 cran 保持一致。所以 README.md 中图片建议存放在`man/figures/`，
+如果是由 Rmd 文件生成，设置 knitr 图片保存路径
+`knitr::opts_chunk(fig.path = "man/figures/")`
  
-- 写 unit test 的时候如果需要读取用`save()`或者`saveRDS()`保存外部数据，出现warning
+##### 3. 写 unit test 的时候如果需要读取用`save()`或者`saveRDS()`保存外部数据，出现warning {-}
 
     Added dependency on R >= 3.5.0 because serialized objects in  serialize/load version 3 cannot be read in older versions of R
     
-  这是因为 R 在 3.5.0 版本后修改了这两个函数的参数`version`默认为`3`, 保存数据的时候设置参数`version = 2`即可。
+这是因为 R 在 3.5.0 版本后修改了这两个函数的参数`version`默认为`3`, 保存数据的时候设置参数`version = 2`即可。
   
 ## Rstudio
 
