@@ -194,6 +194,16 @@ snippet header_section
   因为如果R包如果包含c++/c/Fortran代码（如rlang），如果已经加载了这种包，在对其进行升级或者重装
   的时候就会出现类似上述错误。关掉加载这些包的R，才能继续重装或升级。
 
+- 出现错误:`C stack usage xxxx is too close to the limit`
+
+  可能是因为调用函数存在无限循环的递归调用
+  
+  ```r
+  foo <- function(...) {
+    foo(...)
+  }
+  ```
+
 ## tidyverse 数据分析
 
 - `data.frame` 转置(transpose)
