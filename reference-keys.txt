@@ -38,3 +38,4 @@ git-和-github
 hugo
 docker
 conda
+others

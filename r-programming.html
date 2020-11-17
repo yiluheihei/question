@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2020-11-05" />
+<meta name="date" content="2020-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -197,6 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="tools.html"><a href="tools.html#docker"><i class="fa fa-check"></i><b>7.3</b> docker</a></li>
 <li class="chapter" data-level="7.4" data-path="tools.html"><a href="tools.html#conda"><i class="fa fa-check"></i><b>7.4</b> conda</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="others.html"><a href="others.html"><i class="fa fa-check"></i><b>8</b> 其他</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -320,7 +321,7 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <span id="cb10-2"><a href="r-programming.html#cb10-2"></a>    <span class="co">################################################################################</span></span>
 <span id="cb10-3"><a href="r-programming.html#cb10-3"></a>    <span class="co">## Description: </span></span>
 <span id="cb10-4"><a href="r-programming.html#cb10-4"></a>    <span class="co">## Author: </span></span>
-<span id="cb10-5"><a href="r-programming.html#cb10-5"></a>    <span class="co">## Create Time: Thu Nov  5 09:20:00 2020</span></span>
+<span id="cb10-5"><a href="r-programming.html#cb10-5"></a>    <span class="co">## Create Time: Tue Nov 17 07:44:46 2020</span></span>
 <span id="cb10-6"><a href="r-programming.html#cb10-6"></a>    <span class="co">## Updated Time: </span></span>
 <span id="cb10-7"><a href="r-programming.html#cb10-7"></a>    <span class="co">################################################################################</span></span></code></pre></div>
 <p>脚本的分段注释, 描述该段代码的作用</p>
@@ -370,6 +371,11 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <li><p>安装rlang的时候出现错误<code>复制 C:\R-3.6.0\library\00LOCK-rlang\00new\rlang\libs\x64\rlang.dll到 C:\R-3.6.0\library\rlang\libs\x64\rlang.dll 时出了问题：Permission denied</code></p>
 <p>因为如果R包如果包含c++/c/Fortran代码（如rlang），如果已经加载了这种包，在对其进行升级或者重装
 的时候就会出现类似上述错误。关掉加载这些包的R，才能继续重装或升级。</p></li>
+<li><p>出现错误:<code>C stack usage xxxx is too close to the limit</code></p>
+<p>可能是因为调用函数存在无限循环的递归调用</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="r-programming.html#cb13-1"></a>foo &lt;-<span class="st"> </span><span class="cf">function</span>(...) {</span>
+<span id="cb13-2"><a href="r-programming.html#cb13-2"></a>  <span class="kw">foo</span>(...)</span>
+<span id="cb13-3"><a href="r-programming.html#cb13-3"></a>}</span></code></pre></div></li>
 </ul>
 </div>
 <div id="tidyverse-数据分析" class="section level2" number="1.5">
@@ -379,43 +385,43 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <p>tidyverse 中 默认操作数据结构为 <code>tibble</code>, 用于替代 R 中<code>data.frame</code>，<code>tibble</code>
 默认没有行名。下面对用<code>t()</code>和 tidyr 方法转置作比较：</p>
 <p>用<code>t()</code>函数</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="r-programming.html#cb13-1"></a><span class="co"># 有行名的数据</span></span>
-<span id="cb13-2"><a href="r-programming.html#cb13-2"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">b =</span> <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>)</span>
-<span id="cb13-3"><a href="r-programming.html#cb13-3"></a><span class="kw">row.names</span>(df) &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;r&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</span>
-<span id="cb13-4"><a href="r-programming.html#cb13-4"></a></span>
-<span id="cb13-5"><a href="r-programming.html#cb13-5"></a><span class="co"># as.data.frame(), 保持行名和列名</span></span>
-<span id="cb13-6"><a href="r-programming.html#cb13-6"></a><span class="kw">t</span>(df) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="r-programming.html#cb14-1"></a><span class="co"># 有行名的数据</span></span>
+<span id="cb14-2"><a href="r-programming.html#cb14-2"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">b =</span> <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>)</span>
+<span id="cb14-3"><a href="r-programming.html#cb14-3"></a><span class="kw">row.names</span>(df) &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;r&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</span>
+<span id="cb14-4"><a href="r-programming.html#cb14-4"></a></span>
+<span id="cb14-5"><a href="r-programming.html#cb14-5"></a><span class="co"># as.data.frame(), 保持行名和列名</span></span>
+<span id="cb14-6"><a href="r-programming.html#cb14-6"></a><span class="kw">t</span>(df) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
 <pre><code>##   r1 r2 r3
 ## a  1  2  3
 ## b  4  5  6</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="r-programming.html#cb15-1"></a><span class="co"># as_tibble, 默认删除行名</span></span>
-<span id="cb15-2"><a href="r-programming.html#cb15-2"></a><span class="kw">t</span>(df) <span class="op">%&gt;%</span><span class="st"> </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-programming.html#cb16-1"></a><span class="co"># as_tibble, 默认删除行名</span></span>
+<span id="cb16-2"><a href="r-programming.html#cb16-2"></a><span class="kw">t</span>(df) <span class="op">%&gt;%</span><span class="st"> </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 3
 ##      r1    r2    r3
 ##   &lt;int&gt; &lt;int&gt; &lt;int&gt;
 ## 1     1     2     3
 ## 2     4     5     6</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="r-programming.html#cb17-1"></a><span class="co"># 可以用`rowname = NA`保持行名, 左上角有个`*`表示这个tibble有行名</span></span>
-<span id="cb17-2"><a href="r-programming.html#cb17-2"></a><span class="kw">t</span>(df) <span class="op">%&gt;%</span><span class="st"> </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>(<span class="dt">rownames =</span> <span class="ot">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="r-programming.html#cb18-1"></a><span class="co"># 可以用`rowname = NA`保持行名, 左上角有个`*`表示这个tibble有行名</span></span>
+<span id="cb18-2"><a href="r-programming.html#cb18-2"></a><span class="kw">t</span>(df) <span class="op">%&gt;%</span><span class="st"> </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>(<span class="dt">rownames =</span> <span class="ot">NA</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 3
 ##      r1    r2    r3
 ## * &lt;int&gt; &lt;int&gt; &lt;int&gt;
 ## 1     1     2     3
 ## 2     4     5     6</code></pre>
 <p>用 tidyr 中函数</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="r-programming.html#cb19-1"></a><span class="co"># 保持行名和列名, column_to_rownames用于设置行名，返回data.frame</span></span>
-<span id="cb19-2"><a href="r-programming.html#cb19-2"></a>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(df) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb19-3"><a href="r-programming.html#cb19-3"></a><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">pivot_longer</span>(<span class="op">-</span>rowname) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb19-4"><a href="r-programming.html#cb19-4"></a><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;rowname&quot;</span>, <span class="dt">values_from =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb19-5"><a href="r-programming.html#cb19-5"></a><span class="st">  </span>tibble<span class="op">::</span><span class="kw">column_to_rownames</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="r-programming.html#cb20-1"></a><span class="co"># 保持行名和列名, column_to_rownames用于设置行名，返回data.frame</span></span>
+<span id="cb20-2"><a href="r-programming.html#cb20-2"></a>tibble<span class="op">::</span><span class="kw">rownames_to_column</span>(df) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-3"><a href="r-programming.html#cb20-3"></a><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">pivot_longer</span>(<span class="op">-</span>rowname) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-4"><a href="r-programming.html#cb20-4"></a><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;rowname&quot;</span>, <span class="dt">values_from =</span> <span class="st">&quot;value&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-5"><a href="r-programming.html#cb20-5"></a><span class="st">  </span>tibble<span class="op">::</span><span class="kw">column_to_rownames</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
 <pre><code>##   r1 r2 r3
 ## a  1  2  3
 ## b  4  5  6</code></pre>
 <p>此外还可以使用 <code>purrr::transpose</code></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-programming.html#cb21-1"></a><span class="co"># 行名列名都丢失，transpose 去除了原有行名</span></span>
-<span id="cb21-2"><a href="r-programming.html#cb21-2"></a>purrr<span class="op">::</span><span class="kw">transpose</span>(df) <span class="op">%&gt;%</span></span>
-<span id="cb21-3"><a href="r-programming.html#cb21-3"></a><span class="st">  </span>purrr<span class="op">::</span><span class="kw">map</span>(unlist) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb21-4"><a href="r-programming.html#cb21-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">bind_cols</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="r-programming.html#cb22-1"></a><span class="co"># 行名列名都丢失，transpose 去除了原有行名</span></span>
+<span id="cb22-2"><a href="r-programming.html#cb22-2"></a>purrr<span class="op">::</span><span class="kw">transpose</span>(df) <span class="op">%&gt;%</span></span>
+<span id="cb22-3"><a href="r-programming.html#cb22-3"></a><span class="st">  </span>purrr<span class="op">::</span><span class="kw">map</span>(unlist) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-4"><a href="r-programming.html#cb22-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">bind_cols</span>()</span></code></pre></div>
 <pre><code>## New names:
 ## * NA -&gt; ...1
 ## * NA -&gt; ...2
@@ -456,33 +462,33 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 见<a href="https://www.choyang.me/zh/post/ggplot-reorder-discrete-axis/">这篇博文</a></p></li>
 <li><p>添加文本标注</p>
 <p>使用<code>Inf</code>或<code>-Inf</code>表征在边界添加文本</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="r-programming.html#cb24-1"></a><span class="co"># 例子源自https://r4ds.had.co.nz/graphics-for-communication.html</span></span>
-<span id="cb24-2"><a href="r-programming.html#cb24-2"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb24-3"><a href="r-programming.html#cb24-3"></a>label &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</span>
-<span id="cb24-4"><a href="r-programming.html#cb24-4"></a>  <span class="dt">displ =</span> <span class="ot">Inf</span>,</span>
-<span id="cb24-5"><a href="r-programming.html#cb24-5"></a>  <span class="dt">hwy =</span> <span class="ot">Inf</span>,</span>
-<span id="cb24-6"><a href="r-programming.html#cb24-6"></a>  <span class="dt">label =</span> <span class="st">&quot;Increasing engine size is </span><span class="ch">\n</span><span class="st">related to decreasing fuel economy.&quot;</span></span>
-<span id="cb24-7"><a href="r-programming.html#cb24-7"></a>)</span>
-<span id="cb24-8"><a href="r-programming.html#cb24-8"></a></span>
-<span id="cb24-9"><a href="r-programming.html#cb24-9"></a><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span></span>
-<span id="cb24-10"><a href="r-programming.html#cb24-10"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb24-11"><a href="r-programming.html#cb24-11"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> label), <span class="dt">data =</span> label, <span class="dt">vjust =</span> <span class="st">&quot;top&quot;</span>, <span class="dt">hjust =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="r-programming.html#cb25-1"></a><span class="co"># 例子源自https://r4ds.had.co.nz/graphics-for-communication.html</span></span>
+<span id="cb25-2"><a href="r-programming.html#cb25-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb25-3"><a href="r-programming.html#cb25-3"></a>label &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</span>
+<span id="cb25-4"><a href="r-programming.html#cb25-4"></a>  <span class="dt">displ =</span> <span class="ot">Inf</span>,</span>
+<span id="cb25-5"><a href="r-programming.html#cb25-5"></a>  <span class="dt">hwy =</span> <span class="ot">Inf</span>,</span>
+<span id="cb25-6"><a href="r-programming.html#cb25-6"></a>  <span class="dt">label =</span> <span class="st">&quot;Increasing engine size is </span><span class="ch">\n</span><span class="st">related to decreasing fuel economy.&quot;</span></span>
+<span id="cb25-7"><a href="r-programming.html#cb25-7"></a>)</span>
+<span id="cb25-8"><a href="r-programming.html#cb25-8"></a></span>
+<span id="cb25-9"><a href="r-programming.html#cb25-9"></a><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span></span>
+<span id="cb25-10"><a href="r-programming.html#cb25-10"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb25-11"><a href="r-programming.html#cb25-11"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> label), <span class="dt">data =</span> label, <span class="dt">vjust =</span> <span class="st">&quot;top&quot;</span>, <span class="dt">hjust =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
 <p><img src="question-notes_files/figure-html/text-annotation-position-1.png" width="672" /></p></li>
 <li><p>图形添加边框</p>
 <p>设置<code>theme(plot.background = element_rect())</code></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="r-programming.html#cb25-1"></a><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(wt, mpg)) <span class="op">+</span></span>
-<span id="cb25-2"><a href="r-programming.html#cb25-2"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb25-3"><a href="r-programming.html#cb25-3"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.background =</span> <span class="kw">element_rect</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="r-programming.html#cb26-1"></a><span class="kw">ggplot</span>(mtcars, <span class="kw">aes</span>(wt, mpg)) <span class="op">+</span></span>
+<span id="cb26-2"><a href="r-programming.html#cb26-2"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb26-3"><a href="r-programming.html#cb26-3"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.background =</span> <span class="kw">element_rect</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
 <p><img src="question-notes_files/figure-html/round-rect-1.png" width="672" /></p></li>
 <li><p>等高线图<code>geom_contour()</code>自定义levels</p>
 <p>手动指定参数<code>breaks</code>(帮助文档中找不到该参数说明)，参考<a href="https://stackoverflow.com/questions/19658088/custom-levels-in-ggplot2-contour-plot">此</a>.</p></li>
 <li><p>ggplot中文字体</p>
 <p><a href="https://www.choyang.me/zh/post/ggplot-chinese-font/">见此</a></p></li>
 <li><p>ggplot分面添加tag (如A,B, C)，可参考<a href="https://community.rstudio.com/t/how-to-automatically-add-text-annotations-or-tags-outside-of-faceted-plots/13700">此问题</a></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="r-programming.html#cb26-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb26-2"><a href="r-programming.html#cb26-2"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb26-3"><a href="r-programming.html#cb26-3"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(class))</span>
-<span id="cb26-4"><a href="r-programming.html#cb26-4"></a>egg<span class="op">::</span><span class="kw">tag_facet_outside</span>(p)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="r-programming.html#cb27-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb27-2"><a href="r-programming.html#cb27-2"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb27-3"><a href="r-programming.html#cb27-3"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(class))</span>
+<span id="cb27-4"><a href="r-programming.html#cb27-4"></a>egg<span class="op">::</span><span class="kw">tag_facet_outside</span>(p)</span></code></pre></div>
 <p><img src="question-notes_files/figure-html/facet-tag-1.png" width="672" />
 ## 字符 {#char}</p></li>
 </ul>
@@ -492,21 +498,21 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <ul>
 <li><p>正则表达式字符列表<code>[]</code>用法：<code>[]</code>中的字符匹配字符本身，如<code>[.]</code>匹配.,而不是任意字符，因此可以使用<code>[.]</code>代替<code>\\.</code>,一些在<code>[]</code>内有特殊意义的字符除外，如<code>-</code>表示范围，<code>^</code>不包含这些字符，<code>]</code>结束括号，<code>\</code>在字符串中表示转义。</p></li>
 <li><p>正则表达式默认是进行贪婪匹配，即匹配最长字符串，在正则表达式后边加?表示最短匹配</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="r-programming.html#cb27-1"></a><span class="co"># 匹配到两个a，然后删除</span></span>
-<span id="cb27-2"><a href="r-programming.html#cb27-2"></a><span class="kw">sub</span>(<span class="st">&quot;a+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</span>
-<span id="cb27-3"><a href="r-programming.html#cb27-3"></a><span class="co">## [1] &quot;c&quot;</span></span>
-<span id="cb27-4"><a href="r-programming.html#cb27-4"></a></span>
-<span id="cb27-5"><a href="r-programming.html#cb27-5"></a><span class="co"># 匹配到一个a，然后删除</span></span>
-<span id="cb27-6"><a href="r-programming.html#cb27-6"></a><span class="kw">sub</span>(<span class="st">&quot;a+?&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</span>
-<span id="cb27-7"><a href="r-programming.html#cb27-7"></a><span class="co">## [1] &quot;ac&quot;</span></span></code></pre></div></li>
-<li><p>表示重复次数的<code>*</code>(任意次)、<code>?</code>(0或1次)、<code>+</code>(一次以上)优先级较高</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="r-programming.html#cb28-1"></a><span class="co"># b出现一次以上</span></span>
-<span id="cb28-2"><a href="r-programming.html#cb28-2"></a><span class="kw">sub</span>(<span class="st">&quot;ab+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</span>
-<span id="cb28-3"><a href="r-programming.html#cb28-3"></a><span class="co">## [1] &quot;abc&quot;</span></span>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="r-programming.html#cb28-1"></a><span class="co"># 匹配到两个a，然后删除</span></span>
+<span id="cb28-2"><a href="r-programming.html#cb28-2"></a><span class="kw">sub</span>(<span class="st">&quot;a+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</span>
+<span id="cb28-3"><a href="r-programming.html#cb28-3"></a><span class="co">## [1] &quot;c&quot;</span></span>
 <span id="cb28-4"><a href="r-programming.html#cb28-4"></a></span>
-<span id="cb28-5"><a href="r-programming.html#cb28-5"></a><span class="co"># ab出现一次以上</span></span>
-<span id="cb28-6"><a href="r-programming.html#cb28-6"></a><span class="kw">sub</span>(<span class="st">&quot;(ab)+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</span>
-<span id="cb28-7"><a href="r-programming.html#cb28-7"></a><span class="co">## [1] &quot;c&quot;</span></span></code></pre></div></li>
+<span id="cb28-5"><a href="r-programming.html#cb28-5"></a><span class="co"># 匹配到一个a，然后删除</span></span>
+<span id="cb28-6"><a href="r-programming.html#cb28-6"></a><span class="kw">sub</span>(<span class="st">&quot;a+?&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;aac&quot;</span>)</span>
+<span id="cb28-7"><a href="r-programming.html#cb28-7"></a><span class="co">## [1] &quot;ac&quot;</span></span></code></pre></div></li>
+<li><p>表示重复次数的<code>*</code>(任意次)、<code>?</code>(0或1次)、<code>+</code>(一次以上)优先级较高</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="r-programming.html#cb29-1"></a><span class="co"># b出现一次以上</span></span>
+<span id="cb29-2"><a href="r-programming.html#cb29-2"></a><span class="kw">sub</span>(<span class="st">&quot;ab+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</span>
+<span id="cb29-3"><a href="r-programming.html#cb29-3"></a><span class="co">## [1] &quot;abc&quot;</span></span>
+<span id="cb29-4"><a href="r-programming.html#cb29-4"></a></span>
+<span id="cb29-5"><a href="r-programming.html#cb29-5"></a><span class="co"># ab出现一次以上</span></span>
+<span id="cb29-6"><a href="r-programming.html#cb29-6"></a><span class="kw">sub</span>(<span class="st">&quot;(ab)+&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;ababc&quot;</span>)</span>
+<span id="cb29-7"><a href="r-programming.html#cb29-7"></a><span class="co">## [1] &quot;c&quot;</span></span></code></pre></div></li>
 </ul>
 </div>
 </div>
@@ -550,16 +556,16 @@ chapter_name: [&quot;第&quot;, &quot;章&quot;]</code></pre>
 <h3><span class="header-section-number">1.7.3</span> tinytex</h3>
 <ul>
 <li><p>pkgdown编译jss文档的时候出现，<code>! LaTeX Error: File</code>ae.sty’not found.` 说明缺少ae包，</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="r-programming.html#cb31-1"></a><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</span>
-<span id="cb31-2"><a href="r-programming.html#cb31-2"></a><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></span>
-<span id="cb31-3"><a href="r-programming.html#cb31-3"></a>tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</span>
-<span id="cb31-4"><a href="r-programming.html#cb31-4"></a></span>
-<span id="cb31-5"><a href="r-programming.html#cb31-5"></a><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</span>
-<span id="cb31-6"><a href="r-programming.html#cb31-6"></a><span class="co"># ae:</span></span>
-<span id="cb31-7"><a href="r-programming.html#cb31-7"></a><span class="co">#     texmf-dist/tex/latex/ae/ae.sty</span></span>
-<span id="cb31-8"><a href="r-programming.html#cb31-8"></a></span>
-<span id="cb31-9"><a href="r-programming.html#cb31-9"></a><span class="co">#安装即可</span></span>
-<span id="cb31-10"><a href="r-programming.html#cb31-10"></a><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="r-programming.html#cb32-1"></a><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</span>
+<span id="cb32-2"><a href="r-programming.html#cb32-2"></a><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></span>
+<span id="cb32-3"><a href="r-programming.html#cb32-3"></a>tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</span>
+<span id="cb32-4"><a href="r-programming.html#cb32-4"></a></span>
+<span id="cb32-5"><a href="r-programming.html#cb32-5"></a><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</span>
+<span id="cb32-6"><a href="r-programming.html#cb32-6"></a><span class="co"># ae:</span></span>
+<span id="cb32-7"><a href="r-programming.html#cb32-7"></a><span class="co">#     texmf-dist/tex/latex/ae/ae.sty</span></span>
+<span id="cb32-8"><a href="r-programming.html#cb32-8"></a></span>
+<span id="cb32-9"><a href="r-programming.html#cb32-9"></a><span class="co">#安装即可</span></span>
+<span id="cb32-10"><a href="r-programming.html#cb32-10"></a><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</span></code></pre></div></li>
 </ul>
 
 </div>
