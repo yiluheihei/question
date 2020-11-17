@@ -12,3 +12,4 @@ rmd_files:
 - "mac.Rmd"
 - "linux.Rmd"
 - "tools.Rmd"
+- "other.Rmd"

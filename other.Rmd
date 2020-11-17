@@ -1,0 +1,5 @@
+# 其他 {#others}
+
+- mac突然打开www.baidu.com特别慢
+  
+  不知道什么工具把wifi的dns修改成了google的8.8.8.8, 在网络删除中删除即可。
