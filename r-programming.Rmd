@@ -161,6 +161,21 @@ snippet header_section
 - `ctrl + .`, 在弹出框中输入文件名或者函数名, 也可以在工具栏的`Go to File/Function` 搜索框中输入要搜索的文件名或者函数名
 - `F2`
 - 按住`ctrl`, 点击左键
+
+##### 源文件导航
+
+- 跳转到指定行， `Alt+Shift+G` (Mac: `Option+Shift+Cmd+G`).
+- 点击源代码编辑器(source editor)下方的状态栏从函数列表中选择函数会跳转到该函数
+的源码.
+
+##### 前进和后退
+
+`Ctrl+F9/Ctrl+F10` (Mac: Cmd+F9/Cmd+F10)或者是源代码编辑器上方工具栏最左边的方向
+箭头。适用于以下情况:
+
+- 不同source文件之间的切换
+- 跳转到函数定义处
+- 跳转到指定行
   
 ## R 基础
 
