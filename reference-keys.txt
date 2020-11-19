@@ -9,6 +9,8 @@ snippet
 rstudio-常用快捷键
 navigating-code-代码导航
 跳转到project中的文件函数定义
+源文件导航
+前进和后退
 r-基础
 tidyverse-数据分析
 visualization
