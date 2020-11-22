@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2020-11-19" />
+<meta name="date" content="2020-11-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -321,7 +321,7 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <span id="cb10-2"><a href="r-programming.html#cb10-2"></a>    <span class="co">################################################################################</span></span>
 <span id="cb10-3"><a href="r-programming.html#cb10-3"></a>    <span class="co">## Description: </span></span>
 <span id="cb10-4"><a href="r-programming.html#cb10-4"></a>    <span class="co">## Author: </span></span>
-<span id="cb10-5"><a href="r-programming.html#cb10-5"></a>    <span class="co">## Create Time: Thu Nov 19 13:14:24 2020</span></span>
+<span id="cb10-5"><a href="r-programming.html#cb10-5"></a>    <span class="co">## Create Time: Sun Nov 22 07:00:25 2020</span></span>
 <span id="cb10-6"><a href="r-programming.html#cb10-6"></a>    <span class="co">## Updated Time: </span></span>
 <span id="cb10-7"><a href="r-programming.html#cb10-7"></a>    <span class="co">################################################################################</span></span></code></pre></div>
 <p>脚本的分段注释, 描述该段代码的作用</p>
@@ -394,6 +394,13 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="r-programming.html#cb13-1"></a>foo &lt;-<span class="st"> </span><span class="cf">function</span>(...) {</span>
 <span id="cb13-2"><a href="r-programming.html#cb13-2"></a>  <span class="kw">foo</span>(...)</span>
 <span id="cb13-3"><a href="r-programming.html#cb13-3"></a>}</span></code></pre></div></li>
+<li><p><code>data.frame</code>作为list的一个元素</p>
+<p>在写函数的时候有时候需要利用参数列表(列表的名称表示参数名)加<code>do.call()</code>来调用
+执行函数。一般形如<code>c(list(arg1=value1, arg2=value2), arg3=value3)</code>,
+如果有参数的类别是<code>data.frame</code>的话(value3)，因为<code>data.frame</code>实际上也是列表,
+这样<code>data.frame</code>的每一列都会成为列表的一个元素。为了保证<code>data.frame</code>作为列表的
+一个元素，对该参数在构建参数列表的时候要显式的使用<code>list(df)</code>,
+<code>c(list(arg1=value1, arg2=value2), arg3=list(value3))</code></p></li>
 </ul>
 </div>
 <div id="tidyverse-数据分析" class="section level2" number="1.5">
