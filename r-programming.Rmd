@@ -219,6 +219,15 @@ snippet header_section
   }
   ```
 
+- `data.frame`作为list的一个元素
+  
+  在写函数的时候有时候需要利用参数列表(列表的名称表示参数名)加`do.call()`来调用
+  执行函数。一般形如`c(list(arg1=value1, arg2=value2), arg3=value3)`,
+  如果有参数的类别是`data.frame`的话(value3)，因为`data.frame`实际上也是列表, 
+  这样`data.frame`的每一列都会成为列表的一个元素。为了保证`data.frame`作为列表的
+  一个元素，对该参数在构建参数列表的时候要显式的使用`list(df)`,
+  `c(list(arg1=value1, arg2=value2), arg3=list(value3))`
+
 ## tidyverse 数据分析
 
 - `data.frame` 转置(transpose)
