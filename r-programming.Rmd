@@ -170,13 +170,35 @@ snippet header_section
 
 ##### 前进和后退
 
-`Ctrl+F9/Ctrl+F10` (Mac: Cmd+F9/Cmd+F10)或者是源代码编辑器上方工具栏最左边的方向
+`Ctrl+F9/Ctrl+F10` (Mac: `Cmd+F9/Cmd+F10`)或者是源代码编辑器上方工具栏最左边的方向
 箭头。适用于以下情况:
 
 - 不同source文件之间的切换
 - 跳转到函数定义处
 - 跳转到指定行
-  
+
+#### Code folding (代码折叠) 
+
+以下几类代码可以折叠:大括号`{}`内的代码块(如函数或者条件语句); Rmarkdown 中代码
+块 (code chunks) 和标题,及代码段 (code section);任何以四个以上的`-`或`=`或`#`字
+符为结尾的注释行(注释行中开始`#`的个数可以为多个)。
+
+```
+# Section One ---------------------------------
+ 
+# Section Two =================================
+ 
+### Section Three ############################# 
+```
+
+- 折叠, `Alt+L`
+- 展开, `Shit+Alt+L`
+- 全部折叠, `Alt+O`
+- 全部展开, `Shit+Alt+O`
+- 插入代码块, `Ctrl+Shit+R` (Mac: `Cmd+Shift+R`)
+- 代码块跳转, `Shit+Alt+J`
+
+
 ## R 基础
 
 - 根据序列长度进行迭代（循环）的时候，`1:seq_along(y)`和`1:length(y)`有什么区别？
