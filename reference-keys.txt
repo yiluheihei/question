@@ -41,4 +41,7 @@ git-和-github
 hugo
 docker
 conda
+zotero
+collecions-分类
+合并重复条目
 others

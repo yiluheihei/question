@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2020-12-04" />
+<meta name="date" content="2020-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,6 +196,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="tools.html"><a href="tools.html#hugo"><i class="fa fa-check"></i><b>7.2</b> hugo</a></li>
 <li class="chapter" data-level="7.3" data-path="tools.html"><a href="tools.html#docker"><i class="fa fa-check"></i><b>7.3</b> docker</a></li>
 <li class="chapter" data-level="7.4" data-path="tools.html"><a href="tools.html#conda"><i class="fa fa-check"></i><b>7.4</b> conda</a></li>
+<li class="chapter" data-level="7.5" data-path="tools.html"><a href="tools.html#zotero"><i class="fa fa-check"></i><b>7.5</b> Zotero</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="tools.html"><a href="tools.html#collecions-分类"><i class="fa fa-check"></i><b>7.5.1</b> collecions (分类)</a></li>
+<li class="chapter" data-level="7.5.2" data-path="tools.html"><a href="tools.html#合并重复条目"><i class="fa fa-check"></i><b>7.5.2</b> 合并重复条目</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="others.html"><a href="others.html"><i class="fa fa-check"></i><b>8</b> 其他</a></li>
 <li class="divider"></li>
@@ -403,7 +408,52 @@ ls *.app
 rm -rf *.app
 conda update -n some_env --all --yes</code></pre></li>
 </ul>
+</div>
+<div id="zotero" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Zotero</h2>
+<div id="collecions-分类" class="section level3" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> collecions (分类)</h3>
+<p>Zotero中可以把文献按层次进行分组(或子组)，比如某一个课题或某一篇文章的参考文献
+归为一个分类。相同文献条目可以划分到不同分类不会重复保存该条目的数据(条目只会
+保存一次，不同分类下的该条目都指向它)。根目录(My Library)会显示所有条目，在根目
+录下多次出现的条目才是重复条目。</p>
+<p>常用的与分类有关的操作</p>
+<ul>
+<li>移动分类，可以在左边面板中利用鼠标拖拽。</li>
+<li>分类的排序，默认按字母顺序排列</li>
+<li>条目添加到另一个分类，类似于copy，直接鼠标拖拽该条目到另一个分类即可。</li>
+<li>条目移动到另一个分类，类似于move，在拖动的时候按住<code>Mac: Cmd</code>或<code>Windows:Shift</code>
+键。</li>
+<li>删除分类，右键点击<code>删除分类</code>，删除分类及其子分类，但不会删除分类中的条目，条目
+在根目录下仍存在(点击<code>删除分类及条目</code>删除分类下条目)。</li>
+<li>删除分类中的条目
+<ul>
+<li>remove, 在右边面板中选中相应分类下的条目后按<code>Delete</code>删除，或者是点击
+右键选择<code>从分类中删除条目</code>, 只会删除该分类下的条目，不会删除其他任何分类中
+相同的条目(如根目录).</li>
+<li>delete, <code>Cmd/Ctrol+delete</code>移动条目到回收站，或点击右键移动条目至回收站。</li>
+</ul></li>
+<li>查看条目在哪些分类中，选中条目后，按住<code>Mac:Option/Windows:Control/Linux:Alt</code>，
+一定时间后左侧面板中含有该条目的分类会高亮显示。</li>
+</ul>
+<p>Zotero自带特殊分类</p>
+<ul>
+<li>重复条目(Duplicated Items), 重复的条目可以帮助我们合并重复条目。</li>
+<li>未分类条目(Unfiled Items), 没有在任何分类中(比如位于根目录下)</li>
+<li>回收站(Trash), 类似于电脑的回收站，可以重新恢复相应条目、永久删除条目等。
+项目默认30天后删除。</li>
+</ul>
+<p>此外，子分类中的条目默认不会显示在父分类中，可以通过设置<code>高级(Advanced Pane) -&gt;  设置编辑器(Config Editor), 把</code>extensions.zotero.recursiveCollections<code>设置为</code>True`</p>
+</div>
+<div id="合并重复条目" class="section level3" number="7.5.2">
+<h3><span class="header-section-number">7.5.2</span> 合并重复条目</h3>
+<p>重复条目分类中列出了相应Library下的重复条目。合并重复条目(不是删除重复条目)，
+这样可以保证条目所有的分类和标签都能保留，而删除重复条目可能删除相应的信息，并且
+word插件也会自动识别合并。</p>
+<p>在重复条目分类中选中相应的重复条目，然后在右侧面板中进行合并即可。也可以在相应的
+分类中选择相同的条目点击右键<code>合并条目</code>。</p>
 
+</div>
 </div>
 </div>
             </section>
