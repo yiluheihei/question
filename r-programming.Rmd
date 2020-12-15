@@ -107,10 +107,28 @@ library(magrittr)
  
 ##### 3. 写 unit test 的时候如果需要读取用`save()`或者`saveRDS()`保存外部数据，出现warning {-}
 
-    Added dependency on R >= 3.5.0 because serialized objects in  serialize/load version 3 cannot be read in older versions of R
+    Added dependency on R >= 3.5.0 because serialized objects in  serialize/load 
+    version 3 cannot be read in older versions of R
     
 这是因为 R 在 3.5.0 版本后修改了这两个函数的参数`version`默认为`3`, 保存数据的时候设置参数`version = 2`即可。
+
+##### 4. 按照[r-pkgs](https://r-pkgs.org/data.html#documenting-data)建议写导出`data`的文档，check 的时候出现warning (`Lazyload: TRUE`) {-}
+
+    > "Variables with usage in documentation object '<data-name>' but not in 
+    code: '<data-name>'
   
+  写成如下形式解决问题，手动指定文档的`name`，最后一行用`NA`替代`"<data-name>"`:  
+  
+  ```R
+  #' title
+  #'
+  #' Description
+  #' 
+  #' @name <data-name>
+  NA
+  ```
+
+
 ## Rstudio
 
 - rstudio git 选择所有文件add并commit
