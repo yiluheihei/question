@@ -127,6 +127,34 @@ library(magrittr)
   #' @name <data-name>
   NA
   ```
+##### 5. 帮助文档中公式 {-}
+
+采用<code>\\eqn{*latex*}{*ascii*}</code>(行内公式), 和 
+<code>\\deqn{*latex*}{*ascii*}</code>(以段落显示的公式). 
+其中 *`latex`* 表示 **LATEX** 公式, *`ascii`* 表示帮助中想要展示的公式,
+如$\frac{\lambda^x e^{-\lambda}}{x!}$, 应写成:
+
+```
+\eqn{\frac{\lambda^x e^{-\lambda}}{x!}}{%
+     \lambda^x exp(-\lambda)/x!}
+```
+此外，也可以采用 <code>\\eqn{*latexascii*}</code>, 表示 <code>*latex*</code> 和 
+<code>*ascii*</code>表示方法相同的时候写一个参数即可。参考
+[这里](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Mathematics).
+
+##### 6. 依赖其他包中的数据 {-}
+
+参考[这里](https://stackoverflow.com/questions/48715141/how-do-i-load-data-from-another-package-from-within-my-package).
+
+1. 直接使用`::`, `<pkg>::<data>`;
+2. 如果多次用到该数据，减少多次使用`::`的开销，可以直接复制数据到自己的包中
+`<mydata> <- <pkg>::<data>`;
+3. 如果可以修改源数据的包，可以导出数据, 在 `<pkg>` 的 `NAMESPACE` 中添加
+`@export(<data>)`, 或`roxygen2`添加`@export`字段。然后`@importFrom <pkg> <data>`
+就可直接使用数据。(然而老哈的 [r-pkgs](https://r-pkgs.org/data.html#documenting-data)
+中说:
+
+    > Never \@export a data set.
 
 
 ## Rstudio
@@ -443,6 +471,12 @@ snippet header_section
 - 代码块中的输出多个图形，怎么输出为一副图形？
 
   `figure.show`默认为`asis`图形位于产生图形代码后面，多个作图语句就会产生多幅图形，`figure.show='hold'`就代码块结尾显示所有图形，即一个代码块产生一个图形。
+
+- Rmarkdown 中代码块内斜体(或其他 markdown 标记语法)
+
+  把 一般的 markdown 标记放在代码外围，如``*`斜体代码`*``, 显示为*`斜体代码`*。
+  如果是正常字体和斜体混合借助`<code>`元素: `<code>正常*斜体*</code>`，显示为
+  <code>正常*斜体*</code>.
 
 ### bookdown
 
