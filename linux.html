@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2020-12-15" />
+<meta name="date" content="2021-01-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -239,20 +239,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 没有显卡驱动进入图形界面会卡死。<code>sudo ubuntu-drivers autoinstall</code>，重启即可</li>
 </ol>
 <p>检查显卡驱动是否安装成功</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="linux.html#cb41-1"></a><span class="co"># 看到configuration那里driver=nvidia表示显卡驱动安装成功，如果不采用nomodeset</span></span>
-<span id="cb41-2"><a href="linux.html#cb41-2"></a><span class="co"># 选项安装，默认安装nouveau驱动</span></span>
-<span id="cb41-3"><a href="linux.html#cb41-3"></a><span class="fu">sudo</span> lshw -C display</span>
-<span id="cb41-4"><a href="linux.html#cb41-4"></a><span class="co"># *-display</span></span>
-<span id="cb41-5"><a href="linux.html#cb41-5"></a><span class="co">#     description: VGA compatible controller</span></span>
-<span id="cb41-6"><a href="linux.html#cb41-6"></a><span class="co">#     product: NVIDIA Corporation</span></span>
-<span id="cb41-7"><a href="linux.html#cb41-7"></a><span class="co">#     vendor: NVIDIA Corporation</span></span>
-<span id="cb41-8"><a href="linux.html#cb41-8"></a><span class="co">#     physical id: 0</span></span>
-<span id="cb41-9"><a href="linux.html#cb41-9"></a><span class="co">#     bus info: pci@0000:01:00.0</span></span>
-<span id="cb41-10"><a href="linux.html#cb41-10"></a><span class="co">#     version: a1</span></span>
-<span id="cb41-11"><a href="linux.html#cb41-11"></a><span class="co">#     width: 64 bits</span></span>
-<span id="cb41-12"><a href="linux.html#cb41-12"></a><span class="co">#     clock: 33MHz</span></span>
-<span id="cb41-13"><a href="linux.html#cb41-13"></a><span class="co">#     capabilities: pm msi pciexpress vga_controller bus_master cap_list rom</span></span>
-<span id="cb41-14"><a href="linux.html#cb41-14"></a><span class="co">#     configuration: driver=nvidia latency=0</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="linux.html#cb42-1"></a><span class="co"># 看到configuration那里driver=nvidia表示显卡驱动安装成功，如果不采用nomodeset</span></span>
+<span id="cb42-2"><a href="linux.html#cb42-2"></a><span class="co"># 选项安装，默认安装nouveau驱动</span></span>
+<span id="cb42-3"><a href="linux.html#cb42-3"></a><span class="fu">sudo</span> lshw -C display</span>
+<span id="cb42-4"><a href="linux.html#cb42-4"></a><span class="co"># *-display</span></span>
+<span id="cb42-5"><a href="linux.html#cb42-5"></a><span class="co">#     description: VGA compatible controller</span></span>
+<span id="cb42-6"><a href="linux.html#cb42-6"></a><span class="co">#     product: NVIDIA Corporation</span></span>
+<span id="cb42-7"><a href="linux.html#cb42-7"></a><span class="co">#     vendor: NVIDIA Corporation</span></span>
+<span id="cb42-8"><a href="linux.html#cb42-8"></a><span class="co">#     physical id: 0</span></span>
+<span id="cb42-9"><a href="linux.html#cb42-9"></a><span class="co">#     bus info: pci@0000:01:00.0</span></span>
+<span id="cb42-10"><a href="linux.html#cb42-10"></a><span class="co">#     version: a1</span></span>
+<span id="cb42-11"><a href="linux.html#cb42-11"></a><span class="co">#     width: 64 bits</span></span>
+<span id="cb42-12"><a href="linux.html#cb42-12"></a><span class="co">#     clock: 33MHz</span></span>
+<span id="cb42-13"><a href="linux.html#cb42-13"></a><span class="co">#     capabilities: pm msi pciexpress vga_controller bus_master cap_list rom</span></span>
+<span id="cb42-14"><a href="linux.html#cb42-14"></a><span class="co">#     configuration: driver=nvidia latency=0</span></span></code></pre></div></li>
 <li><p>ubuntu 修复模式下修改文件</p>
 <p>有时候在修改完某个文件后，重启系统会卡在 ubuntu 启动的log界面，比如通过修改
 <code>rc.local</code>设置开机启动项，这时候就需要在recovery模式下修改引起启动问题的文件：</p>
@@ -264,29 +264,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>ubuntu 添加 aliyun 源</p>
 <p>根据<a href="https://developer.aliyun.com/mirror/ubuntu">这里</a>选择相应版本的源，以
 16.04 xenial为例</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="linux.html#cb42-1"></a><span class="co"># 备份原有文件</span></span>
-<span id="cb42-2"><a href="linux.html#cb42-2"></a><span class="fu">mv</span> /etc/apt/sources.list /etc/apt/sources.list.backup</span>
-<span id="cb42-3"><a href="linux.html#cb42-3"></a></span>
-<span id="cb42-4"><a href="linux.html#cb42-4"></a><span class="co"># 新建文件，添加源</span></span>
-<span id="cb42-5"><a href="linux.html#cb42-5"></a><span class="fu">touch</span> /etc/apt/sources.list</span>
-<span id="cb42-6"><a href="linux.html#cb42-6"></a></span>
-<span id="cb42-7"><a href="linux.html#cb42-7"></a><span class="ex">deb-src</span> http://archive.ubuntu.com/ubuntu xenial main restricted <span class="co"># Added by software-properties</span></span>
-<span id="cb42-8"><a href="linux.html#cb42-8"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial main restricted</span>
-<span id="cb42-9"><a href="linux.html#cb42-9"></a><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial main restricted multiverse universe <span class="co"># Added by software-properties</span></span>
-<span id="cb42-10"><a href="linux.html#cb42-10"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted</span>
-<span id="cb42-11"><a href="linux.html#cb42-11"></a><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted multiverse universe <span class="co"># Added by software-properties</span></span>
-<span id="cb42-12"><a href="linux.html#cb42-12"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial universe</span>
-<span id="cb42-13"><a href="linux.html#cb42-13"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates universe</span>
-<span id="cb42-14"><a href="linux.html#cb42-14"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial multiverse</span>
-<span id="cb42-15"><a href="linux.html#cb42-15"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates multiverse</span>
-<span id="cb42-16"><a href="linux.html#cb42-16"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse</span>
-<span id="cb42-17"><a href="linux.html#cb42-17"></a><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse <span class="co"># Added by software-properties</span></span>
-<span id="cb42-18"><a href="linux.html#cb42-18"></a><span class="ex">deb</span> http://archive.canonical.com/ubuntu xenial partner</span>
-<span id="cb42-19"><a href="linux.html#cb42-19"></a><span class="ex">deb-src</span> http://archive.canonical.com/ubuntu xenial partner</span>
-<span id="cb42-20"><a href="linux.html#cb42-20"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted</span>
-<span id="cb42-21"><a href="linux.html#cb42-21"></a><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe <span class="co"># Added by software-properties</span></span>
-<span id="cb42-22"><a href="linux.html#cb42-22"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-security universe</span>
-<span id="cb42-23"><a href="linux.html#cb42-23"></a><span class="ex">deb</span> http://mirr.iyun.com/ubuntu/ xenial-security multiverse</span></code></pre></div></li>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="linux.html#cb43-1"></a><span class="co"># 备份原有文件</span></span>
+<span id="cb43-2"><a href="linux.html#cb43-2"></a><span class="fu">mv</span> /etc/apt/sources.list /etc/apt/sources.list.backup</span>
+<span id="cb43-3"><a href="linux.html#cb43-3"></a></span>
+<span id="cb43-4"><a href="linux.html#cb43-4"></a><span class="co"># 新建文件，添加源</span></span>
+<span id="cb43-5"><a href="linux.html#cb43-5"></a><span class="fu">touch</span> /etc/apt/sources.list</span>
+<span id="cb43-6"><a href="linux.html#cb43-6"></a></span>
+<span id="cb43-7"><a href="linux.html#cb43-7"></a><span class="ex">deb-src</span> http://archive.ubuntu.com/ubuntu xenial main restricted <span class="co"># Added by software-properties</span></span>
+<span id="cb43-8"><a href="linux.html#cb43-8"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial main restricted</span>
+<span id="cb43-9"><a href="linux.html#cb43-9"></a><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial main restricted multiverse universe <span class="co"># Added by software-properties</span></span>
+<span id="cb43-10"><a href="linux.html#cb43-10"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted</span>
+<span id="cb43-11"><a href="linux.html#cb43-11"></a><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted multiverse universe <span class="co"># Added by software-properties</span></span>
+<span id="cb43-12"><a href="linux.html#cb43-12"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial universe</span>
+<span id="cb43-13"><a href="linux.html#cb43-13"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates universe</span>
+<span id="cb43-14"><a href="linux.html#cb43-14"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial multiverse</span>
+<span id="cb43-15"><a href="linux.html#cb43-15"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-updates multiverse</span>
+<span id="cb43-16"><a href="linux.html#cb43-16"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse</span>
+<span id="cb43-17"><a href="linux.html#cb43-17"></a><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse <span class="co"># Added by software-properties</span></span>
+<span id="cb43-18"><a href="linux.html#cb43-18"></a><span class="ex">deb</span> http://archive.canonical.com/ubuntu xenial partner</span>
+<span id="cb43-19"><a href="linux.html#cb43-19"></a><span class="ex">deb-src</span> http://archive.canonical.com/ubuntu xenial partner</span>
+<span id="cb43-20"><a href="linux.html#cb43-20"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted</span>
+<span id="cb43-21"><a href="linux.html#cb43-21"></a><span class="ex">deb-src</span> http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe <span class="co"># Added by software-properties</span></span>
+<span id="cb43-22"><a href="linux.html#cb43-22"></a><span class="ex">deb</span> http://mirrors.aliyun.com/ubuntu/ xenial-security universe</span>
+<span id="cb43-23"><a href="linux.html#cb43-23"></a><span class="ex">deb</span> http://mirr.iyun.com/ubuntu/ xenial-security multiverse</span></code></pre></div></li>
 <li><p>ubuntu 18.04 设置开机启动脚本</p>
 <p>方法参考<a href="http://www.r9it.com/20180613/ubuntu-18.04-auto-start.html">这里</a></p>
 <p>ubutu 18.04采用 systemd 进行系统管理，启动的时候 systemd 默认读取
@@ -294,40 +294,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 文件。</p>
 <p><code>ls /lib/systemd/system</code>下可以看到有<code>rc-local.service</code>和<code>rc.local.service</code>文
 件,其中<code>rc.local.servce</code>是链接到<code>rc-local.service</code>。打开<code>rc-local.service</code></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="linux.html#cb43-1"></a><span class="co"># SPDX-License-Identifier: LGPL-2.1+</span></span>
-<span id="cb43-2"><a href="linux.html#cb43-2"></a><span class="co">#</span></span>
-<span id="cb43-3"><a href="linux.html#cb43-3"></a><span class="co">#  This file is part of systemd.</span></span>
-<span id="cb43-4"><a href="linux.html#cb43-4"></a><span class="co">#</span></span>
-<span id="cb43-5"><a href="linux.html#cb43-5"></a><span class="co">#  systemd is free software; you can redistribute it and/or modify it</span></span>
-<span id="cb43-6"><a href="linux.html#cb43-6"></a><span class="co">#  under the terms of the GNU Lesser General Public License as published by</span></span>
-<span id="cb43-7"><a href="linux.html#cb43-7"></a><span class="co">#  the Free Software Foundation; either version 2.1 of the License, or</span></span>
-<span id="cb43-8"><a href="linux.html#cb43-8"></a><span class="co">#  (at your option) any later version.</span></span>
-<span id="cb43-9"><a href="linux.html#cb43-9"></a></span>
-<span id="cb43-10"><a href="linux.html#cb43-10"></a><span class="co"># This unit gets pulled automatically into multi-user.target by</span></span>
-<span id="cb43-11"><a href="linux.html#cb43-11"></a><span class="co"># systemd-rc-local-generator if /etc/rc.local is executable.</span></span>
-<span id="cb43-12"><a href="linux.html#cb43-12"></a>[<span class="ex">Unit</span>]</span>
-<span id="cb43-13"><a href="linux.html#cb43-13"></a><span class="va">Description=</span>/etc/rc.local <span class="ex">Compatibility</span></span>
-<span id="cb43-14"><a href="linux.html#cb43-14"></a><span class="va">ConditionFileIsExecutable=</span>/etc/rc.local</span>
-<span id="cb43-15"><a href="linux.html#cb43-15"></a><span class="va">After=</span>network.target</span>
-<span id="cb43-16"><a href="linux.html#cb43-16"></a></span>
-<span id="cb43-17"><a href="linux.html#cb43-17"></a>[<span class="ex">Service</span>]</span>
-<span id="cb43-18"><a href="linux.html#cb43-18"></a><span class="va">Type=</span>forking</span>
-<span id="cb43-19"><a href="linux.html#cb43-19"></a><span class="va">ExecStart=</span>/etc/rc.local <span class="ex">start</span></span>
-<span id="cb43-20"><a href="linux.html#cb43-20"></a><span class="va">TimeoutSec=</span>0</span>
-<span id="cb43-21"><a href="linux.html#cb43-21"></a><span class="va">RemainAfterExit=</span>yes</span>
-<span id="cb43-22"><a href="linux.html#cb43-22"></a><span class="va">GuessMainPID=</span>on</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="linux.html#cb44-1"></a><span class="co"># SPDX-License-Identifier: LGPL-2.1+</span></span>
+<span id="cb44-2"><a href="linux.html#cb44-2"></a><span class="co">#</span></span>
+<span id="cb44-3"><a href="linux.html#cb44-3"></a><span class="co">#  This file is part of systemd.</span></span>
+<span id="cb44-4"><a href="linux.html#cb44-4"></a><span class="co">#</span></span>
+<span id="cb44-5"><a href="linux.html#cb44-5"></a><span class="co">#  systemd is free software; you can redistribute it and/or modify it</span></span>
+<span id="cb44-6"><a href="linux.html#cb44-6"></a><span class="co">#  under the terms of the GNU Lesser General Public License as published by</span></span>
+<span id="cb44-7"><a href="linux.html#cb44-7"></a><span class="co">#  the Free Software Foundation; either version 2.1 of the License, or</span></span>
+<span id="cb44-8"><a href="linux.html#cb44-8"></a><span class="co">#  (at your option) any later version.</span></span>
+<span id="cb44-9"><a href="linux.html#cb44-9"></a></span>
+<span id="cb44-10"><a href="linux.html#cb44-10"></a><span class="co"># This unit gets pulled automatically into multi-user.target by</span></span>
+<span id="cb44-11"><a href="linux.html#cb44-11"></a><span class="co"># systemd-rc-local-generator if /etc/rc.local is executable.</span></span>
+<span id="cb44-12"><a href="linux.html#cb44-12"></a>[<span class="ex">Unit</span>]</span>
+<span id="cb44-13"><a href="linux.html#cb44-13"></a><span class="va">Description=</span>/etc/rc.local <span class="ex">Compatibility</span></span>
+<span id="cb44-14"><a href="linux.html#cb44-14"></a><span class="va">ConditionFileIsExecutable=</span>/etc/rc.local</span>
+<span id="cb44-15"><a href="linux.html#cb44-15"></a><span class="va">After=</span>network.target</span>
+<span id="cb44-16"><a href="linux.html#cb44-16"></a></span>
+<span id="cb44-17"><a href="linux.html#cb44-17"></a>[<span class="ex">Service</span>]</span>
+<span id="cb44-18"><a href="linux.html#cb44-18"></a><span class="va">Type=</span>forking</span>
+<span id="cb44-19"><a href="linux.html#cb44-19"></a><span class="va">ExecStart=</span>/etc/rc.local <span class="ex">start</span></span>
+<span id="cb44-20"><a href="linux.html#cb44-20"></a><span class="va">TimeoutSec=</span>0</span>
+<span id="cb44-21"><a href="linux.html#cb44-21"></a><span class="va">RemainAfterExit=</span>yes</span>
+<span id="cb44-22"><a href="linux.html#cb44-22"></a><span class="va">GuessMainPID=</span>on</span></code></pre></div>
 <p>该启动文件少了<code>INSTALL</code>字段，在<code>rc-local.service</code>后面添加</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb44-1"><a href="linux.html#cb44-1"></a>[<span class="ex">INSTALL</span>]</span>
-<span id="cb44-2"><a href="linux.html#cb44-2"></a><span class="va">WantedBy=</span>multi-user.target</span>
-<span id="cb44-3"><a href="linux.html#cb44-3"></a><span class="va">Alias=</span>rc-local.service</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="linux.html#cb45-1"></a>[<span class="ex">INSTALL</span>]</span>
+<span id="cb45-2"><a href="linux.html#cb45-2"></a><span class="va">WantedBy=</span>multi-user.target</span>
+<span id="cb45-3"><a href="linux.html#cb45-3"></a><span class="va">Alias=</span>rc-local.service</span></code></pre></div>
 <p>接着新建<code>/etc/rc.local</code>文件，在里面添加启动脚本</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb45-1"><a href="linux.html#cb45-1"></a>!<span class="ex">bin/sh</span> -e</span>
-<span id="cb45-2"><a href="linux.html#cb45-2"></a><span class="co"># 如添加xx-net的启动脚本</span></span>
-<span id="cb45-3"><a href="linux.html#cb45-3"></a>/<span class="op">&lt;</span><span class="ex">path_to_xx-net</span><span class="op">&gt;</span>/xx_net.sh</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="linux.html#cb46-1"></a>!<span class="ex">bin/sh</span> -e</span>
+<span id="cb46-2"><a href="linux.html#cb46-2"></a><span class="co"># 如添加xx-net的启动脚本</span></span>
+<span id="cb46-3"><a href="linux.html#cb46-3"></a>/<span class="op">&lt;</span><span class="ex">path_to_xx-net</span><span class="op">&gt;</span>/xx_net.sh</span></code></pre></div>
 <p>加上<code>x</code>执行权限</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb46-1"><a href="linux.html#cb46-1"></a><span class="fu">sudo</span> chmod +x /etc/rc.load</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb47-1"><a href="linux.html#cb47-1"></a><span class="fu">sudo</span> chmod +x /etc/rc.load</span></code></pre></div>
 <p>最后把<code>rc-local.service</code>链接到<code>/etc/systemd/system/</code>下</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb47-1"><a href="linux.html#cb47-1"></a><span class="fu">sudo</span> ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb48-1"><a href="linux.html#cb48-1"></a><span class="fu">sudo</span> ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/</span></code></pre></div>
 <p>重启<code>/etc/rc.local</code>内的脚本就会在开机后自动启动。</p></li>
 <li><p>ubuntu workspace 呈 grid 形式显示</p>
 <p>ubuntu 默认的 workspace 只能上下显示，安装
@@ -345,13 +345,13 @@ workspace 以行列显示。</p>
 <ol style="list-style-type: decimal">
 <li>添加用户至 <code>INPUT</code> 用户组后重启</li>
 </ol>
-<div class="sourceCode" id="cb48"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb48-1"><a href="linux.html#cb48-1"></a><span class="fu">sudo</span> gpasswd -a <span class="kw">`</span><span class="va">$USER</span><span class="kw">`</span> input</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb49-1"><a href="linux.html#cb49-1"></a><span class="fu">sudo</span> gpasswd -a <span class="kw">`</span><span class="va">$USER</span><span class="kw">`</span> input</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>安装</li>
 </ol>
-<div class="sourceCode" id="cb49"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb49-1"><a href="linux.html#cb49-1"></a><span class="fu">sudo</span> apt-get install libinput-tools</span>
-<span id="cb49-2"><a href="linux.html#cb49-2"></a><span class="fu">sudo</span> gem install fusuma</span>
-<span id="cb49-3"><a href="linux.html#cb49-3"></a><span class="fu">sudo</span> apt-get install xdotool</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb50-1"><a href="linux.html#cb50-1"></a><span class="fu">sudo</span> apt-get install libinput-tools</span>
+<span id="cb50-2"><a href="linux.html#cb50-2"></a><span class="fu">sudo</span> gem install fusuma</span>
+<span id="cb50-3"><a href="linux.html#cb50-3"></a><span class="fu">sudo</span> apt-get install xdotool</span></code></pre></div>
 <p>添加至开机自动启动: 打开 <strong>gnome-session-properties</strong> 添加 <strong>fusuma</strong>
 (<code>which fusuma</code>)的路径, 路径后面加上参数 <code>-d</code> 表明后台运行</p>
 <p>最后可以在<code>~/.config/fusuma/config.yml</code>下自定义配置</p></li>
@@ -363,48 +363,48 @@ workspace 以行列显示。</p>
 <li>依赖性检查<code>sudo apt-get install -f</code></li>
 <li>删除配置文件后重启</li>
 </ol>
-<div class="sourceCode" id="cb50"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb50-1"><a href="linux.html#cb50-1"></a><span class="bu">cd</span> ~/.config</span>
-<span id="cb50-2"><a href="linux.html#cb50-2"></a><span class="fu">rm</span> -rf SogouPY* sogou*</span>
-<span id="cb50-3"><a href="linux.html#cb50-3"></a><span class="ex">fcitx</span> -r</span></code></pre></div></li>
+<div class="sourceCode" id="cb51"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb51-1"><a href="linux.html#cb51-1"></a><span class="bu">cd</span> ~/.config</span>
+<span id="cb51-2"><a href="linux.html#cb51-2"></a><span class="fu">rm</span> -rf SogouPY* sogou*</span>
+<span id="cb51-3"><a href="linux.html#cb51-3"></a><span class="ex">fcitx</span> -r</span></code></pre></div></li>
 <li><p>ubuntu 开机后弹窗 检测系统程序出现问题</p>
 <p>修改<code>/etc/default/apport</code>, <code>enable=0</code></p></li>
 <li><p>centos 7 升级内核, 一些软件或者驱动（如网卡驱动）需要高版本内核</p>
 <p>参考<a href="https://blog.csdn.net/fenglailea/article/details/88740961">这里</a></p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb51-1"><a href="linux.html#cb51-1"></a><span class="co"># 添加elrepo源，elrepo包含了许多硬件相关的软件包的rpm软件仓库</span></span>
-<span id="cb51-2"><a href="linux.html#cb51-2"></a><span class="co"># 首先倒入public key</span></span>
-<span id="cb51-3"><a href="linux.html#cb51-3"></a><span class="ex">rpm</span> --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span>
-<span id="cb51-4"><a href="linux.html#cb51-4"></a><span class="co"># 参考http://elrepo.org/tiki/tiki-index.php选择对应系统版本的源</span></span>
-<span id="cb51-5"><a href="linux.html#cb51-5"></a><span class="ex">rpm</span> -Uvh https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm</span>
-<span id="cb51-6"><a href="linux.html#cb51-6"></a></span>
-<span id="cb51-7"><a href="linux.html#cb51-7"></a><span class="co"># 查看可升级的内核</span></span>
-<span id="cb51-8"><a href="linux.html#cb51-8"></a><span class="ex">yum</span> --disablerepo=<span class="st">&quot;*&quot;</span> --enablerepo=<span class="st">&quot;elrepo-kernel&quot;</span> list available</span>
-<span id="cb51-9"><a href="linux.html#cb51-9"></a></span>
-<span id="cb51-10"><a href="linux.html#cb51-10"></a><span class="co"># 安装最新内核</span></span>
-<span id="cb51-11"><a href="linux.html#cb51-11"></a><span class="ex">yum</span> --enablerepo=elrepo-kernel install kernel-ml</span>
-<span id="cb51-12"><a href="linux.html#cb51-12"></a></span>
-<span id="cb51-13"><a href="linux.html#cb51-13"></a><span class="co"># 更新内核</span></span>
-<span id="cb51-14"><a href="linux.html#cb51-14"></a><span class="ex">grub2-mkconfig</span> -o /boot/grub2/grub.cfg</span>
-<span id="cb51-15"><a href="linux.html#cb51-15"></a></span>
-<span id="cb51-16"><a href="linux.html#cb51-16"></a><span class="co"># 查看系统中的内核</span></span>
-<span id="cb51-17"><a href="linux.html#cb51-17"></a><span class="fu">cat</span> /boot/grub2/grub.cfg <span class="kw">|</span><span class="fu">grep</span> menuentry</span>
-<span id="cb51-18"><a href="linux.html#cb51-18"></a></span>
-<span id="cb51-19"><a href="linux.html#cb51-19"></a><span class="kw">if</span><span class="bu"> [</span> x<span class="st">&quot;</span><span class="va">${feature_menuentry_id}</span><span class="st">&quot;</span> <span class="ot">=</span> xy<span class="bu"> ]</span>; <span class="kw">then</span></span>
-<span id="cb51-20"><a href="linux.html#cb51-20"></a>  <span class="va">menuentry_id_option=</span><span class="st">&quot;--id&quot;</span></span>
-<span id="cb51-21"><a href="linux.html#cb51-21"></a>  <span class="va">menuentry_id_option=</span><span class="st">&quot;&quot;</span></span>
-<span id="cb51-22"><a href="linux.html#cb51-22"></a><span class="bu">export</span> <span class="va">menuentry_id_option</span></span>
-<span id="cb51-23"><a href="linux.html#cb51-23"></a><span class="ex">menuentry</span> <span class="st">&#39;CentOS Linux (5.5.5-1.el7.elrepo.x86_64) 7 (Core)&#39;</span> --class centos --class gnu-linux --class gnu --class os --unrestricted <span class="va">$menuentry_id_option</span> <span class="st">&#39;gnulinux-5.5.5-1.el7.elrepo.x86_64-advanced-a2c5cb57-ab41-44c2-b7f8-e3981fc2582d&#39;</span> {</span>
-<span id="cb51-24"><a href="linux.html#cb51-24"></a><span class="ex">menuentry</span> <span class="st">&#39;CentOS Linux (3.10.0-1062.el7.x86_64) 7 (Core)&#39;</span> --class centos --class gnu-linux --class gnu --class os --unrestricted <span class="va">$menuentry_id_option</span> <span class="st">&#39;gnulinux-3.10.0-1062.el7.x86_64-advanced-a2c5cb57-ab41-44c2-b7f8-e3981fc2582d&#39;</span> </span>
-<span id="cb51-25"><a href="linux.html#cb51-25"></a></span>
-<span id="cb51-26"><a href="linux.html#cb51-26"></a><span class="co"># 然后根据上一步查看到的内核CentOS Linux (5.5.5-1.el7.elrepo.x86_64) 7 (Core)设置</span></span>
-<span id="cb51-27"><a href="linux.html#cb51-27"></a><span class="ex">grub2-set-default</span> <span class="st">&quot;CentOS Linux (5.5.5-1.el7.elrepo.x86_64) 7 (Core)&quot;</span></span>
-<span id="cb51-28"><a href="linux.html#cb51-28"></a></span>
-<span id="cb51-29"><a href="linux.html#cb51-29"></a><span class="co"># 重启即可看到新更新的内核</span></span>
-<span id="cb51-30"><a href="linux.html#cb51-30"></a><span class="ex">reboot</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb52"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb52-1"><a href="linux.html#cb52-1"></a><span class="co"># 添加elrepo源，elrepo包含了许多硬件相关的软件包的rpm软件仓库</span></span>
+<span id="cb52-2"><a href="linux.html#cb52-2"></a><span class="co"># 首先倒入public key</span></span>
+<span id="cb52-3"><a href="linux.html#cb52-3"></a><span class="ex">rpm</span> --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span>
+<span id="cb52-4"><a href="linux.html#cb52-4"></a><span class="co"># 参考http://elrepo.org/tiki/tiki-index.php选择对应系统版本的源</span></span>
+<span id="cb52-5"><a href="linux.html#cb52-5"></a><span class="ex">rpm</span> -Uvh https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm</span>
+<span id="cb52-6"><a href="linux.html#cb52-6"></a></span>
+<span id="cb52-7"><a href="linux.html#cb52-7"></a><span class="co"># 查看可升级的内核</span></span>
+<span id="cb52-8"><a href="linux.html#cb52-8"></a><span class="ex">yum</span> --disablerepo=<span class="st">&quot;*&quot;</span> --enablerepo=<span class="st">&quot;elrepo-kernel&quot;</span> list available</span>
+<span id="cb52-9"><a href="linux.html#cb52-9"></a></span>
+<span id="cb52-10"><a href="linux.html#cb52-10"></a><span class="co"># 安装最新内核</span></span>
+<span id="cb52-11"><a href="linux.html#cb52-11"></a><span class="ex">yum</span> --enablerepo=elrepo-kernel install kernel-ml</span>
+<span id="cb52-12"><a href="linux.html#cb52-12"></a></span>
+<span id="cb52-13"><a href="linux.html#cb52-13"></a><span class="co"># 更新内核</span></span>
+<span id="cb52-14"><a href="linux.html#cb52-14"></a><span class="ex">grub2-mkconfig</span> -o /boot/grub2/grub.cfg</span>
+<span id="cb52-15"><a href="linux.html#cb52-15"></a></span>
+<span id="cb52-16"><a href="linux.html#cb52-16"></a><span class="co"># 查看系统中的内核</span></span>
+<span id="cb52-17"><a href="linux.html#cb52-17"></a><span class="fu">cat</span> /boot/grub2/grub.cfg <span class="kw">|</span><span class="fu">grep</span> menuentry</span>
+<span id="cb52-18"><a href="linux.html#cb52-18"></a></span>
+<span id="cb52-19"><a href="linux.html#cb52-19"></a><span class="kw">if</span><span class="bu"> [</span> x<span class="st">&quot;</span><span class="va">${feature_menuentry_id}</span><span class="st">&quot;</span> <span class="ot">=</span> xy<span class="bu"> ]</span>; <span class="kw">then</span></span>
+<span id="cb52-20"><a href="linux.html#cb52-20"></a>  <span class="va">menuentry_id_option=</span><span class="st">&quot;--id&quot;</span></span>
+<span id="cb52-21"><a href="linux.html#cb52-21"></a>  <span class="va">menuentry_id_option=</span><span class="st">&quot;&quot;</span></span>
+<span id="cb52-22"><a href="linux.html#cb52-22"></a><span class="bu">export</span> <span class="va">menuentry_id_option</span></span>
+<span id="cb52-23"><a href="linux.html#cb52-23"></a><span class="ex">menuentry</span> <span class="st">&#39;CentOS Linux (5.5.5-1.el7.elrepo.x86_64) 7 (Core)&#39;</span> --class centos --class gnu-linux --class gnu --class os --unrestricted <span class="va">$menuentry_id_option</span> <span class="st">&#39;gnulinux-5.5.5-1.el7.elrepo.x86_64-advanced-a2c5cb57-ab41-44c2-b7f8-e3981fc2582d&#39;</span> {</span>
+<span id="cb52-24"><a href="linux.html#cb52-24"></a><span class="ex">menuentry</span> <span class="st">&#39;CentOS Linux (3.10.0-1062.el7.x86_64) 7 (Core)&#39;</span> --class centos --class gnu-linux --class gnu --class os --unrestricted <span class="va">$menuentry_id_option</span> <span class="st">&#39;gnulinux-3.10.0-1062.el7.x86_64-advanced-a2c5cb57-ab41-44c2-b7f8-e3981fc2582d&#39;</span> </span>
+<span id="cb52-25"><a href="linux.html#cb52-25"></a></span>
+<span id="cb52-26"><a href="linux.html#cb52-26"></a><span class="co"># 然后根据上一步查看到的内核CentOS Linux (5.5.5-1.el7.elrepo.x86_64) 7 (Core)设置</span></span>
+<span id="cb52-27"><a href="linux.html#cb52-27"></a><span class="ex">grub2-set-default</span> <span class="st">&quot;CentOS Linux (5.5.5-1.el7.elrepo.x86_64) 7 (Core)&quot;</span></span>
+<span id="cb52-28"><a href="linux.html#cb52-28"></a></span>
+<span id="cb52-29"><a href="linux.html#cb52-29"></a><span class="co"># 重启即可看到新更新的内核</span></span>
+<span id="cb52-30"><a href="linux.html#cb52-30"></a><span class="ex">reboot</span></span></code></pre></div></li>
 <li><p>centos 7 安装 Intel <code>Wi-Fi 6 AX200 160MHz</code>无线网卡驱动</p>
 <p>[官网](<a href="https://www.intel.cn/content/www/cn/zh/support/articles/000005511/network-and-i-o/wireless-networking.html" class="uri">https://www.intel.cn/content/www/cn/zh/support/articles/000005511/network-and-i-o/wireless-networking.html</a>
 上说该网卡要求内核在5.1以上,在升级完内核后，<a href="https://wireless.wiki.kernel.org/_media/en/users/drivers/iwlwifi/iwlwifi-cc-46.3cfab8da.0.tgz">下载</a>
 驱动，然后按照README中的步骤安装即可</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb52-1"><a href="linux.html#cb52-1"></a><span class="fu">cp</span> iwlwifi-cc-a0-46.ucode /lib/firmware</span></code></pre></div></li>
+<div class="sourceCode" id="cb53"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb53-1"><a href="linux.html#cb53-1"></a><span class="fu">cp</span> iwlwifi-cc-a0-46.ucode /lib/firmware</span></code></pre></div></li>
 </ul>
 
 </div>
@@ -465,6 +465,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
