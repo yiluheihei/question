@@ -44,4 +44,6 @@ conda
 zotero
 collecions-分类
 合并重复条目
+vscode
+python-1
 others
