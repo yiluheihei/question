@@ -302,4 +302,12 @@ word插件也会自动识别合并。
 分类中选择相同的条目点击右键`合并条目`。
 
 
+## VSCode
+
+### python
+
+- python代码块有空行的时候，通过REPL运行的时候会出现缩进错误， 这是因为空行中没
+  有缩进，设置`editor.trimAutoWhitespace": false`.
+
+
   
