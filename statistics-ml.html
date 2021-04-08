@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第3章 python | 个人问题集</title>
-  <meta name="description" content="第3章 python | 个人问题集" />
+  <title>第2章 统计，机器学习，深度学习 | 个人问题集</title>
+  <meta name="description" content="第2章 统计，机器学习，深度学习 | 个人问题集" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第3章 python | 个人问题集" />
+  <meta property="og:title" content="第2章 统计，机器学习，深度学习 | 个人问题集" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第3章 python | 个人问题集" />
+  <meta name="twitter:title" content="第2章 统计，机器学习，深度学习 | 个人问题集" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="statistics-ml.html"/>
-<link rel="next" href="bioinformatics.html"/>
+<link rel="prev" href="r-programming.html"/>
+<link rel="next" href="python.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -226,17 +226,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="python" class="section level1" number="3">
-<h1><span class="header-section-number">第3章</span> python</h1>
+<div id="统计机器学习深度学习" class="section level1" number="2">
+<h1><span class="header-section-number">第2章</span> 统计，机器学习，深度学习</h1>
 <ul>
-<li><p>linux 修改 pip 源</p>
-<p>新建<code>~/.pip/pip.conf</code>添加源</p>
-<pre><code># 以清华源为例
-[global]
-timeout = 300
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-[install]
-trusted-host = tsinghua.edu.cn</code></pre></li>
+<li><p>什么是效应量 effect size</p>
+<p>p值通常用于判定差异是否显著。一般我们认为 p 小于 0.05，则差异显著，那么差别
+到底有多大，效应量是对差异程度的度量。也就是说 p 用于定性是否显著差异，效应量
+用于定量差异有多大。效应量有很多种，参考
+<a href="https://www.psychometrica.de/effect_size.html">这里</a>，其中最常用的是
+<span class="math inline">\(d_{Cohen}\)</span>, 均值与两组数据整合在一起的标准差的比值。</p></li>
+<li><p>第一类和第二类错误</p>
+<p>两类错误都是针对假设检验中的 H0 所说的。第一类错误, 实际 H0 正确,结果却拒绝
+H0, 称为拒真,用<span class="math inline">\(\alpha\)</span>表示; 第二类错误, 实际 H0 错误, 结果却接受 H0，称为取伪
+用<span class="math inline">\(\beta\)</span>表示。</p>
+<p>当样本数固定时,<span class="math inline">\(\alpha\)</span>越大,<span class="math inline">\(\beta\)</span>就越小, 只有增大样本量,才可使两者同时减小,
+统计中<span class="math inline">\(\alpha\)</span>通常作为检验水准(level of a test), <span class="math inline">\(1 - \beta\)</span>作为检验效能
+(power of a test). 参考<a href="https://www.zhihu.com/question/20993864">这里</a>和
+<a href="https://zhuanlan.zhihu.com/p/146559807">这里</a>.</p></li>
 </ul>
 
 </div>
@@ -245,8 +251,8 @@ trusted-host = tsinghua.edu.cn</code></pre></li>
           </div>
         </div>
       </div>
-<a href="statistics-ml.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bioinformatics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r-programming.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="python.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

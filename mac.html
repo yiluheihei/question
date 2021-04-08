@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第3章 python | 个人问题集</title>
-  <meta name="description" content="第3章 python | 个人问题集" />
+  <title>第6章 Mac OS | 个人问题集</title>
+  <meta name="description" content="第6章 Mac OS | 个人问题集" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第3章 python | 个人问题集" />
+  <meta property="og:title" content="第6章 Mac OS | 个人问题集" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第3章 python | 个人问题集" />
+  <meta name="twitter:title" content="第6章 Mac OS | 个人问题集" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="statistics-ml.html"/>
-<link rel="next" href="bioinformatics.html"/>
+<link rel="prev" href="office.html"/>
+<link rel="next" href="linux.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -226,27 +226,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="python" class="section level1" number="3">
-<h1><span class="header-section-number">第3章</span> python</h1>
+<div id="mac-os" class="section level1" number="6">
+<h1><span class="header-section-number">第6章</span> Mac OS</h1>
+<div id="homebrew" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> homebrew</h2>
 <ul>
-<li><p>linux 修改 pip 源</p>
-<p>新建<code>~/.pip/pip.conf</code>添加源</p>
-<pre><code># 以清华源为例
-[global]
-timeout = 300
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-[install]
-trusted-host = tsinghua.edu.cn</code></pre></li>
+<li><p>homebrew 安装程序出现以下错误</p>
+<pre><code>Error: An unexpected error occurred during the `brew link` step
+The formula built, but is not symlinked into /usr/local
+Permission denied @ dir_s_mkdir - /usr/local/Frameworks
+Error: Permission denied @ dir_s_mkdir - /usr/local/Frameworks</code></pre>
+<p>是由于用户没有修改<code>$(brew --prefix)/*</code>即<code>/usr/local</code>权限，修改权限即可<code>sudo chown -R $(whoami) $(brew --prefix)/*</code></p></li>
+</ul>
+</div>
+<div id="app" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> 应用程序</h2>
+<ul>
+<li><p>打开<code>xxx.app</code>文件时，出现<code>app已损坏，打不开，你应该将它移到废纸篓</code></p>
+<p>系统默认不允许用户自行下载安装应用程序。在终端运行<code>sudo sptcl --master-disable</code>运行即可。打开系统偏好设置 -&gt; 安全性与隐私 -&gt; 允许从以下位置下载的应用就变成了<code>任何来源</code>，双击即可打开app。</p></li>
+</ul>
+<div id="alfred" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Alfred</h3>
+<p>Mac效率神器，快速搜索并打开app、文件，可替代spotlight</p>
+<ul>
+<li><p>设置激活快捷键<code>cmd + space</code></p>
+<p>需取消splotlight快捷键，然后在设置面板里设置即可，详见<a href="https://www.alfredapp.com/help/troubleshooting/cmd-space/">此</a></p></li>
+<li><p>搜索不到文件</p>
+<p>可能是mac系统索引问题，设置面板选择建立mac os的源文件“Rebuild macOS Metadata”，见<a href="https://www.alfredapp.com/help/troubleshooting/indexing/">此</a></p></li>
 </ul>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="statistics-ml.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bioinformatics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="office.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linux.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

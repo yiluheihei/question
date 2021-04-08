@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第3章 python | 个人问题集</title>
-  <meta name="description" content="第3章 python | 个人问题集" />
+  <title>第4章 生物信息 | 个人问题集</title>
+  <meta name="description" content="第4章 生物信息 | 个人问题集" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第3章 python | 个人问题集" />
+  <meta property="og:title" content="第4章 生物信息 | 个人问题集" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第3章 python | 个人问题集" />
+  <meta name="twitter:title" content="第4章 生物信息 | 个人问题集" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="statistics-ml.html"/>
-<link rel="next" href="bioinformatics.html"/>
+<link rel="prev" href="python.html"/>
+<link rel="next" href="office.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -226,27 +226,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="python" class="section level1" number="3">
-<h1><span class="header-section-number">第3章</span> python</h1>
+<div id="bioinfo" class="section level1" number="4">
+<h1><span class="header-section-number">第4章</span> 生物信息</h1>
+<div id="microbiome" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> 微生物组</h2>
 <ul>
-<li><p>linux 修改 pip 源</p>
-<p>新建<code>~/.pip/pip.conf</code>添加源</p>
-<pre><code># 以清华源为例
-[global]
-timeout = 300
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-[install]
-trusted-host = tsinghua.edu.cn</code></pre></li>
+<li><p>mac如何安装 lefse ？</p>
+<p>通过homebrew安装lefse已经<a href="https://github.com/biobakery/homebrew-biobakery/issues/37">不再维护</a><code>brew install biobakery/biobakery/lefse</code>;采用conda安装(目前biobakery下的软件都用<a href="https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools">conda源安装</a>)</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="bioinformatics.html#cb38-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
+<span id="cb38-2"><a href="bioinformatics.html#cb38-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div></li>
+<li><p>本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入matplotlib.pyplot出现错误<code>from urllib.parse import urlencode ImportError: No module named parse</code></p>
+<p>pycharm中设置 <code>Preferences -&gt; Tools -&gt; Python Scientific</code>取消勾选<code>Show plots in tool window</code>，答案见<a href="https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error">此</a></p></li>
+</ul>
+</div>
+<div id="scrna-seq" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> scRNA-seq</h2>
+<ul>
+<li><p>安装<a href="https://github.com/velocyto-team/velocyto.R">velocyto.R</a>.</p>
+<ul>
+<li><p><code>clang: error: unsupported option '-fopenmp'</code></p>
+<p>mac下clang不支持openmp，解决方法参考<a href="https://github.com/BUStools/BUSpaRse">此处</a>，安装支持openmp的<a href="https://cran.r-project.org/bin/macosx/tools/">clang</a>. 然后修改配置文件，在<code>~/.R/Makevars</code>(配置compliers和library)，添加</p>
+<pre><code>CC=/usr/local/clang7/bin/clang
+SHLIB_CXXLD=/usr/local/clang7/bin/clang++
+CXX= /usr/local/clang7/bin/clang++  -Wall
+CXX1X= /usr/local/clang7/bin/clang++
+CXX98= /usr/local/clang7/bin/clang++
+CXX11= /usr/local/clang7/bin/clang++
+CXX14= /usr/local/clang7/bin/clang++
+CXX17= /usr/local/clang7/bin/clang++
+LDFLAGS=-L/usr/local/clang7/lib</code></pre></li>
+<li><p><code>library not found for -lboost_filesystem</code></p>
+<p>安装 boost <code>brew install boost</code></p></li>
+<li><p><code>library not found for -lgfortran</code></p>
+<p>gfortran包含在gcc中，但是电脑中gcc是通过homebrew安装，原始配置文件<code>/Library/Frameworks/R.framework/Resources/etc/Makeconf</code>中并没有更新库的地址，在<code>~/.R/Makevars</code>中手动添加即可</p>
+<pre><code># 通过homebrew安装的gcc地址
+FLIBS = -L/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/lib/gcc/8 -lgfortran -lquadmath -lm
+# Library/Frameworks/R.framework/Resources/etc/Makeconf中的原始配置
+# FLIBS =  -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm</code></pre></li>
+</ul></li>
+<li><p>安装<a href="https://github.com/velocyto-team/velocyto.py"><code>velocyto.py</code></a></p>
+<p>mac 在 pip 安装的时候gcc编译出现错误，建议使用conda安装<code>conda install velocyto.py</code></p></li>
 </ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="statistics-ml.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bioinformatics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="python.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="office.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

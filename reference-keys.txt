@@ -1,4 +1,4 @@
-r-programming
+rprogramming
 安装和配置
 安装
 配置
@@ -22,6 +22,7 @@ reproducible-research
 rmarkdown---knitr
 bookdown
 tinytex
+统计机器学习深度学习
 python
 bioinfo
 microbiome
