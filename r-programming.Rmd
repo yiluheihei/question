@@ -1,4 +1,4 @@
-# R 语言 {#r-programming}
+# R 语言 {#rprogramming}
 
 ```{r echo=FALSE}
 library(magrittr)
@@ -492,9 +492,11 @@ snippet header_section
 
   >The chapter_name field can be either a character string to be prepended to chapter numbers in chapter titles (e.g., 'CHAPTER '), or an R function that takes the chapter number as the input and returns a string as the new chapter number (e.g., `!expr function(i) paste('Chapter', i))`. If it is a character vector of length 2, the chapter title prefix will be `paste0(chapter_name[1], i, chapter_name[2])`, where `i` is the chapter number. 
 
-- 出现错误`Error in split_chapters(output, gitbook_page, number_sections, split_by,  :Automatically generated filenames contain duplicated ones: -, -`
+- 出现错误`Error in split_chapters(output, gitbook_page, number_sections, split_by,  :Automatically generated filenames contain duplicated ones: -`
   
   表示由`split_by`自动生成章节标题出现重复标题而出现错误。中文标题会出现这种错误，章节标题手动添加`{$ID}`即可，参见[这](https://d.cosx.org/d/420172-bookdown-split-chapters)和[这](https://github.com/rstudio/bookdown/issues/520)
+  
+  如果问题还存在, 设置 `split_by`为`none`或`rmd`，参考[这里](https://github.com/rstudio/bookdown/issues/902).
 
 ### tinytex
 
