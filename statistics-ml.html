@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2021-04-08" />
+<meta name="date" content="2021-04-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -228,22 +228,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="统计机器学习深度学习" class="section level1" number="2">
 <h1><span class="header-section-number">第2章</span> 统计，机器学习，深度学习</h1>
-<ul>
-<li><p>什么是效应量 effect size</p>
+<p><strong>期望，均值，方差和样本方差</strong></p>
+<p>期望和方差是面向总体样本空间，而样本的均值和方差是样本的统计量。其中均值是以
+“上帝视角”角度表征总体的均值，类似的方差通常表示总体样本的方差。它们分别用
+<span class="math inline">\(\mu\)</span>和<span class="math inline">\(\sigma^{2}\)</span>表示，且通常是未知的（一般情况下无法捕捉总体的样本空间）。</p>
+<p>我们通常说的均值是指观察到的特定样本的均值，比如抽样<span class="math inline">\(n\)</span>个样本<span class="math inline">\(X_1, X_2, ..., X_n\)</span>
+(<span class="math inline">\(n\)</span>个随机变量)，
+样本均值表示为:</p>
+<p><span class="math display">\[\overline{X} = \frac{1}{n}\sum_{i=1}^nX_i\]</span>
+显然</p>
+<p><span class="math display">\[E(\overline{X}) = \mu\]</span>
+均值的方差为（证明可以看<a href="https://math.stackexchange.com/questions/1363505/prove-that-e-overlinex-mu2-frac1n-sigma2?answertab=active#tab-top">这里</a>)
+<span class="math display">\[Var(\overline{X}) = \frac{1}{n}\sigma^2\]</span></p>
+<p>因为<span class="math inline">\(\overline{X}\)</span>的期望为<span class="math inline">\(\mu\)</span>,所以<span class="math inline">\(\overline{X}\)</span>可以看做是期望（总体均值）
+<span class="math inline">\(\mu\)</span>的无偏估计。</p>
+<p>样本方差<span class="math inline">\(S_n^2\)</span>用于近似表示总体方差<span class="math inline">\(\sigma^2\)</span>:</p>
+<p><span class="math display">\[S_n^2 = \frac{1}{n-1}\sum_{i=1}^n(X_i - \mu)^2\]</span>
+注意分母是<span class="math inline">\(n-1\)</span>，而不是我们直觉的<span class="math inline">\(n\)</span>。具体证明可参见
+<a href="https://www.zhihu.com/question/20099757">这里</a>, 简单来说
+首先对于任意的随机样本有:</p>
+<p><span class="math display">\[E[(X_i - \mu)^2] = \sigma^2\]</span>
+即有</p>
+<p><span class="math display">\[E[\frac{1}{n}\sum_{i=1}^n(X_i - \mu)^2] = \sigma^2\]</span></p>
+<p>而</p>
+<p><span class="math display">\[\frac{1}{n}\sum_{i=1}^n(X_i - \overline{X})^2 = \frac{1}{n}\sum_{i=1}^n(X_i - \ 
+\mu)^2 - (\mu - \overline{X})^2\]</span></p>
+<p>因此如果直接使用<span class="math inline">\(\frac{1}{n}\sum_{i=1}^n(X_i - \overline{X})^2\)</span>显然小于总体方差，
+因此为了更准确的对总体方差进行无偏估计，把分母换成<span class="math inline">\(n - 1\)</span>，作为对总体方差的无偏
+估计。可以证明:</p>
+<p><span class="math display">\[E[\frac{1}{n-1}\sum_{i=1}^n(X_i - \overline{X})^2] = \
+E[\frac{1}{n}\sum_{i=1}^n(X_i - \mu)^2] = \sigma^2 = \sigma^2\]</span></p>
+<p><strong>什么是效应量 effect size</strong></p>
 <p>p值通常用于判定差异是否显著。一般我们认为 p 小于 0.05，则差异显著，那么差别
 到底有多大，效应量是对差异程度的度量。也就是说 p 用于定性是否显著差异，效应量
 用于定量差异有多大。效应量有很多种，参考
 <a href="https://www.psychometrica.de/effect_size.html">这里</a>，其中最常用的是
-<span class="math inline">\(d_{Cohen}\)</span>, 均值与两组数据整合在一起的标准差的比值。</p></li>
-<li><p>第一类和第二类错误</p>
+<span class="math inline">\(d_{Cohen}\)</span>, 均值与两组数据整合在一起的标准差的比值。</p>
+<p><strong>第一类和第二类错误</strong></p>
 <p>两类错误都是针对假设检验中的 H0 所说的。第一类错误, 实际 H0 正确,结果却拒绝
 H0, 称为拒真,用<span class="math inline">\(\alpha\)</span>表示; 第二类错误, 实际 H0 错误, 结果却接受 H0，称为取伪
 用<span class="math inline">\(\beta\)</span>表示。</p>
 <p>当样本数固定时,<span class="math inline">\(\alpha\)</span>越大,<span class="math inline">\(\beta\)</span>就越小, 只有增大样本量,才可使两者同时减小,
 统计中<span class="math inline">\(\alpha\)</span>通常作为检验水准(level of a test), <span class="math inline">\(1 - \beta\)</span>作为检验效能
 (power of a test). 参考<a href="https://www.zhihu.com/question/20993864">这里</a>和
-<a href="https://zhuanlan.zhihu.com/p/146559807">这里</a>.</p></li>
-</ul>
+<a href="https://zhuanlan.zhihu.com/p/146559807">这里</a>.</p>
 
 </div>
             </section>
@@ -297,7 +325,8 @@ gitbook.start({
 "download": ["question-notes.pdf", "question-notes.epub"],
 "toc": {
 "collapse": "subsection"
-}
+},
+"toc_depth": 4
 });
 });
 </script>
