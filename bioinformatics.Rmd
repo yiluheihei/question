@@ -37,8 +37,17 @@ sudo mv usearch* /usr/local/bin/usearch61
 chmod a+x /usr/local/bin/usearch61
 ```
 
+##### 2. ubuntu 20.04 安装 picrust1 {-}
 
-##### 2. mac安装 lefse {-}
+按照文档中说的`conda create -n picrust1 -c bioconda -c conda-forge picrust`
+安装出现错误 `failed with repodata from current_repodata.json`。
+
+只使用 `bioconda`可正常安装, `conda create -n picrust1 -c bioconda  picrust`.
+
+
+
+
+##### 3. mac安装 lefse {-}
 
 通过homebrew安装lefse已经[不再维护](https://github.com/biobakery/homebrew-biobakery/issues/37)`brew install biobakery/biobakery/lefse`;采用conda安装(目前biobakery下的软件都用[conda源安装](https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools))
   
@@ -47,7 +56,7 @@ conda config --add channels biobakery
 conda install -c biobakery lefse
 ```
 
-##### 3. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 `from urllib.parse import urlencode ImportError: No module named parse` {-}
+##### 4. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 `from urllib.parse import urlencode ImportError: No module named parse` {-}
 
 pycharm中设置 `Preferences -> Tools -> Python Scientific`取消勾选`Show plots in tool window`，答案见[此](https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error)
   
