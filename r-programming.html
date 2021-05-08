@@ -281,6 +281,8 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 <span id="cb5-2"><a href="r-programming.html#cb5-2"></a>  <span class="kw">dir.create</span>(x, <span class="dt">recursive=</span><span class="ot">TRUE</span>)</span>
 <span id="cb5-3"><a href="r-programming.html#cb5-3"></a>  <span class="kw">file.copy</span>(<span class="kw">system.file</span>(<span class="st">&quot;html/R.css&quot;</span>, <span class="dt">package=</span><span class="st">&quot;stats&quot;</span>), x)</span>
 <span id="cb5-4"><a href="r-programming.html#cb5-4"></a>}</span></code></pre></div></li>
+<li><p>ubuntu 20.04 安装 Cairo 出现错误, <code>lib-backend.c:34:10: fatal error: X11/Intrinsic.h: No such file or directory</code></p>
+<p>已经安装了包的系统依赖 libcairo2-dev, 安装 <code>libxt-dev</code>即可，参见 <a href="https://stackoverflow.com/questions/23642353/error-message-installing-cairo-package-in-r?answertab=active#tab-top">这里</a></p></li>
 </ul>
 </div>
 </div>
@@ -373,7 +375,7 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <span id="cb13-2"><a href="r-programming.html#cb13-2"></a>    <span class="co">################################################################################</span></span>
 <span id="cb13-3"><a href="r-programming.html#cb13-3"></a>    <span class="co">## Description: </span></span>
 <span id="cb13-4"><a href="r-programming.html#cb13-4"></a>    <span class="co">## Author: </span></span>
-<span id="cb13-5"><a href="r-programming.html#cb13-5"></a>    <span class="co">## Create Time: Sat May  8 02:53:49 2021</span></span>
+<span id="cb13-5"><a href="r-programming.html#cb13-5"></a>    <span class="co">## Create Time: Sat May  8 07:47:26 2021</span></span>
 <span id="cb13-6"><a href="r-programming.html#cb13-6"></a>    <span class="co">## Updated Time: </span></span>
 <span id="cb13-7"><a href="r-programming.html#cb13-7"></a>    <span class="co">################################################################################</span></span></code></pre></div>
 <p>脚本的分段注释, 描述该段代码的作用</p>
