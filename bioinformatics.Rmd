@@ -26,6 +26,17 @@ pip install qiime
 print_qiime_config.py -t
 ```
 
+pick otu 或者 嵌合体识别 (chimera) 可用 usearch61 方法, 安装 usearch步骤为
+
+[下载](https://drive5.com/downloads/usearch6.1.544_i86linux32.gz)解压后, 
+拷贝到 `/usr/local/bin/` 然后赋予执行权限:
+
+```sh
+sudo mv usearch* /usr/local/bin/usearch61
+# 添加权限
+chmod a+x /usr/local/bin/usearch61
+```
+
 
 ##### 2. mac安装 lefse {-}
 
