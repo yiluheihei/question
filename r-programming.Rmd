@@ -73,6 +73,10 @@ library(magrittr)
   }
   ```
   
+- ubuntu 20.04 安装 Cairo 出现错误, `lib-backend.c:34:10: fatal error: X11/Intrinsic.h: No such file or directory`
+
+  已经安装了包的系统依赖 libcairo2-dev, 安装 `libxt-dev`即可，参见 [这里](https://stackoverflow.com/questions/23642353/error-message-installing-cairo-package-in-r?answertab=active#tab-top)
+  
 ## R 包开发
 
 ##### 1. github中添加包的 code coverage {-}
