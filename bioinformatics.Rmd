@@ -2,19 +2,43 @@
 
 ## 微生物组 {#microbiome}
 
-- mac如何安装 lefse ？
+##### 1. Ubuntu 20.04 安装 qiime1 {-}
 
-  通过homebrew安装lefse已经[不再维护](https://github.com/biobakery/homebrew-biobakery/issues/37)`brew install biobakery/biobakery/lefse`;采用conda安装(目前biobakery下的软件都用[conda源安装](https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools))
-  
-  ```sh
-  conda config --add channels biobakery
-  conda install -c biobakery lefse
-  ```
-  
-- 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入matplotlib.pyplot出现错误`from urllib.parse import urlencode
-ImportError: No module named parse`
+直接按文档中所说 `conda create -n qiime1 python=2.7 qiime matplotlib=1.4.3 mock
+nose -c bioconda` 出现错误 PackagesNotFoundError matplotlib=1.4.3
+   
+解决办法是创建新的 conda 环境 `qiime1`, `conda create -n qiime1 python=2.7`, 然后用 pip 手动安装 matplotlib 及其他的 python 模块
 
-  pycharm中设置 `Preferences -> Tools -> Python Scientific`取消勾选`Show plots in tool window`，答案见[此](https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error)
+```
+# 1 安装matplotlib==1.4.3的时候，出现错误 "The following required packages can
+# not be built: * freetype", pip 不能安装系统依赖，手动安装系统依赖后然后安装
+sudo apt-get install libfreetype6-dev libxft-dev
+pip install matplotlib==1.4.3
+
+# 2 qiime中要求biom-format>=2.1.4,<2.2.0,但是目前版本不支持python 2.7
+# 手动安装2.1.4版本
+pip install biom-format==2.1.4
+
+# 3 最后安装qiime
+pip install qiime
+
+# 检测安装是否成功
+print_qiime_config.py -t
+```
+
+
+##### 2. mac安装 lefse {-}
+
+通过homebrew安装lefse已经[不再维护](https://github.com/biobakery/homebrew-biobakery/issues/37)`brew install biobakery/biobakery/lefse`;采用conda安装(目前biobakery下的软件都用[conda源安装](https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools))
+  
+```sh
+conda config --add channels biobakery
+conda install -c biobakery lefse
+```
+
+##### 3. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 `from urllib.parse import urlencode ImportError: No module named parse` {-}
+
+pycharm中设置 `Preferences -> Tools -> Python Scientific`取消勾选`Show plots in tool window`，答案见[此](https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error)
   
 ## scRNA-seq
 
