@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>第4章 生物信息 | 个人问题集</title>
   <meta name="description" content="第4章 生物信息 | 个人问题集" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="第4章 生物信息 | 个人问题集" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2021-04-14" />
+<meta name="date" content="2021-05-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="python.html"/>
 <link rel="next" href="office.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -117,6 +119,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -230,14 +233,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">第4章</span> 生物信息</h1>
 <div id="microbiome" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> 微生物组</h2>
-<ul>
-<li><p>mac如何安装 lefse ？</p>
+<div id="ubuntu-20.04-安装-qiime1" class="section level5 unnumbered" number="">
+<h5>1. Ubuntu 20.04 安装 qiime1</h5>
+<p>直接按文档中所说 <code>conda create -n qiime1 python=2.7 qiime matplotlib=1.4.3 mock nose -c bioconda</code> 出现错误 PackagesNotFoundError matplotlib=1.4.3</p>
+<p>解决办法是创建新的 conda 环境 <code>qiime1</code>, <code>conda create -n qiime1 python=2.7</code>, 然后用 pip 手动安装 matplotlib 及其他的 python 模块</p>
+<pre><code># 1 安装matplotlib==1.4.3的时候，出现错误 &quot;The following required packages can
+# not be built: * freetype&quot;, pip 不能安装系统依赖，手动安装系统依赖后然后安装
+sudo apt-get install libfreetype6-dev libxft-dev
+pip install matplotlib==1.4.3
+
+# 2 qiime中要求biom-format&gt;=2.1.4,&lt;2.2.0,但是目前版本不支持python 2.7
+# 手动安装2.1.4版本
+pip install biom-format==2.1.4
+
+# 3 最后安装qiime
+pip install qiime
+
+# 检测安装是否成功
+print_qiime_config.py -t</code></pre>
+</div>
+<div id="mac安装-lefse" class="section level5 unnumbered" number="">
+<h5>2. mac安装 lefse</h5>
 <p>通过homebrew安装lefse已经<a href="https://github.com/biobakery/homebrew-biobakery/issues/37">不再维护</a><code>brew install biobakery/biobakery/lefse</code>;采用conda安装(目前biobakery下的软件都用<a href="https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools">conda源安装</a>)</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb38-1"><a href="bioinformatics.html#cb38-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
-<span id="cb38-2"><a href="bioinformatics.html#cb38-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div></li>
-<li><p>本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入matplotlib.pyplot出现错误<code>from urllib.parse import urlencode ImportError: No module named parse</code></p>
-<p>pycharm中设置 <code>Preferences -&gt; Tools -&gt; Python Scientific</code>取消勾选<code>Show plots in tool window</code>，答案见<a href="https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error">此</a></p></li>
-</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="bioinformatics.html#cb39-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
+<span id="cb39-2"><a href="bioinformatics.html#cb39-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div>
+</div>
+<div id="q-本地测试qiime1脚本时安装完依赖后运行脚本pycharm-导入-matplotlib.pyplot-出现错误-from-urllib.parse-import-urlencode-importerror-no-module-named-parse" class="section level5 unnumbered" number="">
+<h5>3. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 <code>from urllib.parse import urlencode ImportError: No module named parse</code></h5>
+<p>pycharm中设置 <code>Preferences -&gt; Tools -&gt; Python Scientific</code>取消勾选<code>Show plots in tool window</code>，答案见<a href="https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error">此</a></p>
+</div>
 </div>
 <div id="scrna-seq" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> scRNA-seq</h2>
@@ -299,6 +323,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
