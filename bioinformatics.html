@@ -251,12 +251,18 @@ pip install qiime
 
 # 检测安装是否成功
 print_qiime_config.py -t</code></pre>
+<p>pick otu 或者 嵌合体识别 (chimera) 可用 usearch61 方法, 安装 usearch步骤为</p>
+<p><a href="https://drive5.com/downloads/usearch6.1.544_i86linux32.gz">下载</a>解压后,
+拷贝到 <code>/usr/local/bin/</code> 然后赋予执行权限:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="bioinformatics.html#cb39-1"></a><span class="fu">sudo</span> mv usearch* /usr/local/bin/usearch61</span>
+<span id="cb39-2"><a href="bioinformatics.html#cb39-2"></a><span class="co"># 添加权限</span></span>
+<span id="cb39-3"><a href="bioinformatics.html#cb39-3"></a><span class="fu">chmod</span> a+x /usr/local/bin/usearch61</span></code></pre></div>
 </div>
 <div id="mac安装-lefse" class="section level5 unnumbered" number="">
 <h5>2. mac安装 lefse</h5>
 <p>通过homebrew安装lefse已经<a href="https://github.com/biobakery/homebrew-biobakery/issues/37">不再维护</a><code>brew install biobakery/biobakery/lefse</code>;采用conda安装(目前biobakery下的软件都用<a href="https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools">conda源安装</a>)</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="bioinformatics.html#cb39-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
-<span id="cb39-2"><a href="bioinformatics.html#cb39-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="bioinformatics.html#cb40-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
+<span id="cb40-2"><a href="bioinformatics.html#cb40-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div>
 </div>
 <div id="q-本地测试qiime1脚本时安装完依赖后运行脚本pycharm-导入-matplotlib.pyplot-出现错误-from-urllib.parse-import-urlencode-importerror-no-module-named-parse" class="section level5 unnumbered" number="">
 <h5>3. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 <code>from urllib.parse import urlencode ImportError: No module named parse</code></h5>
