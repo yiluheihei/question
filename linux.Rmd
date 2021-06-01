@@ -41,7 +41,14 @@
   1. 开机后按`shift`或者`esc`进入grub，选额高级启动项
   2. 进入recovery mode
   3. 选则进入`Drop To Root Shell Prompt`，就用 root 用户登录了，然后修改文件即可
+
+- Mac 通过网线链接 ubuntu 服务器
+
+  网线链接两台电脑后，手动设置相应网卡的 IP 地址，保证在同一个网段。如 
+  Mac IP 设置成192.168.11.1，子网掩码设置为 255.255.255.0，ubuntu 
+  IP设置为192.168.11.2，子网掩码设置为 255.255.255.0。
   
+
 - ubuntu 添加 aliyun 源
   
   根据[这里](https://developer.aliyun.com/mirror/ubuntu)选择相应版本的源，以 
