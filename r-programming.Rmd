@@ -28,6 +28,10 @@ library(magrittr)
   yum install R-core R-core-devel
   ```
   
+- 升级 R 版本后装, minor 以上的升级需要重新安装包(`x.y.z`中的`y`).
+
+  参考[这里](https://rstats.wtf/maintaining-r.html#how-to-transfer-your-library-when-updating-r).
+  
 ### 配置
 
 - 设置cran和bioconductor国内源
