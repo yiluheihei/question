@@ -32,6 +32,22 @@
   #     capabilities: pm msi pciexpress vga_controller bus_master cap_list rom
   #     configuration: driver=nvidia latency=0
   ```
+  
+- ubuntu 添加新用户并赋予sudo权限
+  
+  ```sh
+  # 切换到root账户
+  su -
+  # 添加用户
+  useradd xxx
+  # 添加至sudo组
+  usermod -aG sudo xxx
+  
+  # 或直接修改/etc/sudoers, 使该账户具有root权限，默认不可写
+  chmod u+w /etc/sudoers
+  # root ALL=(ALL) ALL 后添加一行，root该成用户名xxx
+  xxx ALL=(ALL) ALL
+  ```
 
 - ubuntu 修复模式下修改文件
 
