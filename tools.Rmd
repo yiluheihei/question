@@ -218,6 +218,8 @@ after \, but got '\r'.`
 
   ```sh
   channels:
+    - conda-forge
+    - bioconda
     - defaults
   show_channel_urls: true
   channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda
@@ -235,6 +237,14 @@ after \, but got '\r'.`
     pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
     simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   ```
+
+- 安装 biconda 上的工具的时候，可能出现软件版本冲突错误: `UnsatisfiableError: 
+  The following specifications were found to be incompatible with each other: 
+  Output in format: Requested package -> Available versions`.
+  
+  可能是 conda 中 channels 顺序设置错误，按照 [bioconda 文档中建议的顺序](https://bioconda.github.io/user/install.html#set-up-channels)(`conda-forge > bioconda > defaults`)设置. 或参考[这里](https://stackoverflow.com/questions/64081302/conda-install-figtree/64084648#64084648).
+
+Output in format: Requested package -> Available versions
 
 - macOS 10.14 Mojave,conda安装包的时候设计到qt就出现错误，如`conda-forge::qt-5.9.7-h93ee506_1'. PermissionError(1, 'Operation not permitted')`
 
