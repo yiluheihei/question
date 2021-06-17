@@ -262,4 +262,22 @@
   cp iwlwifi-cc-a0-46.ucode /lib/firmware
   ```
 
-
+- ubuntu 20.04 网络设置静态 IP 后，出现错误`Temporary failure in name 
+  resolution`
+  
+  ping ip 地址和网关都通,ping 域名则无法连接，原因可能是域名无法解析。
+  直接在`/etc/reslov.conf`添加 DNS 服务器 
+  (如114.114.114.114)会在重启后会恢复为原来内容。在`/etc/systemd/resolved.conf`
+  添加 DNS 服务器，然后链接到`/etc/reslov.conf`即可(参考[这里](https://blog.csdn.net/booklijian/article/details/116491288)):
+  
+  ```sh
+  # 备份原有的/etc/reslov.conf，若不可修改，先修改其属性
+  # chattr -i /etc/reslov.conf
+  mv /etc/reslov.conf /etc/reslov.conf.bak
+  
+  # 修改 /etc/systemd/resolved.conf 设置 DNS
+  vim /etc/systemd/resolved.conf # DNS = 114.114.114.114 8.8.8.8
+  # 链接
+  ln -s /run/systemd/resolve/resolv.conf /etc/reslov.conf
+  ```
+  
