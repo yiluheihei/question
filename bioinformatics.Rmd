@@ -59,6 +59,16 @@ conda install -c biobakery lefse
 ##### 4. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 `from urllib.parse import urlencode ImportError: No module named parse` {-}
 
 pycharm中设置 `Preferences -> Tools -> Python Scientific`取消勾选`Show plots in tool window`，答案见[此](https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error)
+
+##### 5. Q: phyloseq 中 `distance()` 或 `ordinate()` (调用 `distance()`) 基于树计算距离的时候(如 `unifrac`), 出现 `Warning message: In matrix(tree$edge[order(tree$edge[, 1]), ][, 2], byrow = TRUE, : data length [86515] is not a sub-multiple or multiple of the number of rows [43258]`
+
+原因是因为对 OTU 进行质控的时候 (如删除丰度较低的 OTU)，原因是
+树不是二分树，解决办法是转化为二分树。参考[这里](https://github.com/joey711/phyloseq/issues/936#issuecomment-569000555)
+
+```r
+new_tre <- ape::multi2di(phy_tree(ps))
+phy_tree(ps) <- new_tre
+```
   
 ## scRNA-seq
 
