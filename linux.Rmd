@@ -280,4 +280,31 @@
   # 链接
   ln -s /run/systemd/resolve/resolv.conf /etc/reslov.conf
   ```
+
+## 系统管理
+
+### 1. 磁盘 {-}
+
+- 取消磁盘挂载
+
+  ```sh
+  # sudo umount </media/share>, 出现target is busy, 需要首先杀死使用
+  # 挂载目录的进程
+  fuser -km </media/share>
+  sudo umount </media/share>
+  ```
+- 永久挂载磁盘
+
+  ```sh
+  # 查看磁盘信息
+  blkid </dev/sdx>
+  # UUID="7c6c4126-26ec-4071-966a-0cdb5c8a8f96" TYPE="ext4" ...
   
+  # 修改fstab文件(文件系统挂载)，根据blkid显示的磁盘信息添加一行
+  # UUID和文件系统类型
+  UUID=7c6c4126-26ec-4071-966a-0cdb5c8a8f96  <挂载目录>  ext4 defaults  0  0
+  
+  ## 挂载
+  sudo mount -a
+  ```
+
