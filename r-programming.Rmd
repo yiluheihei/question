@@ -165,6 +165,35 @@ library(magrittr)
     > Never \@export a data set.
 
 
+##### 7. Mac升级 Big Sur后R 包开发环境被破坏，改进方法 {-}
+
+参考[这里](https://stackoverflow.com/questions/65251887/clang-7-error-linker-command-failed-with-exit-code-1-for-macos-big-sur)
+
+1. 升级 xcode
+2. 从这里安装gfortran：https://github.com/fxcoudert/gfortran-for-macOS
+3. 修改`~/.R/Makevars`
+
+```sh
+# 备份~/.R/Makevars, 如果没有直接新建即可
+mv ~/.R/Makevars ~/.R/Makevars.bak
+
+vi ~/.R/Makevars # 添加
+FLIBS=-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin19/10.2.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm
+CXX1X=/usr/local/gfortran/bin/g++
+CXX98=/usr/local/gfortran/bin/g++
+CXX11=/usr/local/gfortran/bin/g++
+CXX14=/usr/local/gfortran/bin/g++
+CXX17=/usr/local/gfortran/bin/g++
+
+LLVM_LOC = /usr/local/opt/llvm
+CC=/usr/local/gfortran/bin/gcc -fopenmp
+CXX=/usr/local/gfortran/bin/g++ -fopenmp
+CFLAGS=-g -O3 -Wall -pedantic -std=gnu99 -mtune=native -pipe
+CXXFLAGS=-g -O3 -Wall -pedantic -std=c++11 -mtune=native -pipe
+LDFLAGS=-L/usr/local/opt/gettext/lib -L$(LLVM_LOC)/lib -Wl,-rpath,$(LLVM_LOC)/lib
+CPPFLAGS=-I/usr/local/opt/gettext/include -I$(LLVM_LOC)/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+```
+
 ## Rstudio
 
 - rstudio git 选择所有文件add并commit
