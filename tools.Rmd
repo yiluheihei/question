@@ -138,6 +138,16 @@ git push origin --delete <remote_branch>
  git commit
  ```
 
+- 恢复已经push到远程仓库的误删的文件
+
+```sh
+# 找到误删文件的commit
+git log --diff-filter=D -- <filename>
+
+# 恢复文件, ~n表示该commit的第n个祖先
+git checkout <commit>~1 -- <filename>
+```
+
 - 查看仓库中代码行数
   
   参考[这里](https://stackoverflow.com/questions/26881441/can-you-get-the-number-of-lines-of-code-from-a-github-repository)
