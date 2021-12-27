@@ -332,6 +332,17 @@ snippet header_section
   这样`data.frame`的每一列都会成为列表的一个元素。为了保证`data.frame`作为列表的
   一个元素，对该参数在构建参数列表的时候要显式的使用`list(df)`,
   `c(list(arg1=value1, arg2=value2), arg3=list(value3))`
+  
+- `switch`中匹配`NA`, 使用用反引号
+
+   ```r
+   swithc(
+       var, 
+       var1 = ...,
+       var2 = ...,
+       `NA` = ...
+  )
+   ```
 
 ## tidyverse 数据分析
 
