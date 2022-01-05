@@ -184,7 +184,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="linux.html"><a href="linux.html#系统管理"><i class="fa fa-check"></i><b>7.2</b> 系统管理</a><ul>
 <li class="chapter" data-level="" data-path="linux.html"><a href="linux.html#磁盘"><i class="fa fa-check"></i>1. 磁盘</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="linux.html"><a href="linux.html#vim"><i class="fa fa-check"></i><b>7.3</b> VIM</a></li>
+<li class="chapter" data-level="7.3" data-path="linux.html"><a href="linux.html#vim"><i class="fa fa-check"></i><b>7.3</b> VIM</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="linux.html"><a href="linux.html#插件"><i class="fa fa-check"></i><b>7.3.1</b> 插件</a></li>
+</ul></li>
 <li class="chapter" data-level="7.4" data-path="linux.html"><a href="linux.html#misc"><i class="fa fa-check"></i><b>7.4</b> Misc</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>8</b> tools</a><ul>
@@ -462,8 +464,10 @@ workspace 以行列显示。</p>
 </div>
 <div id="vim" class="section level2">
 <h2><span class="header-section-number">7.3</span> VIM</h2>
+<div id="插件" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> 插件</h3>
 <div id="安装插件" class="section level5">
-<h5><span class="header-section-number">7.3.0.0.1</span> {-} 安装插件</h5>
+<h5><span class="header-section-number">7.3.1.0.1</span> {-} 安装插件</h5>
 <ol style="list-style-type: decimal">
 <li>安装插件管理器<a href="https://github.com/junegunn/vim-plug">vim-plug</a>,
 <a href="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim">plug-vim</a>
@@ -486,6 +490,16 @@ call plug#end()</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>退出vim,重新打开后 <code>:PlugInstall</code> 即可安装</li>
 </ol>
+</div>
+<div id="安装-python-autocompletion-插件-jedi-vim-后出现错误" class="section level5 unnumbered">
+<h5>安装 python autocompletion 插件 jedi-vim 后出现错误</h5>
+<p>因为安装系统的 vim 是基于自带的 python(3.5) 配置的, jedi-vim 默认使用系统自带的
+python3.5 (<code>:python3 import sys; print(sys.version_info)</code>), 而我们需要使用更高版本的 python (3.9), 出现版本不匹配而引起错误
+<code>File "/home/user/.vim/plugged/jedi-vim/pythonx/parso/parso/parser.py", line  113 node_map: Dict[str, type] = {} ^ SyntaxError: invalid syntax</code>.</p>
+<p><strong>解决办法</strong>: 用 conda 用相应版本 python 重新安装配置新的 vim <code>conda install -c conda-forge vim</code>. 参考
+<a href="https://gitmemory.cn/repo/davidhalter/jedi-vim/issues/1062">这里</a>. 如果使用
+自带的 vim 和 python, 则直接把 <code>python3</code> 链接到系统版本应该也可以.</p>
+</div>
 </div>
 </div>
 <div id="misc" class="section level2">
