@@ -245,9 +245,9 @@ print_qiime_config.py -t</code></pre>
 <p>pick otu 或者 嵌合体识别 (chimera) 可用 usearch61 方法, 安装 usearch步骤为</p>
 <p><a href="https://drive5.com/downloads/usearch6.1.544_i86linux32.gz">下载</a>解压后,
 拷贝到 <code>/usr/local/bin/</code> 然后赋予执行权限:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="bioinformatics.html#cb41-1"></a><span class="fu">sudo</span> mv usearch* /usr/local/bin/usearch61</span>
-<span id="cb41-2"><a href="bioinformatics.html#cb41-2"></a><span class="co"># 添加权限</span></span>
-<span id="cb41-3"><a href="bioinformatics.html#cb41-3"></a><span class="fu">chmod</span> a+x /usr/local/bin/usearch61</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="bioinformatics.html#cb42-1"></a><span class="fu">sudo</span> mv usearch* /usr/local/bin/usearch61</span>
+<span id="cb42-2"><a href="bioinformatics.html#cb42-2"></a><span class="co"># 添加权限</span></span>
+<span id="cb42-3"><a href="bioinformatics.html#cb42-3"></a><span class="fu">chmod</span> a+x /usr/local/bin/usearch61</span></code></pre></div>
 </div>
 <div id="ubuntu-20.04-安装-picrust1" class="section level5 unnumbered">
 <h5>2. ubuntu 20.04 安装 picrust1</h5>
@@ -258,8 +258,8 @@ print_qiime_config.py -t</code></pre>
 <div id="mac安装-lefse" class="section level5 unnumbered">
 <h5>3. mac安装 lefse</h5>
 <p>通过homebrew安装lefse已经<a href="https://github.com/biobakery/homebrew-biobakery/issues/37">不再维护</a><code>brew install biobakery/biobakery/lefse</code>;采用conda安装(目前biobakery下的软件都用<a href="https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools">conda源安装</a>)</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="bioinformatics.html#cb42-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
-<span id="cb42-2"><a href="bioinformatics.html#cb42-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="bioinformatics.html#cb43-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
+<span id="cb43-2"><a href="bioinformatics.html#cb43-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div>
 </div>
 <div id="q-本地测试qiime1脚本时安装完依赖后运行脚本pycharm-导入-matplotlib.pyplot-出现错误-from-urllib.parse-import-urlencode-importerror-no-module-named-parse" class="section level5 unnumbered">
 <h5>4. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 <code>from urllib.parse import urlencode ImportError: No module named parse</code></h5>
@@ -269,8 +269,8 @@ print_qiime_config.py -t</code></pre>
 <h5><span class="header-section-number">4.1.0.0.1</span> 5. Q: phyloseq 中 <code>distance()</code> 或 <code>ordinate()</code> (调用 <code>distance()</code>) 基于树计算距离的时候(如 <code>unifrac</code>), 出现 <code>Warning message: In matrix(tree$edge[order(tree$edge[, 1]), ][, 2], byrow = TRUE, : data length [86515] is not a sub-multiple or multiple of the number of rows [43258]</code></h5>
 <p>原因是因为对 OTU 进行质控的时候 (如删除丰度较低的 OTU)，原因是
 树不是二分树，解决办法是转化为二分树。参考<a href="https://github.com/joey711/phyloseq/issues/936#issuecomment-569000555">这里</a></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="bioinformatics.html#cb43-1"></a>new_tre &lt;-<span class="st"> </span>ape<span class="op">::</span><span class="kw">multi2di</span>(<span class="kw">phy_tree</span>(ps))</span>
-<span id="cb43-2"><a href="bioinformatics.html#cb43-2"></a><span class="kw">phy_tree</span>(ps) &lt;-<span class="st"> </span>new_tre</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="bioinformatics.html#cb44-1"></a>new_tre &lt;-<span class="st"> </span>ape<span class="op">::</span><span class="kw">multi2di</span>(<span class="kw">phy_tree</span>(ps))</span>
+<span id="cb44-2"><a href="bioinformatics.html#cb44-2"></a><span class="kw">phy_tree</span>(ps) &lt;-<span class="st"> </span>new_tre</span></code></pre></div>
 </div>
 </div>
 <div id="scrna-seq" class="section level2">

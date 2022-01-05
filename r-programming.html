@@ -395,7 +395,7 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <span id="cb14-2"><a href="r-programming.html#cb14-2"></a>    <span class="co">################################################################################</span></span>
 <span id="cb14-3"><a href="r-programming.html#cb14-3"></a>    <span class="co">## Description: </span></span>
 <span id="cb14-4"><a href="r-programming.html#cb14-4"></a>    <span class="co">## Author: </span></span>
-<span id="cb14-5"><a href="r-programming.html#cb14-5"></a>    <span class="co">## Create Time: Wed Jan  5 01:29:02 2022</span></span>
+<span id="cb14-5"><a href="r-programming.html#cb14-5"></a>    <span class="co">## Create Time: Wed Jan  5 01:44:14 2022</span></span>
 <span id="cb14-6"><a href="r-programming.html#cb14-6"></a>    <span class="co">## Updated Time: </span></span>
 <span id="cb14-7"><a href="r-programming.html#cb14-7"></a>    <span class="co">################################################################################</span></span></code></pre></div>
 <p>脚本的分段注释, 描述该段代码的作用</p>
@@ -681,21 +681,79 @@ chapter_name: [&quot;第&quot;, &quot;章&quot;]</code></pre>
 <p>表示由<code>split_by</code>自动生成章节标题出现重复标题而出现错误。中文标题会出现这种错误，章节标题手动添加<code>{$ID}</code>即可，参见<a href="https://d.cosx.org/d/420172-bookdown-split-chapters">这</a>和<a href="https://github.com/rstudio/bookdown/issues/520">这</a></p>
 <p>如果问题还存在, 设置 <code>split_by</code>为<code>none</code>或<code>rmd</code>，参考<a href="https://github.com/rstudio/bookdown/issues/902">这里</a>.</p></li>
 </ul>
+<div id="github-action-部署-bookdown-到-github-page" class="section level5 unnumbered">
+<h5>github action 部署 bookdown 到 github page</h5>
+<p>参考 <a href="https://github.com/r-lib/actions/blob/v2-branch/examples/bookdown.yaml" class="uri">https://github.com/r-lib/actions/blob/v2-branch/examples/bookdown.yaml</a>.
+使用<a href="https://github.com/r-lib/actions/tree/v2-branch/setup-r-dependencies">r-lib/actions/setup-r-dependencies@v2</a>根据 DESCRIPTION 安装依赖的包;如果要生成 PDF
+文件安装 <a href="https://github.com/r-lib/actions/tree/v2-branch/setup-tinytex">TinyTex</a>.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb38-1"><a href="r-programming.html#cb38-1"></a><span class="co"># Workflow derived from https://github.com/r-lib/actions/tree/master/examples</span></span>
+<span id="cb38-2"><a href="r-programming.html#cb38-2"></a><span class="co"># Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help</span></span>
+<span id="cb38-3"><a href="r-programming.html#cb38-3"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb38-4"><a href="r-programming.html#cb38-4"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb38-5"><a href="r-programming.html#cb38-5"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">main</span><span class="kw">,</span><span class="at"> master</span><span class="kw">]</span></span>
+<span id="cb38-6"><a href="r-programming.html#cb38-6"></a></span>
+<span id="cb38-7"><a href="r-programming.html#cb38-7"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> bookdown</span></span>
+<span id="cb38-8"><a href="r-programming.html#cb38-8"></a></span>
+<span id="cb38-9"><a href="r-programming.html#cb38-9"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb38-10"><a href="r-programming.html#cb38-10"></a><span class="at">  </span><span class="fu">bookdown</span><span class="kw">:</span></span>
+<span id="cb38-11"><a href="r-programming.html#cb38-11"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb38-12"><a href="r-programming.html#cb38-12"></a><span class="at">    </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb38-13"><a href="r-programming.html#cb38-13"></a><span class="at">      </span><span class="fu">GITHUB_PAT</span><span class="kw">:</span><span class="at"> ${{ secrets.GITHUB_TOKEN }}</span></span>
+<span id="cb38-14"><a href="r-programming.html#cb38-14"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb38-15"><a href="r-programming.html#cb38-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
+<span id="cb38-16"><a href="r-programming.html#cb38-16"></a></span>
+<span id="cb38-17"><a href="r-programming.html#cb38-17"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-pandoc@v1</span></span>
+<span id="cb38-18"><a href="r-programming.html#cb38-18"></a></span>
+<span id="cb38-19"><a href="r-programming.html#cb38-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r@v1</span></span>
+<span id="cb38-20"><a href="r-programming.html#cb38-20"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb38-21"><a href="r-programming.html#cb38-21"></a><span class="at">          </span><span class="fu">use-public-rspm</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb38-22"><a href="r-programming.html#cb38-22"></a></span>
+<span id="cb38-23"><a href="r-programming.html#cb38-23"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-renv@v1</span></span>
+<span id="cb38-24"><a href="r-programming.html#cb38-24"></a><span class="at">      </span></span>
+<span id="cb38-25"><a href="r-programming.html#cb38-25"></a><span class="co">      # 根据 DESCRIPTION 安装依赖的包</span></span>
+<span id="cb38-26"><a href="r-programming.html#cb38-26"></a><span class="co">      # https://github.com/r-lib/actions/tree/v2-branch/setup-r-dependencies</span></span>
+<span id="cb38-27"><a href="r-programming.html#cb38-27"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r-dependencies@v2</span></span>
+<span id="cb38-28"><a href="r-programming.html#cb38-28"></a></span>
+<span id="cb38-29"><a href="r-programming.html#cb38-29"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Cache bookdown results</span></span>
+<span id="cb38-30"><a href="r-programming.html#cb38-30"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/cache@v2</span></span>
+<span id="cb38-31"><a href="r-programming.html#cb38-31"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb38-32"><a href="r-programming.html#cb38-32"></a><span class="at">          </span><span class="fu">path</span><span class="kw">:</span><span class="at"> _bookdown_files</span></span>
+<span id="cb38-33"><a href="r-programming.html#cb38-33"></a><span class="at">          </span><span class="fu">key</span><span class="kw">:</span><span class="at"> bookdown-${{ hashFiles(&#39;**/*Rmd&#39;) }}</span></span>
+<span id="cb38-34"><a href="r-programming.html#cb38-34"></a><span class="at">          </span><span class="fu">restore-keys</span><span class="kw">:</span><span class="at"> bookdown-</span></span>
+<span id="cb38-35"><a href="r-programming.html#cb38-35"></a><span class="at">      </span></span>
+<span id="cb38-36"><a href="r-programming.html#cb38-36"></a><span class="co">      # 如果生成 pdf 安装TinyTex    </span></span>
+<span id="cb38-37"><a href="r-programming.html#cb38-37"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install TinyTeX</span></span>
+<span id="cb38-38"><a href="r-programming.html#cb38-38"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-tinytex@v1</span></span>
+<span id="cb38-39"><a href="r-programming.html#cb38-39"></a><span class="at">        </span><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb38-40"><a href="r-programming.html#cb38-40"></a><span class="co">          # install full prebuilt version</span></span>
+<span id="cb38-41"><a href="r-programming.html#cb38-41"></a><span class="at">          </span><span class="fu">TINYTEX_INSTALLER</span><span class="kw">:</span><span class="at"> TinyTeX</span></span>
+<span id="cb38-42"><a href="r-programming.html#cb38-42"></a><span class="at">      </span></span>
+<span id="cb38-43"><a href="r-programming.html#cb38-43"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build site</span></span>
+<span id="cb38-44"><a href="r-programming.html#cb38-44"></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb38-45"><a href="r-programming.html#cb38-45"></a>          Rscript -e &#39;bookdown::render_book(&quot;index.Rmd&quot;, quiet = TRUE)&#39;</span>
+<span id="cb38-46"><a href="r-programming.html#cb38-46"></a>          Rscript -e &quot;bookdown::render_book(&#39;index.Rmd&#39;, &#39;bookdown::pdf_book&#39;)&quot;</span>
+<span id="cb38-47"><a href="r-programming.html#cb38-47"></a></span>
+<span id="cb38-48"><a href="r-programming.html#cb38-48"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Deploy to GitHub pages 🚀</span></span>
+<span id="cb38-49"><a href="r-programming.html#cb38-49"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> JamesIves/github-pages-deploy-action@4.1.4</span></span>
+<span id="cb38-50"><a href="r-programming.html#cb38-50"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb38-51"><a href="r-programming.html#cb38-51"></a><span class="at">          </span><span class="fu">branch</span><span class="kw">:</span><span class="at"> gh-pages</span></span>
+<span id="cb38-52"><a href="r-programming.html#cb38-52"></a><span class="at">          </span><span class="fu">folder</span><span class="kw">:</span><span class="at"> _book</span></span></code></pre></div>
+</div>
 </div>
 <div id="tinytex" class="section level3">
 <h3><span class="header-section-number">1.7.3</span> tinytex</h3>
 <ul>
 <li><p>pkgdown编译jss文档的时候出现，<code>! LaTeX Error: File</code>ae.sty’not found.` 说明缺少ae包，</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="r-programming.html#cb38-1"></a><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</span>
-<span id="cb38-2"><a href="r-programming.html#cb38-2"></a><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></span>
-<span id="cb38-3"><a href="r-programming.html#cb38-3"></a>tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</span>
-<span id="cb38-4"><a href="r-programming.html#cb38-4"></a></span>
-<span id="cb38-5"><a href="r-programming.html#cb38-5"></a><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</span>
-<span id="cb38-6"><a href="r-programming.html#cb38-6"></a><span class="co"># ae:</span></span>
-<span id="cb38-7"><a href="r-programming.html#cb38-7"></a><span class="co">#     texmf-dist/tex/latex/ae/ae.sty</span></span>
-<span id="cb38-8"><a href="r-programming.html#cb38-8"></a></span>
-<span id="cb38-9"><a href="r-programming.html#cb38-9"></a><span class="co">#安装即可</span></span>
-<span id="cb38-10"><a href="r-programming.html#cb38-10"></a><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="r-programming.html#cb39-1"></a><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</span>
+<span id="cb39-2"><a href="r-programming.html#cb39-2"></a><span class="co"># 提示remote repository 版本太旧，2018 &lt; 2019,这时候需要升级texlive</span></span>
+<span id="cb39-3"><a href="r-programming.html#cb39-3"></a>tinytex<span class="op">::</span><span class="kw">reinstall_tinytex</span>()</span>
+<span id="cb39-4"><a href="r-programming.html#cb39-4"></a></span>
+<span id="cb39-5"><a href="r-programming.html#cb39-5"></a><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</span>
+<span id="cb39-6"><a href="r-programming.html#cb39-6"></a><span class="co"># ae:</span></span>
+<span id="cb39-7"><a href="r-programming.html#cb39-7"></a><span class="co">#     texmf-dist/tex/latex/ae/ae.sty</span></span>
+<span id="cb39-8"><a href="r-programming.html#cb39-8"></a></span>
+<span id="cb39-9"><a href="r-programming.html#cb39-9"></a><span class="co">#安装即可</span></span>
+<span id="cb39-10"><a href="r-programming.html#cb39-10"></a><span class="kw">tlmgr_install</span>(<span class="st">&#39;ae&#39;</span>)</span></code></pre></div></li>
 </ul>
 
 </div>
