@@ -184,7 +184,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="linux.html"><a href="linux.html#系统管理"><i class="fa fa-check"></i><b>7.2</b> 系统管理</a><ul>
 <li class="chapter" data-level="" data-path="linux.html"><a href="linux.html#磁盘"><i class="fa fa-check"></i>1. 磁盘</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="linux.html"><a href="linux.html#misc"><i class="fa fa-check"></i><b>7.3</b> Misc</a></li>
+<li class="chapter" data-level="7.3" data-path="linux.html"><a href="linux.html#vim"><i class="fa fa-check"></i><b>7.3</b> VIM</a></li>
+<li class="chapter" data-level="7.4" data-path="linux.html"><a href="linux.html#misc"><i class="fa fa-check"></i><b>7.4</b> Misc</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>8</b> tools</a><ul>
 <li class="chapter" data-level="8.1" data-path="tools.html"><a href="tools.html#git-和-github"><i class="fa fa-check"></i><b>8.1</b> git 和 github</a></li>
@@ -459,8 +460,36 @@ workspace 以行列显示。</p>
 </ul>
 </div>
 </div>
+<div id="vim" class="section level2">
+<h2><span class="header-section-number">7.3</span> VIM</h2>
+<div id="安装插件" class="section level5">
+<h5><span class="header-section-number">7.3.0.0.1</span> {-} 安装插件</h5>
+<ol style="list-style-type: decimal">
+<li>安装插件管理器<a href="https://github.com/junegunn/vim-plug">vim-plug</a>,
+<a href="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim">plug-vim</a>
+保存为<code>~/.vim/autoload/plug.vim</code>:</li>
+</ol>
+<pre><code>curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><code>~/.vimrc</code>中添加</li>
+</ol>
+<pre><code>&quot; 括号内为插件安装路径,默认为~/.vim/plugged
+&quot; 之前用的pathogen安装插件保存在~/.vim/bundle,所以修改了默认路径
+call plug#begin(&#39;~/.vim/bundle&#39;)
+  &quot; Make sure you use single quotes
+  &quot; 要安装的插件
+  &quot; Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+  Plug &#39;junegunn/vim-easy-align&#39;
+call plug#end()</code></pre>
+<p><strong>默认执行<code>filetype plugin indent on</code> 和 <code>syntax enable</code></strong></p>
+<ol start="3" style="list-style-type: decimal">
+<li>退出vim,重新打开后 <code>:PlugInstall</code> 即可安装</li>
+</ol>
+</div>
+</div>
 <div id="misc" class="section level2">
-<h2><span class="header-section-number">7.3</span> Misc</h2>
+<h2><span class="header-section-number">7.4</span> Misc</h2>
 <ul>
 <li><p><code>screen</code> 命令鼠标屏幕</p>
 <ol style="list-style-type: decimal">
