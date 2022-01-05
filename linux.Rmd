@@ -308,6 +308,36 @@
   sudo mount -a
   ```
 
+## VIM
+
+##### {-} 安装插件
+
+1. 安装插件管理器[vim-plug](https://github.com/junegunn/vim-plug), 
+[plug-vim](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
+保存为`~/.vim/autoload/plug.vim`:
+
+  ```
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  ```
+  
+2. `~/.vimrc`中添加
+
+  ```
+  " 括号内为插件安装路径,默认为~/.vim/plugged
+  " 之前用的pathogen安装插件保存在~/.vim/bundle,所以修改了默认路径
+  call plug#begin('~/.vim/bundle')
+    " Make sure you use single quotes
+    " 要安装的插件
+    " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+    Plug 'junegunn/vim-easy-align'
+  call plug#end()
+  ```
+  **默认执行`filetype plugin indent on` 和 `syntax enable`**
+  
+3. 退出vim,重新打开后 `:PlugInstall` 即可安装
+
+
 ## Misc
 
 - `screen` 命令鼠标屏幕
