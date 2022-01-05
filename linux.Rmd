@@ -308,3 +308,9 @@
   sudo mount -a
   ```
 
+## Misc
+
+- `screen` 命令鼠标屏幕
+
+  1. `ctrl + A`,接着按 `ESC`,进入拷贝模式 ("Copy mode"),再次按 `ESC` 退出.
+  2. 鼠标滚轮: `echo 'termcapinfo xterm* ti@:te@' >> ~/.screenrc`. 
