@@ -546,6 +546,69 @@ snippet header_section
   
   如果问题还存在, 设置 `split_by`为`none`或`rmd`，参考[这里](https://github.com/rstudio/bookdown/issues/902).
 
+##### github action 部署 bookdown 到 github page {-}
+
+参考 https://github.com/r-lib/actions/blob/v2-branch/examples/bookdown.yaml.
+使用[r-lib/actions/setup-r-dependencies@v2](https://github.com/r-lib/actions/tree/v2-branch/setup-r-dependencies)根据 DESCRIPTION 安装依赖的包;如果要生成 PDF
+文件安装 [TinyTex](https://github.com/r-lib/actions/tree/v2-branch/setup-tinytex).
+
+```yaml
+# Workflow derived from https://github.com/r-lib/actions/tree/master/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+on:
+  push:
+    branches: [main, master]
+
+name: bookdown
+
+jobs:
+  bookdown:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - uses: r-lib/actions/setup-r@v1
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-renv@v1
+      
+      # 根据 DESCRIPTION 安装依赖的包
+      # https://github.com/r-lib/actions/tree/v2-branch/setup-r-dependencies
+      - uses: r-lib/actions/setup-r-dependencies@v2
+
+      - name: Cache bookdown results
+        uses: actions/cache@v2
+        with:
+          path: _bookdown_files
+          key: bookdown-${{ hashFiles('**/*Rmd') }}
+          restore-keys: bookdown-
+      
+      # 如果生成 pdf 安装TinyTex    
+      - name: Install TinyTeX
+        uses: r-lib/actions/setup-tinytex@v1
+        env:
+          # install full prebuilt version
+          TINYTEX_INSTALLER: TinyTeX
+      
+      - name: Build site
+        run: |
+          Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
+          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
+
+      - name: Deploy to GitHub pages 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: _book
+```
+
+
+
 ### tinytex
 
 - pkgdown编译jss文档的时候出现，`! LaTeX Error: File `ae.sty'not found.` 说明缺少ae包，
