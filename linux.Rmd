@@ -310,6 +310,8 @@
 
 ## VIM
 
+### 插件
+
 ##### {-} 安装插件
 
 1. 安装插件管理器[vim-plug](https://github.com/junegunn/vim-plug), 
@@ -337,6 +339,16 @@
   
 3. 退出vim,重新打开后 `:PlugInstall` 即可安装
 
+##### 安装 python autocompletion 插件 jedi-vim 后出现错误 {-}
+
+因为安装系统的 vim 是基于自带的 python(3.5) 配置的, jedi-vim 默认使用系统自带的
+python3.5 (`:python3 import sys; print(sys.version_info)`), 而我们需要使用更高版本的 python (3.9), 出现版本不匹配而引起错误
+`File "/home/user/.vim/plugged/jedi-vim/pythonx/parso/parso/parser.py", line 
+113 node_map: Dict[str, type] = {} ^ SyntaxError: invalid syntax`. 
+
+**解决办法**: 用 conda 用相应版本 python 重新安装配置新的 vim `conda install -c conda-forge vim`. 参考
+[这里](https://gitmemory.cn/repo/davidhalter/jedi-vim/issues/1062). 如果使用
+自带的 vim 和 python, 则直接把 `python3` 链接到系统版本应该也可以.
 
 ## Misc
 
