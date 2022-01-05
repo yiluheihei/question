@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>第4章 生物信息 | 个人问题集</title>
   <meta name="description" content="第4章 生物信息 | 个人问题集" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="第4章 生物信息 | 个人问题集" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2021-06-01" />
+<meta name="date" content="2022-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,8 @@
   
 <link rel="prev" href="python.html"/>
 <link rel="next" href="office.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,24 +50,24 @@
 
 
 
-
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,30 +138,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
-<li class="chapter" data-level="1" data-path="r-programming.html"><a href="r-programming.html"><i class="fa fa-check"></i><b>1</b> R 语言</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="r-programming.html"><a href="r-programming.html#安装和配置"><i class="fa fa-check"></i><b>1.1</b> 安装和配置</a>
-<ul>
+<li class="chapter" data-level="1" data-path="r-programming.html"><a href="r-programming.html"><i class="fa fa-check"></i><b>1</b> R 语言</a><ul>
+<li class="chapter" data-level="1.1" data-path="r-programming.html"><a href="r-programming.html#安装和配置"><i class="fa fa-check"></i><b>1.1</b> 安装和配置</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="r-programming.html"><a href="r-programming.html#安装"><i class="fa fa-check"></i><b>1.1.1</b> 安装</a></li>
 <li class="chapter" data-level="1.1.2" data-path="r-programming.html"><a href="r-programming.html#配置"><i class="fa fa-check"></i><b>1.1.2</b> 配置</a></li>
 <li class="chapter" data-level="1.1.3" data-path="r-programming.html"><a href="r-programming.html#安装包"><i class="fa fa-check"></i><b>1.1.3</b> 安装包</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="r-programming.html"><a href="r-programming.html#r-包开发"><i class="fa fa-check"></i><b>1.2</b> R 包开发</a></li>
-<li class="chapter" data-level="1.3" data-path="r-programming.html"><a href="r-programming.html#rstudio"><i class="fa fa-check"></i><b>1.3</b> Rstudio</a>
-<ul>
+<li class="chapter" data-level="1.3" data-path="r-programming.html"><a href="r-programming.html#rstudio"><i class="fa fa-check"></i><b>1.3</b> Rstudio</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="r-programming.html"><a href="r-programming.html#snippet"><i class="fa fa-check"></i><b>1.3.1</b> snippet</a></li>
 <li class="chapter" data-level="1.3.2" data-path="r-programming.html"><a href="r-programming.html#rstudio-常用快捷键"><i class="fa fa-check"></i><b>1.3.2</b> Rstudio 常用快捷键</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="r-programming.html"><a href="r-programming.html#r-基础"><i class="fa fa-check"></i><b>1.4</b> R 基础</a></li>
 <li class="chapter" data-level="1.5" data-path="r-programming.html"><a href="r-programming.html#tidyverse-数据分析"><i class="fa fa-check"></i><b>1.5</b> tidyverse 数据分析</a></li>
-<li class="chapter" data-level="1.6" data-path="r-programming.html"><a href="r-programming.html#visualization"><i class="fa fa-check"></i><b>1.6</b> 可视化</a>
-<ul>
+<li class="chapter" data-level="1.6" data-path="r-programming.html"><a href="r-programming.html#visualization"><i class="fa fa-check"></i><b>1.6</b> 可视化</a><ul>
 <li class="chapter" data-level="1.6.1" data-path="r-programming.html"><a href="r-programming.html#base-plot"><i class="fa fa-check"></i><b>1.6.1</b> 基础图形</a></li>
 <li class="chapter" data-level="1.6.2" data-path="r-programming.html"><a href="r-programming.html#ggplot"><i class="fa fa-check"></i><b>1.6.2</b> ggplot</a></li>
 <li class="chapter" data-level="1.6.3" data-path="r-programming.html"><a href="r-programming.html#rexpr"><i class="fa fa-check"></i><b>1.6.3</b> 正则表达式</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="r-programming.html"><a href="r-programming.html#reproducible-research"><i class="fa fa-check"></i><b>1.7</b> 可重复性研究</a>
-<ul>
+<li class="chapter" data-level="1.7" data-path="r-programming.html"><a href="r-programming.html#reproducible-research"><i class="fa fa-check"></i><b>1.7</b> 可重复性研究</a><ul>
 <li class="chapter" data-level="1.7.1" data-path="r-programming.html"><a href="r-programming.html#rmarkdown---knitr"><i class="fa fa-check"></i><b>1.7.1</b> Rmarkdown - Knitr</a></li>
 <li class="chapter" data-level="1.7.2" data-path="r-programming.html"><a href="r-programming.html#bookdown"><i class="fa fa-check"></i><b>1.7.2</b> bookdown</a></li>
 <li class="chapter" data-level="1.7.3" data-path="r-programming.html"><a href="r-programming.html#tinytex"><i class="fa fa-check"></i><b>1.7.3</b> tinytex</a></li>
@@ -169,42 +164,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="statistics-ml.html"><a href="statistics-ml.html"><i class="fa fa-check"></i><b>2</b> 统计，机器学习，深度学习</a></li>
 <li class="chapter" data-level="3" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i><b>3</b> python</a></li>
-<li class="chapter" data-level="4" data-path="bioinformatics.html"><a href="bioinformatics.html"><i class="fa fa-check"></i><b>4</b> 生物信息</a>
-<ul>
+<li class="chapter" data-level="4" data-path="bioinformatics.html"><a href="bioinformatics.html"><i class="fa fa-check"></i><b>4</b> 生物信息</a><ul>
 <li class="chapter" data-level="4.1" data-path="bioinformatics.html"><a href="bioinformatics.html#microbiome"><i class="fa fa-check"></i><b>4.1</b> 微生物组</a></li>
 <li class="chapter" data-level="4.2" data-path="bioinformatics.html"><a href="bioinformatics.html#scrna-seq"><i class="fa fa-check"></i><b>4.2</b> scRNA-seq</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="office.html"><a href="office.html"><i class="fa fa-check"></i><b>5</b> 办公软件</a>
-<ul>
+<li class="chapter" data-level="5" data-path="office.html"><a href="office.html"><i class="fa fa-check"></i><b>5</b> 办公软件</a><ul>
 <li class="chapter" data-level="5.1" data-path="office.html"><a href="office.html#ppt"><i class="fa fa-check"></i><b>5.1</b> PPT</a></li>
 <li class="chapter" data-level="5.2" data-path="office.html"><a href="office.html#excel"><i class="fa fa-check"></i><b>5.2</b> EXCEL</a></li>
 <li class="chapter" data-level="5.3" data-path="office.html"><a href="office.html#ps-cc"><i class="fa fa-check"></i><b>5.3</b> PS CC</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="mac.html"><a href="mac.html"><i class="fa fa-check"></i><b>6</b> Mac OS</a>
-<ul>
+<li class="chapter" data-level="6" data-path="mac.html"><a href="mac.html"><i class="fa fa-check"></i><b>6</b> Mac OS</a><ul>
 <li class="chapter" data-level="6.1" data-path="mac.html"><a href="mac.html#homebrew"><i class="fa fa-check"></i><b>6.1</b> homebrew</a></li>
-<li class="chapter" data-level="6.2" data-path="mac.html"><a href="mac.html#app"><i class="fa fa-check"></i><b>6.2</b> 应用程序</a>
-<ul>
+<li class="chapter" data-level="6.2" data-path="mac.html"><a href="mac.html#app"><i class="fa fa-check"></i><b>6.2</b> 应用程序</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="mac.html"><a href="mac.html#alfred"><i class="fa fa-check"></i><b>6.2.1</b> Alfred</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>7</b> linux</a>
-<ul>
+<li class="chapter" data-level="7" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>7</b> linux</a><ul>
 <li class="chapter" data-level="7.1" data-path="linux.html"><a href="linux.html#安装和配置-1"><i class="fa fa-check"></i><b>7.1</b> 安装和配置</a></li>
+<li class="chapter" data-level="7.2" data-path="linux.html"><a href="linux.html#系统管理"><i class="fa fa-check"></i><b>7.2</b> 系统管理</a><ul>
+<li class="chapter" data-level="" data-path="linux.html"><a href="linux.html#磁盘"><i class="fa fa-check"></i>1. 磁盘</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>8</b> tools</a>
-<ul>
+<li class="chapter" data-level="7.3" data-path="linux.html"><a href="linux.html#misc"><i class="fa fa-check"></i><b>7.3</b> Misc</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>8</b> tools</a><ul>
 <li class="chapter" data-level="8.1" data-path="tools.html"><a href="tools.html#git-和-github"><i class="fa fa-check"></i><b>8.1</b> git 和 github</a></li>
 <li class="chapter" data-level="8.2" data-path="tools.html"><a href="tools.html#hugo"><i class="fa fa-check"></i><b>8.2</b> hugo</a></li>
 <li class="chapter" data-level="8.3" data-path="tools.html"><a href="tools.html#docker"><i class="fa fa-check"></i><b>8.3</b> docker</a></li>
 <li class="chapter" data-level="8.4" data-path="tools.html"><a href="tools.html#conda"><i class="fa fa-check"></i><b>8.4</b> conda</a></li>
-<li class="chapter" data-level="8.5" data-path="tools.html"><a href="tools.html#zotero"><i class="fa fa-check"></i><b>8.5</b> Zotero</a>
-<ul>
+<li class="chapter" data-level="8.5" data-path="tools.html"><a href="tools.html#zotero"><i class="fa fa-check"></i><b>8.5</b> Zotero</a><ul>
 <li class="chapter" data-level="8.5.1" data-path="tools.html"><a href="tools.html#collecions-分类"><i class="fa fa-check"></i><b>8.5.1</b> collecions (分类)</a></li>
 <li class="chapter" data-level="8.5.2" data-path="tools.html"><a href="tools.html#合并重复条目"><i class="fa fa-check"></i><b>8.5.2</b> 合并重复条目</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="tools.html"><a href="tools.html#vscode"><i class="fa fa-check"></i><b>8.6</b> VSCode</a>
-<ul>
+<li class="chapter" data-level="8.6" data-path="tools.html"><a href="tools.html#vscode"><i class="fa fa-check"></i><b>8.6</b> VSCode</a><ul>
 <li class="chapter" data-level="8.6.1" data-path="tools.html"><a href="tools.html#python-1"><i class="fa fa-check"></i><b>8.6.1</b> python</a></li>
 </ul></li>
 </ul></li>
@@ -229,11 +220,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bioinfo" class="section level1" number="4">
+<div id="bioinfo" class="section level1">
 <h1><span class="header-section-number">第4章</span> 生物信息</h1>
-<div id="microbiome" class="section level2" number="4.1">
+<div id="microbiome" class="section level2">
 <h2><span class="header-section-number">4.1</span> 微生物组</h2>
-<div id="ubuntu-20.04-安装-qiime1" class="section level5 unnumbered" number="">
+<div id="ubuntu-20.04-安装-qiime1" class="section level5 unnumbered">
 <h5>1. Ubuntu 20.04 安装 qiime1</h5>
 <p>直接按文档中所说 <code>conda create -n qiime1 python=2.7 qiime matplotlib=1.4.3 mock nose -c bioconda</code> 出现错误 PackagesNotFoundError matplotlib=1.4.3</p>
 <p>解决办法是创建新的 conda 环境 <code>qiime1</code>, <code>conda create -n qiime1 python=2.7</code>, 然后用 pip 手动安装 matplotlib 及其他的 python 模块</p>
@@ -254,28 +245,35 @@ print_qiime_config.py -t</code></pre>
 <p>pick otu 或者 嵌合体识别 (chimera) 可用 usearch61 方法, 安装 usearch步骤为</p>
 <p><a href="https://drive5.com/downloads/usearch6.1.544_i86linux32.gz">下载</a>解压后,
 拷贝到 <code>/usr/local/bin/</code> 然后赋予执行权限:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb39-1"><a href="bioinformatics.html#cb39-1"></a><span class="fu">sudo</span> mv usearch* /usr/local/bin/usearch61</span>
-<span id="cb39-2"><a href="bioinformatics.html#cb39-2"></a><span class="co"># 添加权限</span></span>
-<span id="cb39-3"><a href="bioinformatics.html#cb39-3"></a><span class="fu">chmod</span> a+x /usr/local/bin/usearch61</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb41-1"><a href="bioinformatics.html#cb41-1"></a><span class="fu">sudo</span> mv usearch* /usr/local/bin/usearch61</span>
+<span id="cb41-2"><a href="bioinformatics.html#cb41-2"></a><span class="co"># 添加权限</span></span>
+<span id="cb41-3"><a href="bioinformatics.html#cb41-3"></a><span class="fu">chmod</span> a+x /usr/local/bin/usearch61</span></code></pre></div>
 </div>
-<div id="ubuntu-20.04-安装-picrust1" class="section level5 unnumbered" number="">
+<div id="ubuntu-20.04-安装-picrust1" class="section level5 unnumbered">
 <h5>2. ubuntu 20.04 安装 picrust1</h5>
 <p>按照文档中说的<code>conda create -n picrust1 -c bioconda -c conda-forge picrust</code>
 安装出现错误 <code>failed with repodata from current_repodata.json</code>。</p>
 <p>只使用 <code>bioconda</code>可正常安装, <code>conda create -n picrust1 -c bioconda  picrust</code>.</p>
 </div>
-<div id="mac安装-lefse" class="section level5 unnumbered" number="">
+<div id="mac安装-lefse" class="section level5 unnumbered">
 <h5>3. mac安装 lefse</h5>
 <p>通过homebrew安装lefse已经<a href="https://github.com/biobakery/homebrew-biobakery/issues/37">不再维护</a><code>brew install biobakery/biobakery/lefse</code>;采用conda安装(目前biobakery下的软件都用<a href="https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools">conda源安装</a>)</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb40-1"><a href="bioinformatics.html#cb40-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
-<span id="cb40-2"><a href="bioinformatics.html#cb40-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb42-1"><a href="bioinformatics.html#cb42-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
+<span id="cb42-2"><a href="bioinformatics.html#cb42-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div>
 </div>
-<div id="q-本地测试qiime1脚本时安装完依赖后运行脚本pycharm-导入-matplotlib.pyplot-出现错误-from-urllib.parse-import-urlencode-importerror-no-module-named-parse" class="section level5 unnumbered" number="">
+<div id="q-本地测试qiime1脚本时安装完依赖后运行脚本pycharm-导入-matplotlib.pyplot-出现错误-from-urllib.parse-import-urlencode-importerror-no-module-named-parse" class="section level5 unnumbered">
 <h5>4. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 <code>from urllib.parse import urlencode ImportError: No module named parse</code></h5>
 <p>pycharm中设置 <code>Preferences -&gt; Tools -&gt; Python Scientific</code>取消勾选<code>Show plots in tool window</code>，答案见<a href="https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error">此</a></p>
 </div>
+<div id="q-phyloseq-中-distance-或-ordinate-调用-distance-基于树计算距离的时候如-unifrac-出现-warning-message-in-matrixtreeedgeordertreeedge-1-2-byrow-true-data-length-86515-is-not-a-sub-multiple-or-multiple-of-the-number-of-rows-43258" class="section level5">
+<h5><span class="header-section-number">4.1.0.0.1</span> 5. Q: phyloseq 中 <code>distance()</code> 或 <code>ordinate()</code> (调用 <code>distance()</code>) 基于树计算距离的时候(如 <code>unifrac</code>), 出现 <code>Warning message: In matrix(tree$edge[order(tree$edge[, 1]), ][, 2], byrow = TRUE, : data length [86515] is not a sub-multiple or multiple of the number of rows [43258]</code></h5>
+<p>原因是因为对 OTU 进行质控的时候 (如删除丰度较低的 OTU)，原因是
+树不是二分树，解决办法是转化为二分树。参考<a href="https://github.com/joey711/phyloseq/issues/936#issuecomment-569000555">这里</a></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="bioinformatics.html#cb43-1"></a>new_tre &lt;-<span class="st"> </span>ape<span class="op">::</span><span class="kw">multi2di</span>(<span class="kw">phy_tree</span>(ps))</span>
+<span id="cb43-2"><a href="bioinformatics.html#cb43-2"></a><span class="kw">phy_tree</span>(ps) &lt;-<span class="st"> </span>new_tre</span></code></pre></div>
 </div>
-<div id="scrna-seq" class="section level2" number="4.2">
+</div>
+<div id="scrna-seq" class="section level2">
 <h2><span class="header-section-number">4.2</span> scRNA-seq</h2>
 <ul>
 <li><p>安装<a href="https://github.com/velocyto-team/velocyto.R">velocyto.R</a>.</p>
@@ -316,7 +314,6 @@ FLIBS = -L/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -356,6 +353,10 @@ gitbook.start({
 "text": null
 },
 "download": ["question-notes.pdf", "question-notes.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 },
