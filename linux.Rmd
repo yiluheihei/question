@@ -310,9 +310,21 @@
 
 ## VIM
 
+### 快捷键
+
+#### Formatting 格式化排版
+
+根据 `line-width` 格式化(重排)行
+
+```
+gq: （可视模式下）格式化选定内容，行宽度为 line-width 设置变量（80）
+gqq: 根据 line-width 格式化当前行
+ngqq: 格式化 n 行
+```
+
 ### 插件
 
-##### {-} 安装插件
+##### 安装插件 {-}
 
 1. 安装插件管理器[vim-plug](https://github.com/junegunn/vim-plug), 
 [plug-vim](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
