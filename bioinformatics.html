@@ -24,7 +24,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2022-01-16" />
+<meta name="date" content="2022-02-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -167,6 +167,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="bioinformatics.html"><a href="bioinformatics.html"><i class="fa fa-check"></i><b>4</b> 生物信息</a><ul>
 <li class="chapter" data-level="4.1" data-path="bioinformatics.html"><a href="bioinformatics.html#microbiome"><i class="fa fa-check"></i><b>4.1</b> 微生物组</a></li>
 <li class="chapter" data-level="4.2" data-path="bioinformatics.html"><a href="bioinformatics.html#scrna-seq"><i class="fa fa-check"></i><b>4.2</b> scRNA-seq</a></li>
+<li class="chapter" data-level="4.3" data-path="bioinformatics.html"><a href="bioinformatics.html#rna-structure"><i class="fa fa-check"></i><b>4.3</b> RNA structure</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="bioinformatics.html"><a href="bioinformatics.html#软件安装"><i class="fa fa-check"></i><b>4.3.1</b> 软件安装</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="office.html"><a href="office.html"><i class="fa fa-check"></i><b>5</b> 办公软件</a><ul>
 <li class="chapter" data-level="5.1" data-path="office.html"><a href="office.html#ppt"><i class="fa fa-check"></i><b>5.1</b> PPT</a></li>
@@ -305,7 +308,38 @@ FLIBS = -L/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/
 <li><p>安装<a href="https://github.com/velocyto-team/velocyto.py"><code>velocyto.py</code></a></p>
 <p>mac 在 pip 安装的时候gcc编译出现错误，建议使用conda安装<code>conda install velocyto.py</code></p></li>
 </ul>
+</div>
+<div id="rna-structure" class="section level2">
+<h2><span class="header-section-number">4.3</span> RNA structure</h2>
+<p>本节记录在 RNA 结构生物信息学分析中的一些问题，如 RNA 二级结构预测。</p>
+<div id="软件安装" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> 软件安装</h3>
+<div id="二级结构预测" class="section level4 unnumbered">
+<h4>二级结构预测</h4>
+<ul>
+<li><p><a href="http://contra.stanford.edu/contrafold/download.html">CONTRAfold</a>, 按照帮助
+手册<code>make</code>的时候出现错误</p>
+<pre><code>LBFGS.ipp:110:33: error: ‘DoLineSearch’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+       Real step = DoLineSearch(x[k%2], f[k%2], g[k%2], d,
+                   ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                x[(k+1)%2], f[(k+1)%2], g[(k+1)%2],
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                Real(0), std::min(Real(10), MAX_STEP_NORM / std::max(Real(1), Norm(d))));</code></pre>
+<p>解决办法(见<a href="https://github.com/zavolanlab/snoRNAHybridSearchPipeline/blob/master/doics/installation.rst">这里</a>)：</p>
+<ol style="list-style-type: decimal">
+<li>Makefile中添加 <code>-fpermissive</code> 选项至 <code>CSXXFLAGS</code>:</li>
+</ol>
+<pre><code>CXXFLAGS = -O3 -DNDEBUG -W -pipe -Wundef -Winline --param  large-function-growth=100000 -Wall -fpermissive
 
+# 替换
+CXXFLAGS = -O3 -DNDEBUG -W -pipe -Wundef -Winline --param large-function-growth=100000 -Wall</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><code>Utilities.hpp</code>中添加<code>#include &lt;limits.h&gt;</code></li>
+</ol></li>
+</ul>
+
+</div>
+</div>
 </div>
 </div>
             </section>
