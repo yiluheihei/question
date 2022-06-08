@@ -58,12 +58,17 @@
   2. 进入recovery mode
   3. 选则进入`Drop To Root Shell Prompt`，就用 root 用户登录了，然后修改文件即可
 
-- Mac 通过网线链接 ubuntu 服务器
+- Mac/windows 通过网线链接 ubuntu 服务器
 
   网线链接两台电脑后，手动设置相应网卡的 IP 地址，保证在同一个网段。如 
   Mac IP 设置成192.168.11.1，子网掩码设置为 255.255.255.0，ubuntu 
   IP设置为192.168.11.2，子网掩码设置为 255.255.255.0。
   
+- ubuntu 20.04 挂载局域网内windows共享的文件夹
+ 
+  1. 在 windows 设置好共享文件夹
+  2. ubuntu 20.04 安装 cifs-utils `sudo apt install cifs-utils`
+  3. 挂载 `sudo mount -t cifs -o username=<windows用户名> //<192.xx.xx.xx, windows局域网ip>/<共享的文件夹> </mnt/win, 挂载目录>`
 
 - ubuntu 添加 aliyun 源
   
