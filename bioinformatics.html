@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>第4章 生物信息 | 个人问题集</title>
   <meta name="description" content="第4章 生物信息 | 个人问题集" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="第4章 生物信息 | 个人问题集" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2022-02-22" />
+<meta name="date" content="2022-06-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,8 +50,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -227,12 +227,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bioinfo" class="section level1">
-<h1><span class="header-section-number">第4章</span> 生物信息</h1>
-<div id="microbiome" class="section level2">
-<h2><span class="header-section-number">4.1</span> 微生物组</h2>
-<div id="ubuntu-20.04-安装-qiime1" class="section level5 unnumbered">
-<h5>1. Ubuntu 20.04 安装 qiime1</h5>
+<div id="bioinfo" class="section level1 hasAnchor">
+<h1><span class="header-section-number">第4章</span> 生物信息<a href="bioinformatics.html#bioinfo" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="microbiome" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.1</span> 微生物组<a href="bioinformatics.html#microbiome" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ubuntu-20.04-安装-qiime1" class="section level5 unnumbered hasAnchor">
+<h5>1. Ubuntu 20.04 安装 qiime1<a href="bioinformatics.html#ubuntu-20.04-安装-qiime1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>直接按文档中所说 <code>conda create -n qiime1 python=2.7 qiime matplotlib=1.4.3 mock nose -c bioconda</code> 出现错误 PackagesNotFoundError matplotlib=1.4.3</p>
 <p>解决办法是创建新的 conda 环境 <code>qiime1</code>, <code>conda create -n qiime1 python=2.7</code>, 然后用 pip 手动安装 matplotlib 及其他的 python 模块</p>
 <pre><code># 1 安装matplotlib==1.4.3的时候，出现错误 &quot;The following required packages can
@@ -256,32 +256,32 @@ print_qiime_config.py -t</code></pre>
 <span id="cb42-2"><a href="bioinformatics.html#cb42-2"></a><span class="co"># 添加权限</span></span>
 <span id="cb42-3"><a href="bioinformatics.html#cb42-3"></a><span class="fu">chmod</span> a+x /usr/local/bin/usearch61</span></code></pre></div>
 </div>
-<div id="ubuntu-20.04-安装-picrust1" class="section level5 unnumbered">
-<h5>2. ubuntu 20.04 安装 picrust1</h5>
+<div id="ubuntu-20.04-安装-picrust1" class="section level5 unnumbered hasAnchor">
+<h5>2. ubuntu 20.04 安装 picrust1<a href="bioinformatics.html#ubuntu-20.04-安装-picrust1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>按照文档中说的<code>conda create -n picrust1 -c bioconda -c conda-forge picrust</code>
 安装出现错误 <code>failed with repodata from current_repodata.json</code>。</p>
 <p>只使用 <code>bioconda</code>可正常安装, <code>conda create -n picrust1 -c bioconda  picrust</code>.</p>
 </div>
-<div id="mac安装-lefse" class="section level5 unnumbered">
-<h5>3. mac安装 lefse</h5>
+<div id="mac安装-lefse" class="section level5 unnumbered hasAnchor">
+<h5>3. mac安装 lefse<a href="bioinformatics.html#mac安装-lefse" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>通过homebrew安装lefse已经<a href="https://github.com/biobakery/homebrew-biobakery/issues/37">不再维护</a><code>brew install biobakery/biobakery/lefse</code>;采用conda安装(目前biobakery下的软件都用<a href="https://bitbucket.org/biobakery/biobakery/wiki/biobakery_advanced#rst-header-installing-individual-biobakery-tools">conda源安装</a>)</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb43-1"><a href="bioinformatics.html#cb43-1"></a><span class="ex">conda</span> config --add channels biobakery</span>
 <span id="cb43-2"><a href="bioinformatics.html#cb43-2"></a><span class="ex">conda</span> install -c biobakery lefse</span></code></pre></div>
 </div>
-<div id="q-本地测试qiime1脚本时安装完依赖后运行脚本pycharm-导入-matplotlib.pyplot-出现错误-from-urllib.parse-import-urlencode-importerror-no-module-named-parse" class="section level5 unnumbered">
-<h5>4. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 <code>from urllib.parse import urlencode ImportError: No module named parse</code></h5>
+<div id="q-本地测试qiime1脚本时安装完依赖后运行脚本pycharm-导入-matplotlib.pyplot-出现错误-from-urllib.parse-import-urlencode-importerror-no-module-named-parse" class="section level5 unnumbered hasAnchor">
+<h5>4. Q: 本地测试qiime1脚本时，安装完依赖后，运行脚本，pycharm 导入 matplotlib.pyplot 出现错误 <code>from urllib.parse import urlencode ImportError: No module named parse</code><a href="bioinformatics.html#q-本地测试qiime1脚本时安装完依赖后运行脚本pycharm-导入-matplotlib.pyplot-出现错误-from-urllib.parse-import-urlencode-importerror-no-module-named-parse" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>pycharm中设置 <code>Preferences -&gt; Tools -&gt; Python Scientific</code>取消勾选<code>Show plots in tool window</code>，答案见<a href="https://stackoverflow.com/questions/57267016/pycharm-import-matplotlib-pyplot-show-error">此</a></p>
 </div>
-<div id="q-phyloseq-中-distance-或-ordinate-调用-distance-基于树计算距离的时候如-unifrac-出现-warning-message-in-matrixtreeedgeordertreeedge-1-2-byrow-true-data-length-86515-is-not-a-sub-multiple-or-multiple-of-the-number-of-rows-43258" class="section level5">
-<h5><span class="header-section-number">4.1.0.0.1</span> 5. Q: phyloseq 中 <code>distance()</code> 或 <code>ordinate()</code> (调用 <code>distance()</code>) 基于树计算距离的时候(如 <code>unifrac</code>), 出现 <code>Warning message: In matrix(tree$edge[order(tree$edge[, 1]), ][, 2], byrow = TRUE, : data length [86515] is not a sub-multiple or multiple of the number of rows [43258]</code></h5>
+<div id="q-phyloseq-中-distance-或-ordinate-调用-distance-基于树计算距离的时候如-unifrac-出现-warning-message-in-matrixtreeedgeordertreeedge-1-2-byrow-true-data-length-86515-is-not-a-sub-multiple-or-multiple-of-the-number-of-rows-43258" class="section level5 hasAnchor">
+<h5><span class="header-section-number">4.1.0.0.1</span> 5. Q: phyloseq 中 <code>distance()</code> 或 <code>ordinate()</code> (调用 <code>distance()</code>) 基于树计算距离的时候(如 <code>unifrac</code>), 出现 <code>Warning message: In matrix(tree$edge[order(tree$edge[, 1]), ][, 2], byrow = TRUE, : data length [86515] is not a sub-multiple or multiple of the number of rows [43258]</code><a href="bioinformatics.html#q-phyloseq-中-distance-或-ordinate-调用-distance-基于树计算距离的时候如-unifrac-出现-warning-message-in-matrixtreeedgeordertreeedge-1-2-byrow-true-data-length-86515-is-not-a-sub-multiple-or-multiple-of-the-number-of-rows-43258" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>原因是因为对 OTU 进行质控的时候 (如删除丰度较低的 OTU)，原因是
 树不是二分树，解决办法是转化为二分树。参考<a href="https://github.com/joey711/phyloseq/issues/936#issuecomment-569000555">这里</a></p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="bioinformatics.html#cb44-1"></a>new_tre &lt;-<span class="st"> </span>ape<span class="op">::</span><span class="kw">multi2di</span>(<span class="kw">phy_tree</span>(ps))</span>
 <span id="cb44-2"><a href="bioinformatics.html#cb44-2"></a><span class="kw">phy_tree</span>(ps) &lt;-<span class="st"> </span>new_tre</span></code></pre></div>
 </div>
 </div>
-<div id="scrna-seq" class="section level2">
-<h2><span class="header-section-number">4.2</span> scRNA-seq</h2>
+<div id="scrna-seq" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.2</span> scRNA-seq<a href="bioinformatics.html#scrna-seq" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>安装<a href="https://github.com/velocyto-team/velocyto.R">velocyto.R</a>.</p>
 <ul>
@@ -309,13 +309,13 @@ FLIBS = -L/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/
 <p>mac 在 pip 安装的时候gcc编译出现错误，建议使用conda安装<code>conda install velocyto.py</code></p></li>
 </ul>
 </div>
-<div id="rna-structure" class="section level2">
-<h2><span class="header-section-number">4.3</span> RNA structure</h2>
+<div id="rna-structure" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.3</span> RNA structure<a href="bioinformatics.html#rna-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>本节记录在 RNA 结构生物信息学分析中的一些问题，如 RNA 二级结构预测。</p>
-<div id="软件安装" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> 软件安装</h3>
-<div id="二级结构预测" class="section level4 unnumbered">
-<h4>二级结构预测</h4>
+<div id="软件安装" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.3.1</span> 软件安装<a href="bioinformatics.html#软件安装" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="二级结构预测" class="section level4 unnumbered hasAnchor">
+<h4>二级结构预测<a href="bioinformatics.html#二级结构预测" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a href="http://contra.stanford.edu/contrafold/download.html">CONTRAfold</a>, 按照帮助
 手册<code>make</code>的时候出现错误</p>

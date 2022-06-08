@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>第7章 linux | 个人问题集</title>
   <meta name="description" content="第7章 linux | 个人问题集" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="第7章 linux | 个人问题集" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2022-02-22" />
+<meta name="date" content="2022-06-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,8 +50,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -227,10 +227,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="linux" class="section level1">
-<h1><span class="header-section-number">第7章</span> linux</h1>
-<div id="安装和配置-1" class="section level2">
-<h2><span class="header-section-number">7.1</span> 安装和配置</h2>
+<div id="linux" class="section level1 hasAnchor">
+<h1><span class="header-section-number">第7章</span> linux<a href="linux.html#linux" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="安装和配置-1" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.1</span> 安装和配置<a href="linux.html#安装和配置-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>TP-P53 安装 ubuntu 18.04</p>
 <p>参考<a href="https://blogg.bekk.no/how-to-install-ubuntu-18-04-on-lenovo-p1-617a4bdea389">这里</a></p>
@@ -279,10 +279,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>进入recovery mode</li>
 <li>选则进入<code>Drop To Root Shell Prompt</code>，就用 root 用户登录了，然后修改文件即可</li>
 </ol></li>
-<li><p>Mac 通过网线链接 ubuntu 服务器</p>
+<li><p>Mac/windows 通过网线链接 ubuntu 服务器</p>
 <p>网线链接两台电脑后，手动设置相应网卡的 IP 地址，保证在同一个网段。如
 Mac IP 设置成192.168.11.1，子网掩码设置为 255.255.255.0，ubuntu
 IP设置为192.168.11.2，子网掩码设置为 255.255.255.0。</p></li>
+<li><p>ubuntu 20.04 挂载局域网内windows共享的文件夹</p>
+<ol style="list-style-type: decimal">
+<li>在 windows 设置好共享文件夹</li>
+<li>ubuntu 20.04 安装 cifs-utils <code>sudo apt install cifs-utils</code></li>
+<li>挂载 <code>sudo mount -t cifs -o username=&lt;windows用户名&gt; //&lt;192.xx.xx.xx, windows局域网ip&gt;/&lt;共享的文件夹&gt; &lt;/mnt/win, 挂载目录&gt;</code></li>
+</ol></li>
 <li><p>ubuntu 添加 aliyun 源</p>
 <p>根据<a href="https://developer.aliyun.com/mirror/ubuntu">这里</a>选择相应版本的源，以
 16.04 xenial为例</p>
@@ -442,10 +448,10 @@ workspace 以行列显示。</p>
 <span id="cb63-8"><a href="linux.html#cb63-8"></a><span class="fu">ln</span> -s /run/systemd/resolve/resolv.conf /etc/reslov.conf</span></code></pre></div></li>
 </ul>
 </div>
-<div id="系统管理" class="section level2">
-<h2><span class="header-section-number">7.2</span> 系统管理</h2>
-<div id="磁盘" class="section level3 unnumbered">
-<h3>1. 磁盘</h3>
+<div id="系统管理" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.2</span> 系统管理<a href="linux.html#系统管理" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="磁盘" class="section level3 unnumbered hasAnchor">
+<h3>1. 磁盘<a href="linux.html#磁盘" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>取消磁盘挂载</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb64-1"><a href="linux.html#cb64-1"></a><span class="co"># sudo umount &lt;/media/share&gt;, 出现target is busy, 需要首先杀死使用</span></span>
@@ -466,22 +472,22 @@ workspace 以行列显示。</p>
 </ul>
 </div>
 </div>
-<div id="vim" class="section level2">
-<h2><span class="header-section-number">7.3</span> VIM</h2>
-<div id="快捷键" class="section level3">
-<h3><span class="header-section-number">7.3.1</span> 快捷键</h3>
-<div id="formatting-格式化排版" class="section level4">
-<h4><span class="header-section-number">7.3.1.1</span> Formatting 格式化排版</h4>
+<div id="vim" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.3</span> VIM<a href="linux.html#vim" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="快捷键" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.3.1</span> 快捷键<a href="linux.html#快捷键" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="formatting-格式化排版" class="section level4 hasAnchor">
+<h4><span class="header-section-number">7.3.1.1</span> Formatting 格式化排版<a href="linux.html#formatting-格式化排版" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>根据 <code>line-width</code> 格式化(重排)行</p>
 <pre><code>gq: （可视模式下）格式化选定内容，行宽度为 line-width 设置变量（80）
 gqq: 根据 line-width 格式化当前行
 ngqq: 格式化 n 行</code></pre>
 </div>
 </div>
-<div id="插件" class="section level3">
-<h3><span class="header-section-number">7.3.2</span> 插件</h3>
-<div id="安装插件" class="section level5 unnumbered">
-<h5>安装插件</h5>
+<div id="插件" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.3.2</span> 插件<a href="linux.html#插件" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="安装插件" class="section level5 unnumbered hasAnchor">
+<h5>安装插件<a href="linux.html#安装插件" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ol style="list-style-type: decimal">
 <li>安装插件管理器<a href="https://github.com/junegunn/vim-plug">vim-plug</a>,
 <a href="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim">plug-vim</a>
@@ -505,8 +511,8 @@ call plug#end()</code></pre>
 <li>退出vim,重新打开后 <code>:PlugInstall</code> 即可安装</li>
 </ol>
 </div>
-<div id="安装-python-autocompletion-插件-jedi-vim-后出现错误" class="section level5 unnumbered">
-<h5>安装 python autocompletion 插件 jedi-vim 后出现错误</h5>
+<div id="安装-python-autocompletion-插件-jedi-vim-后出现错误" class="section level5 unnumbered hasAnchor">
+<h5>安装 python autocompletion 插件 jedi-vim 后出现错误<a href="linux.html#安装-python-autocompletion-插件-jedi-vim-后出现错误" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>因为安装系统的 vim 是基于自带的 python(3.5) 配置的, jedi-vim 默认使用系统自带的
 python3.5 (<code>:python3 import sys; print(sys.version_info)</code>), 而我们需要使用更高版本的 python (3.9), 出现版本不匹配而引起错误
 <code>File "/home/user/.vim/plugged/jedi-vim/pythonx/parso/parso/parser.py", line  113 node_map: Dict[str, type] = {} ^ SyntaxError: invalid syntax</code>.</p>
@@ -516,8 +522,8 @@ python3.5 (<code>:python3 import sys; print(sys.version_info)</code>), 而我们
 </div>
 </div>
 </div>
-<div id="misc" class="section level2">
-<h2><span class="header-section-number">7.4</span> Misc</h2>
+<div id="misc" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.4</span> Misc<a href="linux.html#misc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p><code>screen</code> 命令鼠标屏幕</p>
 <ol style="list-style-type: decimal">

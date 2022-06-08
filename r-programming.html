@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>第1章 R 语言 | 个人问题集</title>
   <meta name="description" content="第1章 R 语言 | 个人问题集" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="第1章 R 语言 | 个人问题集" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2022-02-22" />
+<meta name="date" content="2022-06-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,8 +50,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -227,12 +227,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rprogramming" class="section level1">
-<h1><span class="header-section-number">第1章</span> R 语言</h1>
-<div id="安装和配置" class="section level2">
-<h2><span class="header-section-number">1.1</span> 安装和配置</h2>
-<div id="安装" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> 安装</h3>
+<div id="rprogramming" class="section level1 hasAnchor">
+<h1><span class="header-section-number">第1章</span> R 语言<a href="r-programming.html#rprogramming" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="安装和配置" class="section level2 hasAnchor">
+<h2><span class="header-section-number">1.1</span> 安装和配置<a href="r-programming.html#安装和配置" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="安装" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.1.1</span> 安装<a href="r-programming.html#安装" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>ubuntu 安裝 R</p>
 <p>参考https://cran.r-project.org/bin/linux/ubuntu/README.html</p>
@@ -249,8 +249,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>参考<a href="https://rstats.wtf/maintaining-r.html#how-to-transfer-your-library-when-updating-r">这里</a>.</p></li>
 </ul>
 </div>
-<div id="配置" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> 配置</h3>
+<div id="配置" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.1.2</span> 配置<a href="r-programming.html#配置" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>设置cran和bioconductor国内源</p>
 <p>可以在用户主目录下新建<code>.Rprofile</code>文件，添加:</p>
@@ -260,8 +260,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="r-programming.html#cb3-4"></a><span class="kw">options</span>(<span class="dt">BioC_mirror =</span> <span class="st">&quot;http://mirrors.ustc.edu.cn/bioc/&quot;</span>)</span></code></pre></div></li>
 </ul>
 </div>
-<div id="安装包" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> 安装包</h3>
+<div id="安装包" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.1.3</span> 安装包<a href="r-programming.html#安装包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>centos 7 安装 hdf5r</p>
 <p>见<a href="https://www.choyang.me/zh/post/centos-7-r-install-hdf5r/">这</a></p></li>
@@ -286,10 +286,10 @@ stringi 要求 ICU4C &gt;= 55, 而centos 7 中 icu版本为50.2。我们可以�
 </ul>
 </div>
 </div>
-<div id="r-包开发" class="section level2">
-<h2><span class="header-section-number">1.2</span> R 包开发</h2>
-<div id="github中添加包的-code-coverage" class="section level5 unnumbered">
-<h5>1. github中添加包的 code coverage</h5>
+<div id="r-包开发" class="section level2 hasAnchor">
+<h2><span class="header-section-number">1.2</span> R 包开发<a href="r-programming.html#r-包开发" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="github中添加包的-code-coverage" class="section level5 unnumbered hasAnchor">
+<h5>1. github中添加包的 code coverage<a href="r-programming.html#github中添加包的-code-coverage" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ol style="list-style-type: decimal">
 <li><p>使用<code>usethis::use_coverage()</code>, 添加test coverage，</p></li>
 <li><p>运行后会创建文件<code>codecov.yml</code>控制台会显示类似下面markerdown文本，粘贴至
@@ -302,22 +302,22 @@ README文件添加badage</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r-programming.html#cb7-1"></a>covr<span class="op">::</span><span class="kw">codecov</span>(<span class="dt">token =</span> <span class="st">&quot;YOUR_TOKEN_GOES_HERE&quot;</span>)</span></code></pre></div></li>
 </ol>
 </div>
-<div id="包中-readme.md-中用到的图片存放位置" class="section level5 unnumbered">
-<h5>2. 包中 README.md 中用到的图片存放位置</h5>
+<div id="包中-readme.md-中用到的图片存放位置" class="section level5 unnumbered hasAnchor">
+<h5>2. 包中 README.md 中用到的图片存放位置<a href="r-programming.html#包中-readme.md-中用到的图片存放位置" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>因为 cran 中生成 readme 只允许放在少数文件夹下，如<code>man/figures/</code>
 <a href="https://github.com/ropensci/rotemplate/issues/19#issuecomment-506315565"><strong>pkgdown</strong></a>
 跟 cran 保持一致。所以 README.md 中图片建议存放在<code>man/figures/</code>，
 如果是由 Rmd 文件生成，设置 knitr 图片保存路径
 <code>knitr::opts_chunk(fig.path = "man/figures/")</code></p>
 </div>
-<div id="写-unit-test-的时候如果需要读取用save或者saverds保存外部数据出现warning" class="section level5 unnumbered">
-<h5>3. 写 unit test 的时候如果需要读取用<code>save()</code>或者<code>saveRDS()</code>保存外部数据，出现warning</h5>
+<div id="写-unit-test-的时候如果需要读取用save或者saverds保存外部数据出现warning" class="section level5 unnumbered hasAnchor">
+<h5>3. 写 unit test 的时候如果需要读取用<code>save()</code>或者<code>saveRDS()</code>保存外部数据，出现warning<a href="r-programming.html#写-unit-test-的时候如果需要读取用save或者saverds保存外部数据出现warning" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <pre><code>Added dependency on R &gt;= 3.5.0 because serialized objects in  serialize/load 
 version 3 cannot be read in older versions of R</code></pre>
 <p>这是因为 R 在 3.5.0 版本后修改了这两个函数的参数<code>version</code>默认为<code>3</code>, 保存数据的时候设置参数<code>version = 2</code>即可。</p>
 </div>
-<div id="按照r-pkgs建议写导出data的文档check-的时候出现warning-lazyload-true" class="section level5 unnumbered">
-<h5>4. 按照<a href="https://r-pkgs.org/data.html#documenting-data">r-pkgs</a>建议写导出<code>data</code>的文档，check 的时候出现warning (<code>Lazyload: TRUE</code>)</h5>
+<div id="按照r-pkgs建议写导出data的文档check-的时候出现warning-lazyload-true" class="section level5 unnumbered hasAnchor">
+<h5>4. 按照<a href="https://r-pkgs.org/data.html#documenting-data">r-pkgs</a>建议写导出<code>data</code>的文档，check 的时候出现warning (<code>Lazyload: TRUE</code>)<a href="r-programming.html#按照r-pkgs建议写导出data的文档check-的时候出现warning-lazyload-true" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <pre><code>&gt; &quot;Variables with usage in documentation object &#39;&lt;data-name&gt;&#39; but not in 
 code: &#39;&lt;data-name&gt;&#39;</code></pre>
 <p>写成如下形式解决问题，手动指定文档的<code>name</code>，最后一行用<code>NA</code>替代<code>"&lt;data-name&gt;"</code>:</p>
@@ -328,8 +328,8 @@ code: &#39;&lt;data-name&gt;&#39;</code></pre>
 <span id="cb10-5"><a href="r-programming.html#cb10-5"></a><span class="co">#&#39; @name &lt;data-name&gt;</span></span>
 <span id="cb10-6"><a href="r-programming.html#cb10-6"></a><span class="ot">NA</span></span></code></pre></div>
 </div>
-<div id="帮助文档中公式" class="section level5 unnumbered">
-<h5>5. 帮助文档中公式</h5>
+<div id="帮助文档中公式" class="section level5 unnumbered hasAnchor">
+<h5>5. 帮助文档中公式<a href="r-programming.html#帮助文档中公式" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>采用<code>\eqn{<em>latex</em>}{<em>ascii</em>}</code>(行内公式), 和
 <code>\deqn{<em>latex</em>}{<em>ascii</em>}</code>(以段落显示的公式).
 其中 <em><code>latex</code></em> 表示 <strong>LATEX</strong> 公式, <em><code>ascii</code></em> 表示帮助中想要展示的公式,
@@ -340,8 +340,8 @@ code: &#39;&lt;data-name&gt;&#39;</code></pre>
 <code><em>ascii</em></code>表示方法相同的时候写一个参数即可。参考
 <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Mathematics">这里</a>.</p>
 </div>
-<div id="依赖其他包中的数据" class="section level5 unnumbered">
-<h5>6. 依赖其他包中的数据</h5>
+<div id="依赖其他包中的数据" class="section level5 unnumbered hasAnchor">
+<h5>6. 依赖其他包中的数据<a href="r-programming.html#依赖其他包中的数据" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>参考<a href="https://stackoverflow.com/questions/48715141/how-do-i-load-data-from-another-package-from-within-my-package">这里</a>.</p>
 <ol style="list-style-type: decimal">
 <li><p>直接使用<code>::</code>, <code>&lt;pkg&gt;::&lt;data&gt;</code>;</p></li>
@@ -356,8 +356,8 @@ code: &#39;&lt;data-name&gt;&#39;</code></pre>
 </blockquote></li>
 </ol>
 </div>
-<div id="mac升级-big-sur后r-包开发环境被破坏改进方法" class="section level5 unnumbered">
-<h5>7. Mac升级 Big Sur后R 包开发环境被破坏，改进方法</h5>
+<div id="mac升级-big-sur后r-包开发环境被破坏改进方法" class="section level5 unnumbered hasAnchor">
+<h5>7. Mac升级 Big Sur后R 包开发环境被破坏，改进方法<a href="r-programming.html#mac升级-big-sur后r-包开发环境被破坏改进方法" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>参考<a href="https://stackoverflow.com/questions/65251887/clang-7-error-linker-command-failed-with-exit-code-1-for-macos-big-sur">这里</a></p>
 <ol style="list-style-type: decimal">
 <li>升级 xcode</li>
@@ -384,8 +384,8 @@ code: &#39;&lt;data-name&gt;&#39;</code></pre>
 <span id="cb12-18"><a href="r-programming.html#cb12-18"></a><span class="va">CPPFLAGS=</span>-I/usr/local/opt/gettext/include <span class="ex">-I</span><span class="va">$(</span><span class="ex">LLVM_LOC</span><span class="va">)</span>/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include</span></code></pre></div>
 </div>
 </div>
-<div id="rstudio" class="section level2">
-<h2><span class="header-section-number">1.3</span> Rstudio</h2>
+<div id="rstudio" class="section level2 hasAnchor">
+<h2><span class="header-section-number">1.3</span> Rstudio<a href="r-programming.html#rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>rstudio git 选择所有文件add并commit</p>
 <p>在commit界面，<code>ctrl/command + A</code>全选,然后回车即可，参考<a href="https://stackoverflow.com/a/33913671/3993246">这里</a></p></li>
@@ -395,14 +395,14 @@ code: &#39;&lt;data-name&gt;&#39;</code></pre>
 sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/plugins/platforminputcontexts/</code></pre>
 <p>重启 Rstudio 即可</p></li>
 </ul>
-<div id="snippet" class="section level3">
-<h3><span class="header-section-number">1.3.1</span> snippet</h3>
+<div id="snippet" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.3.1</span> snippet<a href="r-programming.html#snippet" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>在编写脚本的时候，在脚本开始写上该脚本的信息（如作者，时间，脚本说明）</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="r-programming.html#cb14-1"></a>snippet header_script</span>
 <span id="cb14-2"><a href="r-programming.html#cb14-2"></a>    <span class="co">################################################################################</span></span>
 <span id="cb14-3"><a href="r-programming.html#cb14-3"></a>    <span class="co">## Description: </span></span>
 <span id="cb14-4"><a href="r-programming.html#cb14-4"></a>    <span class="co">## Author: </span></span>
-<span id="cb14-5"><a href="r-programming.html#cb14-5"></a>    <span class="co">## Create Time: Tue Feb 22 13:21:00 2022</span></span>
+<span id="cb14-5"><a href="r-programming.html#cb14-5"></a>    <span class="co">## Create Time: Wed Jun  8 09:51:02 2022</span></span>
 <span id="cb14-6"><a href="r-programming.html#cb14-6"></a>    <span class="co">## Updated Time: </span></span>
 <span id="cb14-7"><a href="r-programming.html#cb14-7"></a>    <span class="co">################################################################################</span></span></code></pre></div>
 <p>脚本的分段注释, 描述该段代码的作用</p>
@@ -410,28 +410,28 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <span id="cb15-2"><a href="r-programming.html#cb15-2"></a>    <span class="co">################################################################################</span></span>
 <span id="cb15-3"><a href="r-programming.html#cb15-3"></a>    <span class="co">################################################################################</span></span></code></pre></div>
 </div>
-<div id="rstudio-常用快捷键" class="section level3">
-<h3><span class="header-section-number">1.3.2</span> Rstudio 常用快捷键</h3>
-<div id="navigating-code-代码导航" class="section level4">
-<h4><span class="header-section-number">1.3.2.1</span> Navigating code (代码导航)</h4>
-<div id="跳转到project中的文件函数定义" class="section level5">
-<h5><span class="header-section-number">1.3.2.1.1</span> 跳转到project中的文件/函数(定义)</h5>
+<div id="rstudio-常用快捷键" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.3.2</span> Rstudio 常用快捷键<a href="r-programming.html#rstudio-常用快捷键" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="navigating-code-代码导航" class="section level4 hasAnchor">
+<h4><span class="header-section-number">1.3.2.1</span> Navigating code (代码导航)<a href="r-programming.html#navigating-code-代码导航" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="跳转到project中的文件函数定义" class="section level5 hasAnchor">
+<h5><span class="header-section-number">1.3.2.1.1</span> 跳转到project中的文件/函数(定义)<a href="r-programming.html#跳转到project中的文件函数定义" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li><code>ctrl + .</code>, 在弹出框中输入文件名或者函数名, 也可以在工具栏的<code>Go to File/Function</code> 搜索框中输入要搜索的文件名或者函数名</li>
 <li><code>F2</code></li>
 <li>按住<code>ctrl</code>, 点击左键</li>
 </ul>
 </div>
-<div id="源文件导航" class="section level5">
-<h5><span class="header-section-number">1.3.2.1.2</span> 源文件导航</h5>
+<div id="源文件导航" class="section level5 hasAnchor">
+<h5><span class="header-section-number">1.3.2.1.2</span> 源文件导航<a href="r-programming.html#源文件导航" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li>跳转到指定行， <code>Alt+Shift+G</code> (Mac: <code>Option+Shift+Cmd+G</code>).</li>
 <li>点击源代码编辑器(source editor)下方的状态栏从函数列表中选择函数会跳转到该函数
 的源码.</li>
 </ul>
 </div>
-<div id="前进和后退" class="section level5">
-<h5><span class="header-section-number">1.3.2.1.3</span> 前进和后退</h5>
+<div id="前进和后退" class="section level5 hasAnchor">
+<h5><span class="header-section-number">1.3.2.1.3</span> 前进和后退<a href="r-programming.html#前进和后退" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>Ctrl+F9/Ctrl+F10</code> (Mac: <code>Cmd+F9/Cmd+F10</code>)或者是源代码编辑器上方工具栏最左边的方向
 箭头。适用于以下情况:</p>
 <ul>
@@ -441,8 +441,8 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 </ul>
 </div>
 </div>
-<div id="code-folding-代码折叠" class="section level4">
-<h4><span class="header-section-number">1.3.2.2</span> Code folding (代码折叠)</h4>
+<div id="code-folding-代码折叠" class="section level4 hasAnchor">
+<h4><span class="header-section-number">1.3.2.2</span> Code folding (代码折叠)<a href="r-programming.html#code-folding-代码折叠" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>以下几类代码可以折叠:大括号<code>{}</code>内的代码块(如函数或者条件语句); Rmarkdown 中代码
 块 (code chunks) 和标题,及代码段 (code section);任何以四个以上的<code>-</code>或<code>=</code>或<code>#</code>字
 符为结尾的注释行(注释行中开始<code>#</code>的个数可以为多个)。</p>
@@ -462,8 +462,8 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 </div>
 </div>
 </div>
-<div id="r-基础" class="section level2">
-<h2><span class="header-section-number">1.4</span> R 基础</h2>
+<div id="r-基础" class="section level2 hasAnchor">
+<h2><span class="header-section-number">1.4</span> R 基础<a href="r-programming.html#r-基础" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>根据序列长度进行迭代（循环）的时候，<code>1:seq_along(y)</code>和<code>1:length(y)</code>有什么区别？</p>
 <p>应使用<code>1:seq_along(y)</code>。当<code>length(y) = 0</code>时<code>seq_along(y)</code>返回<code>integer(0)</code>，基于<code>1:seq_along(y)</code>的循环会抛错； 而<code>1:length(y)</code>表示<code>1:0</code>的迭代，可能出现意想不到的结果。参见R for Data Science <span class="citation">(Grolemund and Wickham <a href="#ref-grolemund2019" role="doc-biblioref">2019</a>)</span></p>
@@ -510,8 +510,8 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <span id="cb19-6"><a href="r-programming.html#cb19-6"></a>)</span></code></pre></div></li>
 </ul>
 </div>
-<div id="tidyverse-数据分析" class="section level2">
-<h2><span class="header-section-number">1.5</span> tidyverse 数据分析</h2>
+<div id="tidyverse-数据分析" class="section level2 hasAnchor">
+<h2><span class="header-section-number">1.5</span> tidyverse 数据分析<a href="r-programming.html#tidyverse-数据分析" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p><code>data.frame</code> 转置(transpose)</p>
 <p>tidyverse 中 默认操作数据结构为 <code>tibble</code>, 用于替代 R 中<code>data.frame</code>，<code>tibble</code>
@@ -555,9 +555,9 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 <span id="cb28-3"><a href="r-programming.html#cb28-3"></a><span class="st">  </span>purrr<span class="op">::</span><span class="kw">map</span>(unlist) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb28-4"><a href="r-programming.html#cb28-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">bind_cols</span>()</span></code></pre></div>
 <pre><code>## New names:
-## * `` -&gt; ...1
-## * `` -&gt; ...2
-## * `` -&gt; ...3</code></pre>
+## • `` -&gt; `...1`
+## • `` -&gt; `...2`
+## • `` -&gt; `...3`</code></pre>
 <pre><code>## # A tibble: 2 × 3
 ##    ...1  ...2  ...3
 ##   &lt;int&gt; &lt;int&gt; &lt;int&gt;
@@ -565,10 +565,10 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 ## 2     4     5     6</code></pre></li>
 </ul>
 </div>
-<div id="visualization" class="section level2">
-<h2><span class="header-section-number">1.6</span> 可视化</h2>
-<div id="base-plot" class="section level3">
-<h3><span class="header-section-number">1.6.1</span> 基础图形</h3>
+<div id="visualization" class="section level2 hasAnchor">
+<h2><span class="header-section-number">1.6</span> 可视化<a href="r-programming.html#visualization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="base-plot" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.6.1</span> 基础图形<a href="r-programming.html#base-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p><code>par("pin")</code>, <code>par("usr")</code></p>
 <p><code>par("pin")</code>表示当前图形的尺寸用英寸表示(width * height)；<code>par("usr")</code>表示当前图形的坐标范围<code>c(xmin, xmax, ymin, ymax)</code></p></li>
@@ -579,8 +579,8 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 </ul></li>
 </ul>
 </div>
-<div id="ggplot" class="section level3">
-<h3><span class="header-section-number">1.6.2</span> ggplot</h3>
+<div id="ggplot" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.6.2</span> ggplot<a href="r-programming.html#ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>什么是<strong>individal geom</strong> 和 <strong>collective geom</strong>?
 基于一行数据进行作图的<code>geom</code>称为<strong>individal geom</strong>，如<code>geom_point</code>每行数据映射到图形中的一个点；基于多行数据作图的<code>geom</code>称为<strong>collective geom</strong>, 如<code>geom_bar</code>对多行数据进行统计变换计算其频数，也就是说多行数据映射到图形中的一个<strong>bar</strong>.</p></li>
@@ -625,8 +625,8 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 ## 字符 {#char}</p></li>
 </ul>
 </div>
-<div id="rexpr" class="section level3">
-<h3><span class="header-section-number">1.6.3</span> 正则表达式</h3>
+<div id="rexpr" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.6.3</span> 正则表达式<a href="r-programming.html#rexpr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>正则表达式字符列表<code>[]</code>用法：<code>[]</code>中的字符匹配字符本身，如<code>[.]</code>匹配.,而不是任意字符，因此可以使用<code>[.]</code>代替<code>\\.</code>,一些在<code>[]</code>内有特殊意义的字符除外，如<code>-</code>表示范围，<code>^</code>不包含这些字符，<code>]</code>结束括号，<code>\</code>在字符串中表示转义。</p></li>
 <li><p>正则表达式默认是进行贪婪匹配，即匹配最长字符串，在正则表达式后边加?表示最短匹配</p>
@@ -648,10 +648,10 @@ sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platf
 </ul>
 </div>
 </div>
-<div id="reproducible-research" class="section level2">
-<h2><span class="header-section-number">1.7</span> 可重复性研究</h2>
-<div id="rmarkdown---knitr" class="section level3">
-<h3><span class="header-section-number">1.7.1</span> Rmarkdown - Knitr</h3>
+<div id="reproducible-research" class="section level2 hasAnchor">
+<h2><span class="header-section-number">1.7</span> 可重复性研究<a href="r-programming.html#reproducible-research" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="rmarkdown---knitr" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.7.1</span> Rmarkdown - Knitr<a href="r-programming.html#rmarkdown---knitr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>Rmarkdown 输出 pdf 支持中文</p>
 <p>使用<a href="https://github.com/rstudio/rticles">rticles</a>包, 在 <code>yaml</code> 头文件中指定
@@ -673,8 +673,8 @@ output:
 <code>正常<em>斜体</em></code>.</p></li>
 </ul>
 </div>
-<div id="bookdown" class="section level3">
-<h3><span class="header-section-number">1.7.2</span> bookdown</h3>
+<div id="bookdown" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.7.2</span> bookdown<a href="r-programming.html#bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>章节去除编号 章节后面添加 {-}</p></li>
 <li><p>汉话：章节标题汉化，<a href="https://bookdown.org/yihui/bookdown/internationalization.html。配置文件%60_bookdown.yml" class="uri">https://bookdown.org/yihui/bookdown/internationalization.html。配置文件`_bookdown.yml</a>`</p>
@@ -688,8 +688,8 @@ chapter_name: [&quot;第&quot;, &quot;章&quot;]</code></pre>
 <p>表示由<code>split_by</code>自动生成章节标题出现重复标题而出现错误。中文标题会出现这种错误，章节标题手动添加<code>{$ID}</code>即可，参见<a href="https://d.cosx.org/d/420172-bookdown-split-chapters">这</a>和<a href="https://github.com/rstudio/bookdown/issues/520">这</a></p>
 <p>如果问题还存在, 设置 <code>split_by</code>为<code>none</code>或<code>rmd</code>，参考<a href="https://github.com/rstudio/bookdown/issues/902">这里</a>.</p></li>
 </ul>
-<div id="github-action-部署-bookdown-到-github-page" class="section level5 unnumbered">
-<h5>github action 部署 bookdown 到 github page</h5>
+<div id="github-action-部署-bookdown-到-github-page" class="section level5 unnumbered hasAnchor">
+<h5>github action 部署 bookdown 到 github page<a href="r-programming.html#github-action-部署-bookdown-到-github-page" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>参考 <a href="https://github.com/r-lib/actions/blob/v2-branch/examples/bookdown.yaml" class="uri">https://github.com/r-lib/actions/blob/v2-branch/examples/bookdown.yaml</a>.
 使用<a href="https://github.com/r-lib/actions/tree/v2-branch/setup-r-dependencies">r-lib/actions/setup-r-dependencies@v2</a>根据 DESCRIPTION 安装依赖的包;如果要生成 PDF
 文件安装 <a href="https://github.com/r-lib/actions/tree/v2-branch/setup-tinytex">TinyTex</a>.</p>
@@ -747,8 +747,8 @@ chapter_name: [&quot;第&quot;, &quot;章&quot;]</code></pre>
 <span id="cb38-52"><a href="r-programming.html#cb38-52"></a><span class="at">          </span><span class="fu">folder</span><span class="kw">:</span><span class="at"> _book</span></span></code></pre></div>
 </div>
 </div>
-<div id="tinytex" class="section level3">
-<h3><span class="header-section-number">1.7.3</span> tinytex</h3>
+<div id="tinytex" class="section level3 hasAnchor">
+<h3><span class="header-section-number">1.7.3</span> tinytex<a href="r-programming.html#tinytex" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>pkgdown编译jss文档的时候出现，<code>! LaTeX Error: File</code>ae.sty’not found.` 说明缺少ae包，</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="r-programming.html#cb39-1"></a><span class="kw">tlmgr_search</span>(<span class="st">&#39;ae.sty&#39;</span>)</span>

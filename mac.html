@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>第6章 Mac OS | 个人问题集</title>
   <meta name="description" content="第6章 Mac OS | 个人问题集" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="第6章 Mac OS | 个人问题集" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="曹洋" />
 
 
-<meta name="date" content="2022-02-22" />
+<meta name="date" content="2022-06-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,8 +50,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -227,10 +227,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mac-os" class="section level1">
-<h1><span class="header-section-number">第6章</span> Mac OS</h1>
-<div id="homebrew" class="section level2">
-<h2><span class="header-section-number">6.1</span> homebrew</h2>
+<div id="mac-os" class="section level1 hasAnchor">
+<h1><span class="header-section-number">第6章</span> Mac OS<a href="mac.html#mac-os" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="homebrew" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.1</span> homebrew<a href="mac.html#homebrew" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>homebrew 安装程序出现以下错误</p>
 <pre><code>Error: An unexpected error occurred during the `brew link` step
@@ -240,14 +240,14 @@ Error: Permission denied @ dir_s_mkdir - /usr/local/Frameworks</code></pre>
 <p>是由于用户没有修改<code>$(brew --prefix)/*</code>即<code>/usr/local</code>权限，修改权限即可<code>sudo chown -R $(whoami) $(brew --prefix)/*</code></p></li>
 </ul>
 </div>
-<div id="app" class="section level2">
-<h2><span class="header-section-number">6.2</span> 应用程序</h2>
+<div id="app" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.2</span> 应用程序<a href="mac.html#app" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>打开<code>xxx.app</code>文件时，出现<code>app已损坏，打不开，你应该将它移到废纸篓</code></p>
 <p>系统默认不允许用户自行下载安装应用程序。在终端运行<code>sudo sptcl --master-disable</code>运行即可。打开系统偏好设置 -&gt; 安全性与隐私 -&gt; 允许从以下位置下载的应用就变成了<code>任何来源</code>，双击即可打开app。</p></li>
 </ul>
-<div id="alfred" class="section level3">
-<h3><span class="header-section-number">6.2.1</span> Alfred</h3>
+<div id="alfred" class="section level3 hasAnchor">
+<h3><span class="header-section-number">6.2.1</span> Alfred<a href="mac.html#alfred" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Mac效率神器，快速搜索并打开app、文件，可替代spotlight</p>
 <ul>
 <li><p>设置激活快捷键<code>cmd + space</code></p>
